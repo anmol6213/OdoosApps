@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add Slack User ID field to Employee form -->
+    <record id="view_employee_form_slack" model="ir.ui.view">
+        <field name="name">hr.employee.form.slack</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='work_phone']" position="after">
+                <field name="slack_user_id" 
+                       placeholder="e.g., U01234ABCDE"
+                       help="Find this in Slack: Profile → More → Copy member ID"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add Slack User ID to Employee tree view -->
+    <record id="view_employee_tree_slack" model="ir.ui.view">
+        <field name="name">hr.employee.tree.slack</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='work_phone']" position="after">
+                <field name="slack_user_id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

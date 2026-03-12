@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Cron job for sending daily attendance summaries -->
+        <record id="ir_cron_send_daily_summary" model="ir.cron">
+            <field name="name">Send Daily Attendance Summary to Slack</field>
+            <field name="model_id" ref="model_slack_config"/>
+            <field name="state">code</field>
+            <field name="code">model.send_daily_summary()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <!-- <field name="numbercall">-1</field> -->
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>
+
