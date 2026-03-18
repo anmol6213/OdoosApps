@@ -31,7 +31,7 @@ Slack Attendance Integration
         'views/attendance_break_views.xml',
         'data/ir_cron_data.xml',
     ],
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.gif'],
     'demo': [],
     'installable': True,
     'application': False,
