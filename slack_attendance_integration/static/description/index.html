@@ -1,339 +1,263 @@
 <!-- ── HERO ──────────────────────────────────────────────────────── -->
-<section class="bg-dark" style="padding:56px 0 48px;">
+<section style="padding:0 0 2rem;">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-7 col-12" style="margin-bottom:28px;">
-        <p style="color:#10b981; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">
-          <i class="fa fa-slack" style="margin-right:6px;"></i>HR Attendance Module
-        </p>
-        <h1 style="color:#f0f5fa; font-size:48px; font-weight:800; line-height:1.1; margin-bottom:8px;">
-          Slack Attendance
-        </h1>
-        <h1 style="color:#10b981; font-size:48px; font-weight:800; line-height:1.1; margin-bottom:20px;">
-          Integration
-        </h1>
-        <p style="color:#aab4c0; font-size:17px; line-height:1.7; margin-bottom:28px; max-width:480px;">
-          Let your team check-in, check-out and manage breaks directly from Slack &#8212; synced live to Odoo HR Attendance. Zero friction. Zero extra apps.
-        </p>
-        <div class="d-flex flex-wrap">
-          <span style="background-color:#10b981; color:#0a0e1a; font-size:12px; font-weight:700; padding:6px 14px; border-radius:20px; letter-spacing:.4px; margin-right:8px; margin-bottom:8px; display:inline-block;">
-            <i class="fa fa-check-circle" style="margin-right:4px;"></i>Odoo 19.0
-          </span>
-          <span style="background-color:#1a3d2e; color:#10b981; border:1.5px solid #2a6648; font-size:12px; font-weight:700; padding:6px 14px; border-radius:20px; margin-right:8px; margin-bottom:8px; display:inline-block;">
-            <i class="fa fa-magic" style="margin-right:4px;"></i>AI Powered
-          </span>
-          <span style="background-color:#1e1e3a; color:#a5b4fc; border:1.5px solid #3a3a6a; font-size:12px; font-weight:700; padding:6px 14px; border-radius:20px; margin-right:8px; margin-bottom:8px; display:inline-block;">
-            <i class="fa fa-shield" style="margin-right:4px;"></i>HMAC Secured
-          </span>
-          <span style="background-color:#2a2a2a; color:#8899aa; border:1.5px solid #444; font-size:12px; font-weight:700; padding:6px 14px; border-radius:20px; margin-bottom:8px; display:inline-block;">
-            LGPL-3
-          </span>
-        </div>
-      </div>
-      <div class="col-md-5 col-12 d-none d-md-block">
-        <div style="background-color:#1a2035; border-radius:16px; padding:20px; border:1px solid #2a3a4a;">
-          <div class="d-flex align-items-center" style="margin-bottom:16px;">
-            <div style="width:10px; height:10px; border-radius:50%; background:#e74c3c; margin-right:6px;"></div>
-            <div style="width:10px; height:10px; border-radius:50%; background:#f39c12; margin-right:6px;"></div>
-            <div style="width:10px; height:10px; border-radius:50%; background:#2ecc71; margin-right:6px;"></div>
-            <span style="color:#6a7588; font-size:12px; margin-left:6px;"># general</span>
-          </div>
-          <div class="d-flex align-items-center" style="margin-bottom:14px;">
-            <div class="d-flex align-items-center justify-content-center" style="width:32px; height:32px; border-radius:8px; background-color:#4f46e5; margin-right:10px; flex-shrink:0;">
-              <span style="color:#fff; font-size:13px; font-weight:700;">R</span>
-            </div>
-            <div>
-              <div style="margin-bottom:3px;">
-                <span style="color:#e2e8f0; font-size:13px; font-weight:600;">Rahul</span>
-                <span style="color:#6a7588; font-size:11px; margin-left:6px;">9:00 AM</span>
-              </div>
-              <span style="background-color:#2d3748; color:#a5b4fc; font-family:monospace; font-size:13px; padding:3px 10px; border-radius:6px;">/login</span>
-            </div>
-          </div>
-          <div class="d-flex align-items-center" style="margin-bottom:14px;">
-            <div class="d-flex align-items-center justify-content-center" style="width:32px; height:32px; border-radius:8px; background-color:#10b981; margin-right:10px; flex-shrink:0;">
-              <i class="fa fa-bolt" style="color:#0a0e1a; font-size:14px;"></i>
-            </div>
-            <div>
-              <div style="margin-bottom:3px;">
-                <span style="color:#10b981; font-size:13px; font-weight:600;">AttendBot</span>
-                <span style="color:#6a7588; font-size:11px; margin-left:6px;">9:00 AM</span>
-              </div>
-              <p style="color:#d1fae5; font-size:13px; margin:0;"><i class="fa fa-check" style="color:#10b981; margin-right:4px;"></i><strong>Rahul</strong> &#8212; Logged in at 9:00 AM</p>
-            </div>
-          </div>
-          <div class="d-flex align-items-center" style="margin-bottom:14px;">
-            <div class="d-flex align-items-center justify-content-center" style="width:32px; height:32px; border-radius:8px; background-color:#4f46e5; margin-right:10px; flex-shrink:0;">
-              <span style="color:#fff; font-size:13px; font-weight:700;">R</span>
-            </div>
-            <div>
-              <div style="margin-bottom:3px;">
-                <span style="color:#e2e8f0; font-size:13px; font-weight:600;">Rahul</span>
-                <span style="color:#6a7588; font-size:11px; margin-left:6px;">6:05 PM</span>
-              </div>
-              <span style="background-color:#2d3748; color:#a5b4fc; font-family:monospace; font-size:13px; padding:3px 10px; border-radius:6px;">/logout</span>
-            </div>
-          </div>
-          <div style="background-color:#0f2a1e; border-left:3px solid #10b981; border-radius:4px; padding:10px 14px;">
-            <p style="color:#d1fae5; font-size:13px; margin:0;"><i class="fa fa-bar-chart" style="color:#10b981; margin-right:6px;"></i><strong>Net: 8h 40m</strong> &nbsp;|&nbsp; Break: 25m &nbsp;|&nbsp; Above target &#10003;</p>
+
+    <div class="bg-dark" style="border-radius:16px; padding:40px 36px; margin-bottom:0;">
+      <div class="row align-items-center">
+
+        <div class="col-md-6 col-12" style="margin-bottom:24px;">
+          <p style="color:#10b981; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px;">
+            <i class="fa fa-slack" style="margin-right:6px;"></i>HR Attendance Module
+          </p>
+          <h1 style="color:#f0f5fa; font-size:2.4rem; font-weight:800; line-height:1.15; margin-bottom:6px;">
+            Slack Attendance
+          </h1>
+          <h1 style="color:#10b981; font-size:2.4rem; font-weight:800; line-height:1.15; margin-bottom:18px;">
+            Integration
+          </h1>
+          <p style="color:#aab4c0; font-size:0.95rem; line-height:1.7; margin-bottom:22px;">
+            Let your team check-in, check-out and manage breaks directly from Slack &#8212; synced live to Odoo HR Attendance. Zero friction. Zero extra apps.
+          </p>
+          <div>
+            <span style="background-color:#10b981; color:#0a0e1a; font-size:11px; font-weight:700; padding:5px 12px; border-radius:20px; margin-right:6px; margin-bottom:6px; display:inline-block;">
+              <i class="fa fa-check-circle" style="margin-right:3px;"></i>Odoo 19.0
+            </span>
+            <span style="background-color:#1a3d2e; color:#10b981; border:1px solid #2a6648; font-size:11px; font-weight:700; padding:5px 12px; border-radius:20px; margin-right:6px; margin-bottom:6px; display:inline-block;">
+              <i class="fa fa-magic" style="margin-right:3px;"></i>AI Powered
+            </span>
+            <span style="background-color:#1e1e3a; color:#a5b4fc; border:1px solid #3a3a6a; font-size:11px; font-weight:700; padding:5px 12px; border-radius:20px; margin-right:6px; margin-bottom:6px; display:inline-block;">
+              <i class="fa fa-shield" style="margin-right:3px;"></i>HMAC Secured
+            </span>
+            <span style="background-color:#2a2a2a; color:#8899aa; border:1px solid #444; font-size:11px; font-weight:700; padding:5px 12px; border-radius:20px; margin-bottom:6px; display:inline-block;">
+              LGPL-3
+            </span>
           </div>
         </div>
+
+        <div class="col-md-6 col-12">
+          <div style="background-color:#1a2035; border-radius:12px; padding:18px; border:1px solid #2a3a4a;">
+            <div class="d-flex align-items-center" style="margin-bottom:14px;">
+              <div style="width:9px; height:9px; border-radius:50%; background:#e74c3c; margin-right:5px;"></div>
+              <div style="width:9px; height:9px; border-radius:50%; background:#f39c12; margin-right:5px;"></div>
+              <div style="width:9px; height:9px; border-radius:50%; background:#2ecc71; margin-right:5px;"></div>
+              <span style="color:#6a7588; font-size:11px; margin-left:5px;"># general &#8212; Attendance</span>
+            </div>
+            <div class="d-flex align-items-center" style="margin-bottom:12px;">
+              <div class="d-flex align-items-center justify-content-center" style="width:30px; height:30px; border-radius:8px; background-color:#10b981; margin-right:8px; flex-shrink:0;">
+                <i class="fa fa-bolt" style="color:#0a0e1a; font-size:13px;"></i>
+              </div>
+              <div>
+                <span style="color:#10b981; font-size:12px; font-weight:600;">AttendBot</span>
+                <span style="color:#6a7588; font-size:10px; margin-left:5px;">1:55 PM</span>
+                <p style="color:#d1fae5; font-size:12px; margin:2px 0 0;">Resumed (25 min &gt; 5 min &#8212; counted)</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center" style="margin-bottom:12px;">
+              <div class="d-flex align-items-center justify-content-center" style="width:30px; height:30px; border-radius:8px; background-color:#4f46e5; margin-right:8px; flex-shrink:0;">
+                <span style="color:#fff; font-size:12px; font-weight:700;">R</span>
+              </div>
+              <div>
+                <span style="color:#e2e8f0; font-size:12px; font-weight:600;">Rahul</span>
+                <span style="color:#6a7588; font-size:10px; margin-left:5px;">6:05 PM</span>
+                <p style="color:#aab4c0; font-size:12px; margin:2px 0 0; font-family:monospace;">/logout</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center">
+              <div class="d-flex align-items-center justify-content-center" style="width:30px; height:30px; border-radius:8px; background-color:#10b981; margin-right:8px; flex-shrink:0;">
+                <i class="fa fa-bolt" style="color:#0a0e1a; font-size:13px;"></i>
+              </div>
+              <div style="flex:1;">
+                <span style="color:#10b981; font-size:12px; font-weight:600;">AttendBot</span>
+                <span style="color:#6a7588; font-size:10px; margin-left:5px;">6:05 PM</span>
+                <div style="background-color:#0f2a1e; border-radius:6px; padding:7px 10px; margin-top:4px; border-left:3px solid #10b981;">
+                  <p style="color:#d1fae5; font-size:12px; margin:0;">Logged out | Net 8h 15m [done] &#10003;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- ── THE PROBLEM ────────────────────────────────────────────────── -->
-<section style="background-color:#f8f9fa; padding:52px 0;">
+<section style="padding:2.5rem 0;">
   <div class="container">
-    <div class="row justify-content-center text-center" style="margin-bottom:36px;">
+    <div class="row justify-content-center text-center" style="margin-bottom:28px;">
       <div class="col-md-8 col-12">
-        <p style="color:#10b981; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">THE PROBLEM</p>
-        <h2 style="font-size:32px; font-weight:800; color:#1a202c; margin-bottom:12px;">Attendance tracking shouldn&#x27;t be a second job</h2>
-        <p style="color:#6b7280; font-size:16px; line-height:1.7;">Switching apps, forgetting to log in, manual HR entries &#8212; it adds up to wasted time and inaccurate data.</p>
+        <p style="color:#10b981; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">THE PROBLEM</p>
+        <h2 style="font-size:1.8rem; font-weight:800; color:#1a202c; margin-bottom:10px;">Attendance tracking shouldn&#x27;t be a second job</h2>
+        <p style="color:#6b7280; font-size:0.95rem; line-height:1.7;">Switching apps, forgetting to log in, manual HR entries &#8212; it adds up to wasted time and inaccurate data.</p>
       </div>
     </div>
     <div class="row text-center align-items-center">
-      <div class="col-md-4 col-12" style="margin-bottom:20px;">
-        <div style="background-color:#fff2f2; border-radius:50%; width:60px; height:60px; margin:0 auto 12px; line-height:60px; text-align:center;">
-          <i class="fa fa-times-circle" style="color:#e53e3e; font-size:26px; vertical-align:middle;"></i>
+      <div class="col-md-4 col-12" style="margin-bottom:16px;">
+        <div style="background-color:#fff2f2; border-radius:50%; width:56px; height:56px; margin:0 auto 10px; line-height:56px; text-align:center;">
+          <i class="fa fa-times-circle" style="color:#e53e3e; font-size:24px; vertical-align:middle;"></i>
         </div>
-        <h5 style="color:#1a202c; font-weight:700;">Before</h5>
-        <p style="color:#6b7280; font-size:14px;">Open browser &rarr; find Odoo &rarr; click Attendance &rarr; click Check In &rarr; go back to Slack</p>
+        <h5 style="color:#1a202c; font-weight:700; font-size:1rem;">Before</h5>
+        <p style="color:#6b7280; font-size:0.85rem;">Open browser &rarr; find Odoo &rarr; click Attendance &rarr; click Check In &rarr; go back to Slack</p>
       </div>
-      <div class="col-md-4 col-12 d-none d-md-block" style="margin-bottom:20px;">
-        <i class="fa fa-arrow-right" style="font-size:36px; color:#d1d5db;"></i>
+      <div class="col-md-4 col-12 d-none d-md-block" style="margin-bottom:16px;">
+        <i class="fa fa-arrow-right" style="font-size:32px; color:#d1d5db;"></i>
       </div>
-      <div class="col-md-4 col-12" style="margin-bottom:20px;">
-        <div style="background-color:#f0fdf4; border-radius:50%; width:60px; height:60px; margin:0 auto 12px; line-height:60px; text-align:center;">
-          <i class="fa fa-check-circle" style="color:#10b981; font-size:26px; vertical-align:middle;"></i>
+      <div class="col-md-4 col-12" style="margin-bottom:16px;">
+        <div style="background-color:#f0fdf4; border-radius:50%; width:56px; height:56px; margin:0 auto 10px; line-height:56px; text-align:center;">
+          <i class="fa fa-check-circle" style="color:#10b981; font-size:24px; vertical-align:middle;"></i>
         </div>
-        <h5 style="color:#1a202c; font-weight:700;">After</h5>
-        <p style="color:#6b7280; font-size:14px;">Type <code>/login</code> in Slack. Done. Odoo attendance updated instantly.</p>
+        <h5 style="color:#1a202c; font-weight:700; font-size:1rem;">After</h5>
+        <p style="color:#6b7280; font-size:0.85rem;">Type <code>/login</code> in Slack. Done. Odoo attendance updated instantly.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ── SLASH COMMANDS ─────────────────────────────────────────────── -->
-<section style="background-color:#ffffff; padding:56px 0;">
+<section style="background-color:#f8f9fa; padding:2.5rem 0;">
   <div class="container">
-    <div class="row justify-content-center text-center" style="margin-bottom:36px;">
+    <div class="row justify-content-center text-center" style="margin-bottom:28px;">
       <div class="col-md-8 col-12">
-        <p style="color:#10b981; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">SLASH COMMANDS</p>
-        <h2 style="font-size:32px; font-weight:800; color:#1a202c; margin-bottom:12px;">Four commands. That&#x27;s all your team needs.</h2>
+        <p style="color:#10b981; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">SLASH COMMANDS</p>
+        <h2 style="font-size:1.8rem; font-weight:800; color:#1a202c; margin-bottom:8px;">Four commands. That&#x27;s all your team needs.</h2>
       </div>
     </div>
     <div class="row">
-
-      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:20px;">
-        <div class="card shadow-sm h-100" style="border:none; border-radius:14px; border-top:4px solid #10b981;">
-          <div class="card-body" style="padding:24px;">
-            <div style="background-color:#f0fdf4; border-radius:10px; width:48px; height:48px; margin-bottom:14px; line-height:48px; text-align:center;">
-              <i class="fa fa-sign-in" style="color:#10b981; font-size:22px; vertical-align:middle;"></i>
+      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:16px;">
+        <div class="card shadow-sm h-100" style="border:none; border-radius:12px; border-top:4px solid #10b981;">
+          <div class="card-body" style="padding:20px;">
+            <div style="background-color:#f0fdf4; border-radius:10px; width:44px; height:44px; margin-bottom:12px; line-height:44px; text-align:center;">
+              <i class="fa fa-sign-in" style="color:#10b981; font-size:20px; vertical-align:middle;"></i>
             </div>
-            <code style="background-color:#212529; color:#10b981; padding:4px 10px; border-radius:6px; font-size:15px; font-weight:700; display:inline-block; margin-bottom:10px;">/login</code>
-            <p style="color:#6b7280; font-size:14px; margin:0; line-height:1.6;">Records attendance in Odoo. Optional grace minutes applied automatically.</p>
+            <code style="background-color:#212529; color:#10b981; padding:3px 9px; border-radius:5px; font-size:14px; font-weight:700; display:inline-block; margin-bottom:8px;">/login</code>
+            <p style="color:#6b7280; font-size:0.85rem; margin:0; line-height:1.6;">Records attendance in Odoo. Optional grace minutes applied automatically.</p>
           </div>
         </div>
       </div>
-
-      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:20px;">
-        <div class="card shadow-sm h-100" style="border:none; border-radius:14px; border-top:4px solid #6366f1;">
-          <div class="card-body" style="padding:24px;">
-            <div style="background-color:#eef2ff; border-radius:10px; width:48px; height:48px; margin-bottom:14px; line-height:48px; text-align:center;">
-              <i class="fa fa-sign-out" style="color:#6366f1; font-size:22px; vertical-align:middle;"></i>
+      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:16px;">
+        <div class="card shadow-sm h-100" style="border:none; border-radius:12px; border-top:4px solid #6366f1;">
+          <div class="card-body" style="padding:20px;">
+            <div style="background-color:#eef2ff; border-radius:10px; width:44px; height:44px; margin-bottom:12px; line-height:44px; text-align:center;">
+              <i class="fa fa-sign-out" style="color:#6366f1; font-size:20px; vertical-align:middle;"></i>
             </div>
-            <code style="background-color:#212529; color:#a5b4fc; padding:4px 10px; border-radius:6px; font-size:15px; font-weight:700; display:inline-block; margin-bottom:10px;">/logout</code>
-            <p style="color:#6b7280; font-size:14px; margin:0; line-height:1.6;">Closes the attendance record. Net working hours calculated instantly.</p>
+            <code style="background-color:#212529; color:#a5b4fc; padding:3px 9px; border-radius:5px; font-size:14px; font-weight:700; display:inline-block; margin-bottom:8px;">/logout</code>
+            <p style="color:#6b7280; font-size:0.85rem; margin:0; line-height:1.6;">Closes the attendance record. Net working hours calculated instantly.</p>
           </div>
         </div>
       </div>
-
-      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:20px;">
-        <div class="card shadow-sm h-100" style="border:none; border-radius:14px; border-top:4px solid #f59e0b;">
-          <div class="card-body" style="padding:24px;">
-            <div style="background-color:#fffbeb; border-radius:10px; width:48px; height:48px; margin-bottom:14px; line-height:48px; text-align:center;">
-              <i class="fa fa-pause-circle" style="color:#f59e0b; font-size:22px; vertical-align:middle;"></i>
+      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:16px;">
+        <div class="card shadow-sm h-100" style="border:none; border-radius:12px; border-top:4px solid #f59e0b;">
+          <div class="card-body" style="padding:20px;">
+            <div style="background-color:#fffbeb; border-radius:10px; width:44px; height:44px; margin-bottom:12px; line-height:44px; text-align:center;">
+              <i class="fa fa-pause-circle" style="color:#f59e0b; font-size:20px; vertical-align:middle;"></i>
             </div>
-            <code style="background-color:#212529; color:#fcd34d; padding:4px 10px; border-radius:6px; font-size:15px; font-weight:700; display:inline-block; margin-bottom:10px;">/break</code>
-            <p style="color:#6b7280; font-size:14px; margin:0; line-height:1.6;">Starts a timed break. Short breaks under the threshold are not deducted.</p>
+            <code style="background-color:#212529; color:#fcd34d; padding:3px 9px; border-radius:5px; font-size:14px; font-weight:700; display:inline-block; margin-bottom:8px;">/break</code>
+            <p style="color:#6b7280; font-size:0.85rem; margin:0; line-height:1.6;">Starts a timed break. Short breaks under the threshold are not deducted.</p>
           </div>
         </div>
       </div>
-
-      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:20px;">
-        <div class="card shadow-sm h-100" style="border:none; border-radius:14px; border-top:4px solid #3b82f6;">
-          <div class="card-body" style="padding:24px;">
-            <div style="background-color:#eff6ff; border-radius:10px; width:48px; height:48px; margin-bottom:14px; line-height:48px; text-align:center;">
-              <i class="fa fa-play-circle" style="color:#3b82f6; font-size:22px; vertical-align:middle;"></i>
+      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:16px;">
+        <div class="card shadow-sm h-100" style="border:none; border-radius:12px; border-top:4px solid #3b82f6;">
+          <div class="card-body" style="padding:20px;">
+            <div style="background-color:#eff6ff; border-radius:10px; width:44px; height:44px; margin-bottom:12px; line-height:44px; text-align:center;">
+              <i class="fa fa-play-circle" style="color:#3b82f6; font-size:20px; vertical-align:middle;"></i>
             </div>
-            <code style="background-color:#212529; color:#93c5fd; padding:4px 10px; border-radius:6px; font-size:15px; font-weight:700; display:inline-block; margin-bottom:10px;">/resume</code>
-            <p style="color:#6b7280; font-size:14px; margin:0; line-height:1.6;">Returns from break. Break duration calculated and saved to Odoo.</p>
+            <code style="background-color:#212529; color:#93c5fd; padding:3px 9px; border-radius:5px; font-size:14px; font-weight:700; display:inline-block; margin-bottom:8px;">/resume</code>
+            <p style="color:#6b7280; font-size:0.85rem; margin:0; line-height:1.6;">Returns from break. Break duration calculated and saved to Odoo.</p>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- ── SMART FEATURES ──────────────────────────────────────────────── -->
-<section style="background-color:#f8f9fa; padding:56px 0;">
+<section style="padding:2.5rem 0;">
   <div class="container">
-    <div class="row justify-content-center text-center" style="margin-bottom:40px;">
+    <div class="row justify-content-center text-center" style="margin-bottom:28px;">
       <div class="col-md-8 col-12">
-        <p style="color:#10b981; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">SMART FEATURES</p>
-        <h2 style="font-size:32px; font-weight:800; color:#1a202c;">Thoughtful details that matter.</h2>
+        <p style="color:#10b981; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">SMART FEATURES</p>
+        <h2 style="font-size:1.8rem; font-weight:800; color:#1a202c;">Thoughtful details that matter.</h2>
       </div>
     </div>
     <div class="row">
-
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div class="card shadow-sm" style="border:none; border-radius:14px;">
-          <div class="card-body d-flex" style="padding:22px;">
-            <div style="background-color:#f0fdf4; border-radius:12px; width:46px; height:46px; line-height:46px; text-align:center; margin-right:16px; min-width:46px;">
-              <i class="fa fa-clock-o" style="color:#10b981; font-size:22px; vertical-align:middle;"></i>
+      <div class="col-md-6 col-12" style="margin-bottom:14px;">
+        <div class="card shadow-sm" style="border:none; border-radius:12px;">
+          <div class="card-body d-flex" style="padding:18px;">
+            <div style="background-color:#f0fdf4; border-radius:10px; width:44px; height:44px; line-height:44px; text-align:center; margin-right:14px; min-width:44px;">
+              <i class="fa fa-clock-o" style="color:#10b981; font-size:20px; vertical-align:middle;"></i>
             </div>
             <div>
-              <h5 style="color:#1a202c; font-weight:700; margin-bottom:6px;">Login Grace Minutes</h5>
-              <p style="color:#6b7280; font-size:14px; margin:0; line-height:1.6;">Type <code>/login</code> at 10:00 AM with a 5-minute grace window? Odoo records 9:55 AM. No more punishing employees for being 30 seconds late to type.</p>
+              <h5 style="color:#1a202c; font-weight:700; margin-bottom:5px; font-size:0.95rem;">Login Grace Minutes</h5>
+              <p style="color:#6b7280; font-size:0.85rem; margin:0; line-height:1.6;">Type <code>/login</code> at 10:00 AM with a 5-minute grace window? Odoo records 9:55 AM. No more penalising employees for being 30 seconds late.</p>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div class="card shadow-sm" style="border:none; border-radius:14px;">
-          <div class="card-body d-flex" style="padding:22px;">
-            <div style="background-color:#fffbeb; border-radius:12px; width:46px; height:46px; line-height:46px; text-align:center; margin-right:16px; min-width:46px;">
-              <i class="fa fa-coffee" style="color:#f59e0b; font-size:22px; vertical-align:middle;"></i>
+      <div class="col-md-6 col-12" style="margin-bottom:14px;">
+        <div class="card shadow-sm" style="border:none; border-radius:12px;">
+          <div class="card-body d-flex" style="padding:18px;">
+            <div style="background-color:#fffbeb; border-radius:10px; width:44px; height:44px; line-height:44px; text-align:center; margin-right:14px; min-width:44px;">
+              <i class="fa fa-coffee" style="color:#f59e0b; font-size:20px; vertical-align:middle;"></i>
             </div>
             <div>
-              <h5 style="color:#1a202c; font-weight:700; margin-bottom:6px;">Minimum Break Threshold</h5>
-              <p style="color:#6b7280; font-size:14px; margin:0; line-height:1.6;">Breaks under the configured minimum (e.g. 5 min) are <strong>saved but not deducted</strong> from working hours. A quick coffee doesn&#x27;t penalise your team.</p>
+              <h5 style="color:#1a202c; font-weight:700; margin-bottom:5px; font-size:0.95rem;">Minimum Break Threshold</h5>
+              <p style="color:#6b7280; font-size:0.85rem; margin:0; line-height:1.6;">Breaks under the configured minimum (e.g. 5 min) are <strong>saved but not deducted</strong> from working hours.</p>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div class="card shadow-sm" style="border:none; border-radius:14px;">
-          <div class="card-body d-flex" style="padding:22px;">
-            <div style="background-color:#eff6ff; border-radius:12px; width:46px; height:46px; line-height:46px; text-align:center; margin-right:16px; min-width:46px;">
-              <i class="fa fa-calculator" style="color:#3b82f6; font-size:22px; vertical-align:middle;"></i>
+      <div class="col-md-6 col-12" style="margin-bottom:14px;">
+        <div class="card shadow-sm" style="border:none; border-radius:12px;">
+          <div class="card-body d-flex" style="padding:18px;">
+            <div style="background-color:#eff6ff; border-radius:10px; width:44px; height:44px; line-height:44px; text-align:center; margin-right:14px; min-width:44px;">
+              <i class="fa fa-calculator" style="color:#3b82f6; font-size:20px; vertical-align:middle;"></i>
             </div>
             <div>
-              <h5 style="color:#1a202c; font-weight:700; margin-bottom:6px;">Net Working Hours</h5>
-              <p style="color:#6b7280; font-size:14px; margin:0; line-height:1.6;"><code>Net Hours = Total Hours &#8722; Counted Breaks</code> &#8212; shown live in the Odoo Attendance list and form view. Accurate, always.</p>
+              <h5 style="color:#1a202c; font-weight:700; margin-bottom:5px; font-size:0.95rem;">Net Working Hours</h5>
+              <p style="color:#6b7280; font-size:0.85rem; margin:0; line-height:1.6;"><code>Net = Total &#8722; Counted Breaks</code> &#8212; shown live in the Odoo Attendance list and form view.</p>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div class="card shadow-sm" style="border:none; border-radius:14px;">
-          <div class="card-body d-flex" style="padding:22px;">
-            <div style="background-color:#eef2ff; border-radius:12px; width:46px; height:46px; line-height:46px; text-align:center; margin-right:16px; min-width:46px;">
-              <i class="fa fa-lock" style="color:#6366f1; font-size:22px; vertical-align:middle;"></i>
+      <div class="col-md-6 col-12" style="margin-bottom:14px;">
+        <div class="card shadow-sm" style="border:none; border-radius:12px;">
+          <div class="card-body d-flex" style="padding:18px;">
+            <div style="background-color:#eef2ff; border-radius:10px; width:44px; height:44px; line-height:44px; text-align:center; margin-right:14px; min-width:44px;">
+              <i class="fa fa-lock" style="color:#6366f1; font-size:20px; vertical-align:middle;"></i>
             </div>
             <div>
-              <h5 style="color:#1a202c; font-weight:700; margin-bottom:6px;">HMAC-SHA256 Verification</h5>
-              <p style="color:#6b7280; font-size:14px; margin:0; line-height:1.6;">Every Slack request is verified with your Signing Secret before any DB action. Replay attacks blocked with a 5-minute timestamp window.</p>
+              <h5 style="color:#1a202c; font-weight:700; margin-bottom:5px; font-size:0.95rem;">HMAC-SHA256 Verification</h5>
+              <p style="color:#6b7280; font-size:0.85rem; margin:0; line-height:1.6;">Every Slack request verified with Signing Secret. Replay attacks blocked with 5-minute timestamp window.</p>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div class="card shadow-sm" style="border:none; border-radius:14px;">
-          <div class="card-body d-flex" style="padding:22px;">
-            <div style="background-color:#fff1f2; border-radius:12px; width:46px; height:46px; line-height:46px; text-align:center; margin-right:16px; min-width:46px;">
-              <i class="fa fa-globe" style="color:#ef4444; font-size:22px; vertical-align:middle;"></i>
+      <div class="col-md-6 col-12" style="margin-bottom:14px;">
+        <div class="card shadow-sm" style="border:none; border-radius:12px;">
+          <div class="card-body d-flex" style="padding:18px;">
+            <div style="background-color:#fff1f2; border-radius:10px; width:44px; height:44px; line-height:44px; text-align:center; margin-right:14px; min-width:44px;">
+              <i class="fa fa-globe" style="color:#ef4444; font-size:20px; vertical-align:middle;"></i>
             </div>
             <div>
-              <h5 style="color:#1a202c; font-weight:700; margin-bottom:6px;">Per-Employee Timezone</h5>
-              <p style="color:#6b7280; font-size:14px; margin:0; line-height:1.6;">Times shown in each employee&#x27;s own timezone &#8212; read from their HR record. No hardcoded IST. Works globally.</p>
+              <h5 style="color:#1a202c; font-weight:700; margin-bottom:5px; font-size:0.95rem;">Per-Employee Timezone</h5>
+              <p style="color:#6b7280; font-size:0.85rem; margin:0; line-height:1.6;">Times shown in each employee&#x27;s own timezone &#8212; read from their HR record. No hardcoded IST.</p>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div class="card shadow-sm" style="border:none; border-radius:14px;">
-          <div class="card-body d-flex" style="padding:22px;">
-            <div style="background-color:#f0fdf4; border-radius:12px; width:46px; height:46px; line-height:46px; text-align:center; margin-right:16px; min-width:46px;">
-              <i class="fa fa-bell" style="color:#10b981; font-size:22px; vertical-align:middle;"></i>
+      <div class="col-md-6 col-12" style="margin-bottom:14px;">
+        <div class="card shadow-sm" style="border:none; border-radius:12px;">
+          <div class="card-body d-flex" style="padding:18px;">
+            <div style="background-color:#f0fdf4; border-radius:10px; width:44px; height:44px; line-height:44px; text-align:center; margin-right:14px; min-width:44px;">
+              <i class="fa fa-bell" style="color:#10b981; font-size:20px; vertical-align:middle;"></i>
             </div>
             <div>
-              <h5 style="color:#1a202c; font-weight:700; margin-bottom:6px;">Missed Logout Alerts</h5>
-              <p style="color:#6b7280; font-size:14px; margin:0; line-height:1.6;">Employees who forgot to <code>/logout</code> get an automatic Slack DM reminder at end of day. No more dangling open attendance records.</p>
+              <h5 style="color:#1a202c; font-weight:700; margin-bottom:5px; font-size:0.95rem;">Missed Logout Alerts</h5>
+              <p style="color:#6b7280; font-size:0.85rem; margin:0; line-height:1.6;">Forgot to <code>/logout</code>? Get an automatic Slack DM reminder at end of day. No more open attendance records.</p>
             </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── AI FEATURE HIGHLIGHT ───────────────────────────────────────── -->
-<section class="bg-dark" style="padding:56px 0;">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 col-12" style="margin-bottom:28px;">
-        <p style="color:#10b981; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px;">
-          <i class="fa fa-magic" style="margin-right:6px;"></i>AI FEATURE
-        </p>
-        <h2 style="color:#f0f5fa; font-size:34px; font-weight:800; line-height:1.2; margin-bottom:14px;">
-          Personalised daily<br/>summaries via Claude AI
-        </h2>
-        <p style="color:#aab4c0; font-size:15px; line-height:1.7; margin-bottom:20px;">
-          Enable AI mode with an Anthropic API key. Each employee gets a tailored Slack DM &#8212; referencing <strong style="color:#d1fae5;">their</strong> actual hours, streak, and target. Not a generic template.
-        </p>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li style="color:#aab4c0; font-size:14px; padding:8px 0; border-bottom:1px solid #2a3a4a;">
-            <i class="fa fa-check-circle" style="color:#10b981; margin-right:8px;"></i>Streak tracking &#8212; consecutive days on target
-          </li>
-          <li style="color:#aab4c0; font-size:14px; padding:8px 0; border-bottom:1px solid #2a3a4a;">
-            <i class="fa fa-check-circle" style="color:#10b981; margin-right:8px;"></i>Plain-text fallback if AI is disabled
-          </li>
-          <li style="color:#aab4c0; font-size:14px; padding:8px 0; border-bottom:1px solid #2a3a4a;">
-            <i class="fa fa-check-circle" style="color:#10b981; margin-right:8px;"></i>Summary cached on attendance record
-          </li>
-          <li style="color:#aab4c0; font-size:14px; padding:8px 0;">
-            <i class="fa fa-check-circle" style="color:#10b981; margin-right:8px;"></i>API key visible to Odoo admins only
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-6 col-12">
-        <div style="background-color:#1a2035; border:1px solid #2a3a4a; border-radius:16px; padding:24px;">
-          <div class="d-flex align-items-center" style="margin-bottom:18px;">
-            <div class="d-flex align-items-center justify-content-center" style="width:36px; height:36px; border-radius:10px; background-color:#10b981; margin-right:10px; flex-shrink:0;">
-              <i class="fa fa-bolt" style="color:#0a0e1a; font-size:16px;"></i>
-            </div>
-            <div>
-              <p style="color:#10b981; font-size:14px; font-weight:600; margin:0;">AttendBot</p>
-              <p style="color:#6a7588; font-size:11px; margin:0;">Today at 6:00 PM</p>
-            </div>
-          </div>
-          <div style="background-color:#0f1724; border-radius:10px; padding:16px;">
-            <p style="color:#d1fae5; font-size:14px; line-height:1.7; margin:0;">
-              Great work today, <strong style="color:#fff;">Rahul</strong>!<br/><br/>
-              You logged <strong style="color:#10b981;">9h 20m</strong> today &#8212; that&#x27;s <strong style="color:#10b981;">1h 20m above your daily target</strong>.<br/><br/>
-              You&#x27;re now on a <strong style="color:#fcd34d;">7-day streak</strong> of hitting your goal. Keep it going tomorrow!
-            </p>
-          </div>
-          <div style="margin-top:14px;">
-            <span style="background-color:#1a3d2e; color:#10b981; border:1px solid #2a6648; font-size:11px; font-weight:600; padding:4px 10px; border-radius:12px; margin-right:8px; display:inline-block; margin-bottom:6px;">
-              Powered by Claude
-            </span>
-            <span style="background-color:#2a2a2a; color:#8899aa; border:1px solid #444; font-size:11px; font-weight:600; padding:4px 10px; border-radius:12px; margin-right:8px; display:inline-block; margin-bottom:6px;">
-              Streak: 7 days
-            </span>
-            <span style="background-color:#2a2a2a; color:#8899aa; border:1px solid #444; font-size:11px; font-weight:600; padding:4px 10px; border-radius:12px; display:inline-block; margin-bottom:6px;">
-              +1h 20m vs target
-            </span>
           </div>
         </div>
       </div>
@@ -341,110 +265,170 @@
   </div>
 </section>
 
-<!-- ── HOW IT WORKS ────────────────────────────────────────────────── -->
-<section style="background-color:#ffffff; padding:56px 0;">
+<!-- ── AI FEATURE ───────────────────────────────────────────────────── -->
+<section style="background-color:#f8f9fa; padding:2.5rem 0;">
   <div class="container">
-    <div class="row justify-content-center text-center" style="margin-bottom:40px;">
+    <div class="bg-dark" style="border-radius:16px; padding:36px;">
+      <div class="row align-items-center">
+        <div class="col-md-6 col-12" style="margin-bottom:24px;">
+          <p style="color:#10b981; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px;">
+            <i class="fa fa-magic" style="margin-right:6px;"></i>AI FEATURE
+          </p>
+          <h2 style="color:#f0f5fa; font-size:1.7rem; font-weight:800; line-height:1.2; margin-bottom:12px;">
+            Personalised daily summaries via Claude AI
+          </h2>
+          <p style="color:#aab4c0; font-size:0.9rem; line-height:1.7; margin-bottom:18px;">
+            Enable AI mode with an Anthropic API key. Each employee gets a tailored Slack DM &#8212; referencing <strong style="color:#d1fae5;">their</strong> actual hours, streak, and target.
+          </p>
+          <ul style="list-style:none; padding:0; margin:0;">
+            <li style="color:#aab4c0; font-size:0.85rem; padding:7px 0; border-bottom:1px solid #2a3a4a;">
+              <i class="fa fa-check-circle" style="color:#10b981; margin-right:8px;"></i>Streak tracking &#8212; consecutive days on target
+            </li>
+            <li style="color:#aab4c0; font-size:0.85rem; padding:7px 0; border-bottom:1px solid #2a3a4a;">
+              <i class="fa fa-check-circle" style="color:#10b981; margin-right:8px;"></i>Plain-text fallback if AI is disabled
+            </li>
+            <li style="color:#aab4c0; font-size:0.85rem; padding:7px 0; border-bottom:1px solid #2a3a4a;">
+              <i class="fa fa-check-circle" style="color:#10b981; margin-right:8px;"></i>Summary cached on attendance record
+            </li>
+            <li style="color:#aab4c0; font-size:0.85rem; padding:7px 0;">
+              <i class="fa fa-check-circle" style="color:#10b981; margin-right:8px;"></i>API key visible to Odoo admins only
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-12">
+          <div style="background-color:#1a2035; border:1px solid #2a3a4a; border-radius:12px; padding:20px;">
+            <div class="d-flex align-items-center" style="margin-bottom:16px;">
+              <div class="d-flex align-items-center justify-content-center" style="width:34px; height:34px; border-radius:9px; background-color:#10b981; margin-right:10px; flex-shrink:0;">
+                <i class="fa fa-bolt" style="color:#0a0e1a; font-size:15px;"></i>
+              </div>
+              <div>
+                <p style="color:#10b981; font-size:13px; font-weight:600; margin:0;">AttendBot</p>
+                <p style="color:#6a7588; font-size:10px; margin:0;">Today at 6:00 PM</p>
+              </div>
+            </div>
+            <div style="background-color:#0f1724; border-radius:8px; padding:14px; margin-bottom:12px;">
+              <p style="color:#d1fae5; font-size:13px; line-height:1.7; margin:0;">
+                Great work today, <strong style="color:#fff;">Rahul</strong>!<br/>
+                You logged <strong style="color:#10b981;">9h 20m</strong> &#8212; <strong style="color:#10b981;">1h 20m above target</strong>.<br/>
+                You&#x27;re on a <strong style="color:#fcd34d;">7-day streak</strong>. Keep it up tomorrow!
+              </p>
+            </div>
+            <div>
+              <span style="background-color:#1a3d2e; color:#10b981; border:1px solid #2a6648; font-size:10px; font-weight:600; padding:3px 8px; border-radius:10px; margin-right:6px; display:inline-block; margin-bottom:4px;">Powered by Claude</span>
+              <span style="background-color:#2a2a2a; color:#8899aa; border:1px solid #444; font-size:10px; font-weight:600; padding:3px 8px; border-radius:10px; margin-right:6px; display:inline-block; margin-bottom:4px;">Streak: 7 days</span>
+              <span style="background-color:#2a2a2a; color:#8899aa; border:1px solid #444; font-size:10px; font-weight:600; padding:3px 8px; border-radius:10px; display:inline-block; margin-bottom:4px;">+1h 20m vs target</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SETUP STEPS ────────────────────────────────────────────────── -->
+<section style="padding:2.5rem 0;">
+  <div class="container">
+    <div class="row justify-content-center text-center" style="margin-bottom:28px;">
       <div class="col-md-8 col-12">
-        <p style="color:#10b981; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">SETUP</p>
-        <h2 style="font-size:32px; font-weight:800; color:#1a202c;">Live in 5 steps.</h2>
+        <p style="color:#10b981; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">SETUP</p>
+        <h2 style="font-size:1.8rem; font-weight:800; color:#1a202c;">Live in 5 steps.</h2>
       </div>
     </div>
     <div class="row text-center">
-      <div class="col-md col-sm-6 col-12" style="margin-bottom:24px;">
-        <div class="bg-success d-flex align-items-center justify-content-center" style="width:52px; height:52px; border-radius:50%; margin:0 auto 14px;">
-          <span style="color:#fff; font-size:20px; font-weight:800;">1</span>
+      <div class="col-md col-sm-6 col-12" style="margin-bottom:20px;">
+        <div class="bg-success d-flex align-items-center justify-content-center" style="width:48px; height:48px; border-radius:50%; margin:0 auto 12px;">
+          <span style="color:#fff; font-size:18px; font-weight:800;">1</span>
         </div>
-        <h6 style="font-weight:700; color:#1a202c; margin-bottom:6px;">Install Module</h6>
-        <p style="color:#6b7280; font-size:13px; line-height:1.5;">Add to addons path, restart Odoo, install from Apps menu</p>
+        <h6 style="font-weight:700; color:#1a202c; margin-bottom:5px; font-size:0.9rem;">Install Module</h6>
+        <p style="color:#6b7280; font-size:0.8rem; line-height:1.5;">Add to addons path, restart Odoo, install from Apps menu</p>
       </div>
-      <div class="col-md col-sm-6 col-12" style="margin-bottom:24px;">
-        <div class="bg-success d-flex align-items-center justify-content-center" style="width:52px; height:52px; border-radius:50%; margin:0 auto 14px;">
-          <span style="color:#fff; font-size:20px; font-weight:800;">2</span>
+      <div class="col-md col-sm-6 col-12" style="margin-bottom:20px;">
+        <div class="bg-success d-flex align-items-center justify-content-center" style="width:48px; height:48px; border-radius:50%; margin:0 auto 12px;">
+          <span style="color:#fff; font-size:18px; font-weight:800;">2</span>
         </div>
-        <h6 style="font-weight:700; color:#1a202c; margin-bottom:6px;">Create Slack App</h6>
-        <p style="color:#6b7280; font-size:13px; line-height:1.5;">Add 4 slash commands at api.slack.com/apps</p>
+        <h6 style="font-weight:700; color:#1a202c; margin-bottom:5px; font-size:0.9rem;">Create Slack App</h6>
+        <p style="color:#6b7280; font-size:0.8rem; line-height:1.5;">Add 4 slash commands at api.slack.com/apps</p>
       </div>
-      <div class="col-md col-sm-6 col-12" style="margin-bottom:24px;">
-        <div class="bg-success d-flex align-items-center justify-content-center" style="width:52px; height:52px; border-radius:50%; margin:0 auto 14px;">
-          <span style="color:#fff; font-size:20px; font-weight:800;">3</span>
+      <div class="col-md col-sm-6 col-12" style="margin-bottom:20px;">
+        <div class="bg-success d-flex align-items-center justify-content-center" style="width:48px; height:48px; border-radius:50%; margin:0 auto 12px;">
+          <span style="color:#fff; font-size:18px; font-weight:800;">3</span>
         </div>
-        <h6 style="font-weight:700; color:#1a202c; margin-bottom:6px;">Configure</h6>
-        <p style="color:#6b7280; font-size:13px; line-height:1.5;">Paste Bot Token, Signing Secret &amp; Webhook URL in Odoo</p>
+        <h6 style="font-weight:700; color:#1a202c; margin-bottom:5px; font-size:0.9rem;">Configure</h6>
+        <p style="color:#6b7280; font-size:0.8rem; line-height:1.5;">Paste Bot Token, Signing Secret &amp; Webhook URL in Odoo</p>
       </div>
-      <div class="col-md col-sm-6 col-12" style="margin-bottom:24px;">
-        <div class="bg-success d-flex align-items-center justify-content-center" style="width:52px; height:52px; border-radius:50%; margin:0 auto 14px;">
-          <span style="color:#fff; font-size:20px; font-weight:800;">4</span>
+      <div class="col-md col-sm-6 col-12" style="margin-bottom:20px;">
+        <div class="bg-success d-flex align-items-center justify-content-center" style="width:48px; height:48px; border-radius:50%; margin:0 auto 12px;">
+          <span style="color:#fff; font-size:18px; font-weight:800;">4</span>
         </div>
-        <h6 style="font-weight:700; color:#1a202c; margin-bottom:6px;">Link Employees</h6>
-        <p style="color:#6b7280; font-size:13px; line-height:1.5;">Add Slack User ID to each HR employee record</p>
+        <h6 style="font-weight:700; color:#1a202c; margin-bottom:5px; font-size:0.9rem;">Link Employees</h6>
+        <p style="color:#6b7280; font-size:0.8rem; line-height:1.5;">Add Slack User ID to each HR employee record</p>
       </div>
-      <div class="col-md col-sm-6 col-12" style="margin-bottom:24px;">
-        <div class="bg-success d-flex align-items-center justify-content-center" style="width:52px; height:52px; border-radius:50%; margin:0 auto 14px;">
-          <i class="fa fa-check" style="color:#fff; font-size:22px;"></i>
+      <div class="col-md col-sm-6 col-12" style="margin-bottom:20px;">
+        <div class="bg-success d-flex align-items-center justify-content-center" style="width:48px; height:48px; border-radius:50%; margin:0 auto 12px;">
+          <i class="fa fa-check" style="color:#fff; font-size:20px;"></i>
         </div>
-        <h6 style="font-weight:700; color:#1a202c; margin-bottom:6px;">Done!</h6>
-        <p style="color:#6b7280; font-size:13px; line-height:1.5;">Team uses /login from Slack &#8212; Odoo updates in real time</p>
+        <h6 style="font-weight:700; color:#1a202c; margin-bottom:5px; font-size:0.9rem;">Done!</h6>
+        <p style="color:#6b7280; font-size:0.8rem; line-height:1.5;">Team uses /login from Slack &#8212; Odoo updates instantly</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ── CONFIGURATION TABLE ────────────────────────────────────────── -->
-<section style="background-color:#f8f9fa; padding:56px 0;">
+<section style="background-color:#f8f9fa; padding:2.5rem 0;">
   <div class="container">
-    <div class="row justify-content-center text-center" style="margin-bottom:36px;">
+    <div class="row justify-content-center text-center" style="margin-bottom:28px;">
       <div class="col-md-8 col-12">
-        <p style="color:#10b981; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">CONFIGURATION</p>
-        <h2 style="font-size:32px; font-weight:800; color:#1a202c;">All settings in one place.</h2>
+        <p style="color:#10b981; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">CONFIGURATION</p>
+        <h2 style="font-size:1.8rem; font-weight:800; color:#1a202c;">All settings in one place.</h2>
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-md-10 col-12">
-        <div class="shadow-sm" style="border-radius:14px; overflow:hidden; border:1px solid #e5e7eb;">
-          <table style="width:100%; border-collapse:collapse; font-size:14px; background-color:#fff;">
+      <div class="col-12">
+        <div class="shadow-sm" style="border-radius:12px; overflow:hidden; border:1px solid #e5e7eb;">
+          <table style="width:100%; border-collapse:collapse; font-size:13px; background-color:#fff;">
             <thead>
               <tr class="bg-dark">
-                <th style="color:#10b981; padding:14px 18px; text-align:left; font-weight:700; font-size:12px; letter-spacing:.5px; text-transform:uppercase;">Setting</th>
-                <th style="color:#aab4c0; padding:14px 18px; text-align:left; font-weight:700; font-size:12px; letter-spacing:.5px; text-transform:uppercase;">Default</th>
-                <th style="color:#aab4c0; padding:14px 18px; text-align:left; font-weight:700; font-size:12px; letter-spacing:.5px; text-transform:uppercase;">Description</th>
+                <th style="color:#10b981; padding:12px 16px; text-align:left; font-weight:700; font-size:11px; letter-spacing:.5px; text-transform:uppercase;">Setting</th>
+                <th style="color:#aab4c0; padding:12px 16px; text-align:left; font-weight:700; font-size:11px; letter-spacing:.5px; text-transform:uppercase;">Default</th>
+                <th style="color:#aab4c0; padding:12px 16px; text-align:left; font-weight:700; font-size:11px; letter-spacing:.5px; text-transform:uppercase; width:50%">Description</th>
               </tr>
             </thead>
             <tbody>
               <tr style="border-bottom:1px solid #f1f5f9;">
-                <td style="padding:13px 18px; font-weight:600; color:#1a202c;">Login Grace Minutes</td>
-                <td style="padding:13px 18px;"><code style="background:#f0fdf4; color:#065f46; padding:2px 8px; border-radius:5px;">5</code></td>
-                <td style="padding:13px 18px; color:#6b7280;">Subtract N minutes from actual check-in time</td>
+                <td style="padding:11px 16px; font-weight:600; color:#1a202c;">Login Grace Minutes</td>
+                <td style="padding:11px 16px;"><code style="background:#f0fdf4; color:#065f46; padding:2px 7px; border-radius:4px;">5</code></td>
+                <td style="padding:11px 16px; color:#6b7280;">Subtract N minutes from actual check-in time</td>
               </tr>
               <tr style="border-bottom:1px solid #f1f5f9; background-color:#fafafa;">
-                <td style="padding:13px 18px; font-weight:600; color:#1a202c;">Minimum Break Minutes</td>
-                <td style="padding:13px 18px;"><code style="background:#f0fdf4; color:#065f46; padding:2px 8px; border-radius:5px;">5</code></td>
-                <td style="padding:13px 18px; color:#6b7280;">Breaks below this are saved but not deducted from hours</td>
+                <td style="padding:11px 16px; font-weight:600; color:#1a202c;">Min Break Minutes</td>
+                <td style="padding:11px 16px;"><code style="background:#f0fdf4; color:#065f46; padding:2px 7px; border-radius:4px;">5</code></td>
+                <td style="padding:11px 16px; color:#6b7280;">Breaks below this are saved but not deducted</td>
               </tr>
               <tr style="border-bottom:1px solid #f1f5f9;">
-                <td style="padding:13px 18px; font-weight:600; color:#1a202c;">Minimum Working Hours</td>
-                <td style="padding:13px 18px;"><code style="background:#f0fdf4; color:#065f46; padding:2px 8px; border-radius:5px;">8.0</code></td>
-                <td style="padding:13px 18px; color:#6b7280;">Daily target used in summary comparison and alerts</td>
+                <td style="padding:11px 16px; font-weight:600; color:#1a202c;">Min Working Hours</td>
+                <td style="padding:11px 16px;"><code style="background:#f0fdf4; color:#065f46; padding:2px 7px; border-radius:4px;">8.0</code></td>
+                <td style="padding:11px 16px; color:#6b7280;">Daily target for summary &amp; alerts</td>
               </tr>
               <tr style="border-bottom:1px solid #f1f5f9; background-color:#fafafa;">
-                <td style="padding:13px 18px; font-weight:600; color:#1a202c;">Send Daily Summary</td>
-                <td style="padding:13px 18px;"><code style="background:#f0fdf4; color:#065f46; padding:2px 8px; border-radius:5px;">True</code></td>
-                <td style="padding:13px 18px; color:#6b7280;">Enable end-of-day Slack DM to each employee</td>
+                <td style="padding:11px 16px; font-weight:600; color:#1a202c;">Send Daily Summary</td>
+                <td style="padding:11px 16px;"><code style="background:#f0fdf4; color:#065f46; padding:2px 7px; border-radius:4px;">True</code></td>
+                <td style="padding:11px 16px; color:#6b7280;">End-of-day Slack DM to each employee</td>
               </tr>
               <tr style="border-bottom:1px solid #f1f5f9;">
-                <td style="padding:13px 18px; font-weight:600; color:#1a202c;">Summary Time</td>
-                <td style="padding:13px 18px;"><code style="background:#f0fdf4; color:#065f46; padding:2px 8px; border-radius:5px;">18:00</code></td>
-                <td style="padding:13px 18px; color:#6b7280;">Hour (24h format) when the daily cron fires</td>
+                <td style="padding:11px 16px; font-weight:600; color:#1a202c;">Summary Time</td>
+                <td style="padding:11px 16px;"><code style="background:#f0fdf4; color:#065f46; padding:2px 7px; border-radius:4px;">18:00</code></td>
+                <td style="padding:11px 16px; color:#6b7280;">Hour (24h) when the daily cron fires</td>
               </tr>
               <tr style="border-bottom:1px solid #f1f5f9; background-color:#fafafa;">
-                <td style="padding:13px 18px; font-weight:600; color:#1a202c;">Enable AI Summaries</td>
-                <td style="padding:13px 18px;"><code style="background:#fafafa; color:#6b7280; padding:2px 8px; border-radius:5px;">False</code></td>
-                <td style="padding:13px 18px; color:#6b7280;">Use Claude AI for personalised messages (optional)</td>
+                <td style="padding:11px 16px; font-weight:600; color:#1a202c;">Enable AI Summaries</td>
+                <td style="padding:11px 16px;"><code style="background:#fafafa; color:#6b7280; padding:2px 7px; border-radius:4px;">False</code></td>
+                <td style="padding:11px 16px; color:#6b7280;">Use Claude AI for personalised messages (optional)</td>
               </tr>
               <tr>
-                <td style="padding:13px 18px; font-weight:600; color:#1a202c;">Anthropic API Key</td>
-                <td style="padding:13px 18px;"><code style="background:#fafafa; color:#6b7280; padding:2px 8px; border-radius:5px;">&#8212;</code></td>
-                <td style="padding:13px 18px; color:#6b7280;">Your <code>sk-ant-</code> key &#8212; visible to Odoo admins only</td>
+                <td style="padding:11px 16px; font-weight:600; color:#1a202c;">Anthropic API Key</td>
+                <td style="padding:11px 16px;"><code style="background:#fafafa; color:#6b7280; padding:2px 7px; border-radius:4px;">&#8212;</code></td>
+                <td style="padding:11px 16px; color:#6b7280;"><code>sk-ant-</code> key &#8212; visible to Odoo admins only</td>
               </tr>
             </tbody>
           </table>
@@ -455,15 +439,17 @@
 </section>
 
 <!-- ── FOOTER ──────────────────────────────────────────────────────── -->
-<section class="bg-dark" style="padding:40px 0;">
-  <div class="container text-center">
-    <p style="color:#6a7588; font-size:13px; margin-bottom:8px;">
-      Built with &#x2764; by <strong style="color:#aab4c0;">Anmol Patil</strong>
-      &nbsp;&#x2022;&nbsp; LGPL-3 License
-      &nbsp;&#x2022;&nbsp; Odoo 19.0
-    </p>
-    <p style="color:#4a5568; font-size:12px; margin:0;">
-      For support contact: <a href="mailto:your-email@example.com" style="color:#10b981;">your-email@example.com</a>
-    </p>
+<section style="padding:2rem 0 3rem;">
+  <div class="container">
+    <div class="bg-dark text-center" style="border-radius:12px; padding:28px 20px;">
+      <p style="color:#6a7588; font-size:12px; margin-bottom:6px;">
+        Built with &#x2764; by <strong style="color:#aab4c0;">Anmol Patil</strong>
+        &nbsp;&#x2022;&nbsp; LGPL-3 License
+        &nbsp;&#x2022;&nbsp; Odoo 19.0
+      </p>
+      <p style="color:#4a5568; font-size:11px; margin:0;">
+        For support: <a href="mailto:your-email@example.com" style="color:#10b981;">your-email@example.com</a>
+      </p>
+    </div>
   </div>
 </section>
