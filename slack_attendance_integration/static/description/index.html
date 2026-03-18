@@ -1,467 +1,243 @@
-<!-- ── HERO ─────────────────────────────────────────────────────── -->
-<section style="background-color:#0a0e1a;padding:56px 0 48px;">
+<!-- Hero -->
+<section style="background-color:#0d1117;padding:60px 0 52px;">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-md-7 col-12">
-        <p style="color:#10b981;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">
-          <i class="fa fa-slack" style="margin-right:6px;"></i>HR Attendance Module
+
+      <div class="col-md-6 col-12" style="margin-bottom:32px;">
+        <div style="display:inline-block;background-color:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:6px;padding:4px 12px;margin-bottom:20px;">
+          <span style="color:#10b981;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;">HR Attendance · Odoo 19</span>
+        </div>
+        <h1 style="color:#f0f6fc;font-size:42px;font-weight:700;line-height:1.2;margin-bottom:16px;letter-spacing:-0.5px;">
+          Attendance tracking<br/>from Slack.
+        </h1>
+        <p style="color:#8b949e;font-size:16px;line-height:1.7;margin-bottom:28px;max-width:420px;">
+          Four slash commands. Full Odoo HR Attendance sync. No browser switching.
         </p>
-        <h1 style="color:#f0f5fa;font-size:48px;font-weight:800;line-height:1.1;margin-bottom:8px;">Slack Attendance</h1>
-        <h1 style="color:#10b981;font-size:48px;font-weight:800;line-height:1.1;margin-bottom:20px;">Integration</h1>
-        <p style="color:#8899aa;font-size:17px;line-height:1.7;margin-bottom:28px;max-width:480px;">
-          Let your team check-in, check-out and manage breaks directly from Slack — synced live to Odoo HR Attendance. Zero friction. Zero extra apps.
-        </p>
-        <div class="d-flex flex-wrap" style="gap:10px;">
-          <span style="background-color:#10b981;color:#0a0e1a;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;">
-            <i class="fa fa-check-circle" style="margin-right:4px;"></i>Odoo 19.0
-          </span>
-          <span style="background-color:rgba(16,185,129,.15);color:#10b981;border:1.5px solid rgba(16,185,129,.4);font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;">
-            <i class="fa fa-magic" style="margin-right:4px;"></i>AI Powered
-          </span>
-          <span style="background-color:rgba(99,102,241,.15);color:#a5b4fc;border:1.5px solid rgba(99,102,241,.4);font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;">
-            <i class="fa fa-shield" style="margin-right:4px;"></i>HMAC Secured
-          </span>
-          <span style="background-color:rgba(255,255,255,.06);color:#8899aa;border:1.5px solid rgba(255,255,255,.12);font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;">
-            LGPL-3 &nbsp;|&nbsp; Free
-          </span>
+        <div class="d-flex flex-wrap" style="gap:8px;">
+          <span style="background-color:rgba(16,185,129,.12);color:#10b981;border:1px solid rgba(16,185,129,.3);font-size:12px;font-weight:600;padding:5px 12px;border-radius:5px;">Free · LGPL-3</span>
+          <span style="background-color:rgba(139,148,158,.1);color:#8b949e;border:1px solid rgba(139,148,158,.2);font-size:12px;font-weight:600;padding:5px 12px;border-radius:5px;">HMAC Verified</span>
+          <span style="background-color:rgba(139,148,158,.1);color:#8b949e;border:1px solid rgba(139,148,158,.2);font-size:12px;font-weight:600;padding:5px 12px;border-radius:5px;">AI Summaries</span>
         </div>
       </div>
-      <div class="col-md-5 col-12 d-none d-md-block">
-        <div style="background-color:#1a2035;border-radius:16px;padding:20px;border:1px solid rgba(255,255,255,.08);">
-          <div class="d-flex align-items-center" style="margin-bottom:16px;">
-            <div style="width:10px;height:10px;border-radius:50%;background:#e74c3c;margin-right:6px;"></div>
-            <div style="width:10px;height:10px;border-radius:50%;background:#f39c12;margin-right:6px;"></div>
-            <div style="width:10px;height:10px;border-radius:50%;background:#2ecc71;margin-right:6px;"></div>
-            <span style="color:#4a5568;font-size:12px;margin-left:6px;"># general</span>
-          </div>
-          <div class="d-flex" style="margin-bottom:14px;gap:10px;">
-            <div class="d-flex align-items-center justify-content-center" style="width:32px;height:32px;border-radius:8px;background:#4f46e5;flex-shrink:0;">
-              <span style="color:#fff;font-size:13px;font-weight:700;">R</span>
+
+      <div class="col-md-6 col-12 d-none d-md-block">
+        <div style="background-color:#161b22;border:1px solid #30363d;border-radius:12px;overflow:hidden;">
+          <div style="background-color:#21262d;padding:12px 16px;border-bottom:1px solid #30363d;">
+            <div class="d-flex align-items-center" style="gap:6px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#ff5f57;"></div>
+              <div style="width:12px;height:12px;border-radius:50%;background:#febc2e;"></div>
+              <div style="width:12px;height:12px;border-radius:50%;background:#28c840;"></div>
+              <span style="color:#484f58;font-size:12px;margin-left:8px;font-family:monospace;"># general — Slack</span>
             </div>
-            <div>
-              <div style="margin-bottom:3px;">
-                <span style="color:#e2e8f0;font-size:13px;font-weight:600;">Rahul</span>
-                <span style="color:#4a5568;font-size:11px;margin-left:6px;">9:00 AM</span>
+          </div>
+          <div style="padding:20px;">
+            <div class="d-flex" style="gap:10px;margin-bottom:16px;">
+              <div style="width:30px;height:30px;border-radius:6px;background:#4f46e5;flex-shrink:0;line-height:30px;text-align:center;font-size:12px;font-weight:700;color:#fff;">R</div>
+              <div>
+                <span style="color:#e6edf3;font-size:13px;font-weight:600;">Rahul</span>
+                <span style="color:#484f58;font-size:11px;margin-left:8px;">9:00 AM</span>
+                <div style="margin-top:5px;"><code style="background-color:#21262d;color:#79c0ff;font-size:13px;padding:2px 8px;border-radius:4px;border:1px solid #30363d;">/login</code></div>
               </div>
-              <span style="background-color:#2d3748;color:#a5b4fc;font-family:monospace;font-size:13px;padding:3px 10px;border-radius:6px;">/login</span>
             </div>
-          </div>
-          <div class="d-flex" style="margin-bottom:14px;gap:10px;">
-            <div style="width:32px;height:32px;border-radius:8px;background:#10b981;flex-shrink:0;"></div>
-            <div>
-              <div style="margin-bottom:3px;">
+            <div class="d-flex" style="gap:10px;margin-bottom:16px;">
+              <div style="width:30px;height:30px;border-radius:6px;background:#10b981;flex-shrink:0;line-height:30px;text-align:center;font-size:12px;font-weight:700;color:#fff;">A</div>
+              <div>
                 <span style="color:#10b981;font-size:13px;font-weight:600;">AttendBot</span>
-                <span style="color:#4a5568;font-size:11px;margin-left:6px;">9:00 AM</span>
+                <span style="color:#484f58;font-size:11px;margin-left:8px;">9:00 AM</span>
+                <p style="color:#adbac7;font-size:13px;margin:5px 0 0;">Logged in at <strong style="color:#e6edf3;">9:00 AM</strong></p>
               </div>
-              <p style="color:#d1fae5;font-size:13px;margin:0;"><i class="fa fa-check" style="color:#10b981;margin-right:4px;"></i><strong>Rahul</strong> — Logged in at 9:00 AM</p>
+            </div>
+            <div class="d-flex" style="gap:10px;margin-bottom:16px;">
+              <div style="width:30px;height:30px;border-radius:6px;background:#4f46e5;flex-shrink:0;line-height:30px;text-align:center;font-size:12px;font-weight:700;color:#fff;">R</div>
+              <div>
+                <span style="color:#e6edf3;font-size:13px;font-weight:600;">Rahul</span>
+                <span style="color:#484f58;font-size:11px;margin-left:8px;">6:05 PM</span>
+                <div style="margin-top:5px;"><code style="background-color:#21262d;color:#79c0ff;font-size:13px;padding:2px 8px;border-radius:4px;border:1px solid #30363d;">/logout</code></div>
+              </div>
+            </div>
+            <div style="background-color:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.15);border-radius:6px;padding:10px 14px;">
+              <p style="color:#adbac7;font-size:13px;margin:0;">Logged out &nbsp;·&nbsp; <strong style="color:#e6edf3;">Net: 8h 40m</strong> &nbsp;·&nbsp; Break: 25m</p>
             </div>
           </div>
-          <div class="d-flex" style="gap:10px;">
-            <div style="width:32px;height:32px;border-radius:8px;background:#4f46e5;flex-shrink:0;"></div>
-            <div>
-              <div style="margin-bottom:3px;">
-                <span style="color:#e2e8f0;font-size:13px;font-weight:600;">Rahul</span>
-                <span style="color:#4a5568;font-size:11px;margin-left:6px;">6:05 PM</span>
-              </div>
-              <span style="background-color:#2d3748;color:#a5b4fc;font-family:monospace;font-size:13px;padding:3px 10px;border-radius:6px;">/logout</span>
-            </div>
-          </div>
-          <div style="background-color:rgba(16,185,129,.08);border-left:3px solid #10b981;border-radius:0 4px 4px 0;padding:10px 14px;margin-top:14px;">
-            <p style="color:#d1fae5;font-size:13px;margin:0;"><i class="fa fa-bar-chart" style="color:#10b981;margin-right:6px;"></i><strong>Net: 8h 40m</strong> &nbsp;|&nbsp; Break: 25m &nbsp;|&nbsp; Above target</p>
-          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ── BEFORE / AFTER ─────────────────────────────────────────────── -->
-<section style="background-color:#f8f9fa;padding:52px 0;">
+<!-- Commands -->
+<section style="background-color:#ffffff;padding:56px 0;">
   <div class="container">
-    <div class="row justify-content-center text-center" style="margin-bottom:36px;">
-      <div class="col-md-8 col-12">
-        <p style="color:#10b981;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">THE PROBLEM</p>
-        <h2 style="font-size:32px;font-weight:800;color:#1a202c;margin-bottom:12px;">Attendance tracking shouldn&#x27;t be a second job</h2>
-        <p style="color:#6b7280;font-size:16px;line-height:1.7;">Switching apps, forgetting to log in, manual HR entries — it adds up to wasted time and inaccurate data.</p>
-      </div>
-    </div>
-    <div class="row text-center">
-      <div class="col-md-4 col-12" style="margin-bottom:20px;">
-        <div style="background-color:#fff2f2;border-radius:50%;width:60px;height:60px;margin:0 auto 12px;line-height:60px;">
-          <i class="fa fa-times-circle" style="color:#e53e3e;font-size:26px;"></i>
-        </div>
-        <h5 style="color:#1a202c;font-weight:700;">Before</h5>
-        <p style="color:#6b7280;font-size:14px;">Open browser &#x2192; find Odoo &#x2192; click Attendance &#x2192; click Check In &#x2192; go back to Slack</p>
-      </div>
-      <div class="col-md-4 col-12 d-none d-md-flex align-items-center justify-content-center" style="margin-bottom:20px;">
-        <i class="fa fa-arrow-right" style="font-size:36px;color:#d1d5db;"></i>
-      </div>
-      <div class="col-md-4 col-12" style="margin-bottom:20px;">
-        <div style="background-color:#f0fdf4;border-radius:50%;width:60px;height:60px;margin:0 auto 12px;line-height:60px;">
-          <i class="fa fa-check-circle" style="color:#10b981;font-size:26px;"></i>
-        </div>
-        <h5 style="color:#1a202c;font-weight:700;">After</h5>
-        <p style="color:#6b7280;font-size:14px;">Type <code>/login</code> in Slack. Done. Odoo attendance updated instantly.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── SLASH COMMANDS ─────────────────────────────────────────────── -->
-<section style="background-color:#fff;padding:56px 0;">
-  <div class="container">
-    <div class="row justify-content-center text-center" style="margin-bottom:36px;">
-      <div class="col-md-8 col-12">
-        <p style="color:#10b981;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">SLASH COMMANDS</p>
-        <h2 style="font-size:32px;font-weight:800;color:#1a202c;margin-bottom:12px;">Four commands. That&#x27;s all your team needs.</h2>
-      </div>
-    </div>
-    <div class="row" style="margin-bottom:40px;">
-      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:20px;">
-        <div class="shadow-sm h-100" style="background-color:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:24px;border-top:4px solid #10b981;">
-          <div style="background-color:#f0fdf4;border-radius:10px;width:48px;height:48px;margin-bottom:14px;line-height:48px;text-align:center;">
-            <i class="fa fa-sign-in" style="color:#10b981;font-size:22px;"></i>
-          </div>
-          <code style="background-color:#0a0e1a;color:#10b981;padding:4px 10px;border-radius:6px;font-size:15px;font-weight:700;display:inline-block;margin-bottom:10px;">/login</code>
-          <p style="color:#6b7280;font-size:14px;margin:0;line-height:1.6;">Records attendance in Odoo. Grace minutes applied automatically.</p>
+    <p style="color:#6b7280;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:32px;">COMMANDS</p>
+    <div class="row" style="margin-bottom:48px;">
+      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:16px;">
+        <div style="border:1px solid #e5e7eb;border-radius:8px;padding:20px;border-top:3px solid #10b981;">
+          <code style="font-size:16px;font-weight:700;color:#0a0e1a;">/login</code>
+          <p style="color:#6b7280;font-size:13px;margin:10px 0 0;line-height:1.5;">Check-in. Optional grace minutes subtract from recorded time.</p>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:20px;">
-        <div class="shadow-sm h-100" style="background-color:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:24px;border-top:4px solid #6366f1;">
-          <div style="background-color:#eef2ff;border-radius:10px;width:48px;height:48px;margin-bottom:14px;line-height:48px;text-align:center;">
-            <i class="fa fa-sign-out" style="color:#6366f1;font-size:22px;"></i>
-          </div>
-          <code style="background-color:#0a0e1a;color:#a5b4fc;padding:4px 10px;border-radius:6px;font-size:15px;font-weight:700;display:inline-block;margin-bottom:10px;">/logout</code>
-          <p style="color:#6b7280;font-size:14px;margin:0;line-height:1.6;">Closes the attendance record. Net working hours calculated instantly.</p>
+      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:16px;">
+        <div style="border:1px solid #e5e7eb;border-radius:8px;padding:20px;border-top:3px solid #6366f1;">
+          <code style="font-size:16px;font-weight:700;color:#0a0e1a;">/logout</code>
+          <p style="color:#6b7280;font-size:13px;margin:10px 0 0;line-height:1.5;">Check-out. Net working hours calculated and saved instantly.</p>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:20px;">
-        <div class="shadow-sm h-100" style="background-color:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:24px;border-top:4px solid #f59e0b;">
-          <div style="background-color:#fffbeb;border-radius:10px;width:48px;height:48px;margin-bottom:14px;line-height:48px;text-align:center;">
-            <i class="fa fa-pause-circle" style="color:#f59e0b;font-size:22px;"></i>
-          </div>
-          <code style="background-color:#0a0e1a;color:#fcd34d;padding:4px 10px;border-radius:6px;font-size:15px;font-weight:700;display:inline-block;margin-bottom:10px;">/break</code>
-          <p style="color:#6b7280;font-size:14px;margin:0;line-height:1.6;">Starts a timed break. Short breaks under threshold are not deducted.</p>
+      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:16px;">
+        <div style="border:1px solid #e5e7eb;border-radius:8px;padding:20px;border-top:3px solid #f59e0b;">
+          <code style="font-size:16px;font-weight:700;color:#0a0e1a;">/break</code>
+          <p style="color:#6b7280;font-size:13px;margin:10px 0 0;line-height:1.5;">Start a break. Duration tracked. Breaks under threshold not deducted.</p>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:20px;">
-        <div class="shadow-sm h-100" style="background-color:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:24px;border-top:4px solid #3b82f6;">
-          <div style="background-color:#eff6ff;border-radius:10px;width:48px;height:48px;margin-bottom:14px;line-height:48px;text-align:center;">
-            <i class="fa fa-play-circle" style="color:#3b82f6;font-size:22px;"></i>
-          </div>
-          <code style="background-color:#0a0e1a;color:#93c5fd;padding:4px 10px;border-radius:6px;font-size:15px;font-weight:700;display:inline-block;margin-bottom:10px;">/resume</code>
-          <p style="color:#6b7280;font-size:14px;margin:0;line-height:1.6;">Returns from break. Duration calculated and saved to Odoo.</p>
+      <div class="col-md-3 col-sm-6 col-12" style="margin-bottom:16px;">
+        <div style="border:1px solid #e5e7eb;border-radius:8px;padding:20px;border-top:3px solid #3b82f6;">
+          <code style="font-size:16px;font-weight:700;color:#0a0e1a;">/resume</code>
+          <p style="color:#6b7280;font-size:13px;margin:10px 0 0;line-height:1.5;">End break. Duration saved to attendance record in Odoo.</p>
         </div>
       </div>
     </div>
 
-    <!-- ── SCREENSHOTS: Slack commands in action ── -->
-    <div class="row justify-content-center text-center" style="margin-bottom:16px;">
-      <div class="col-12">
-        <p style="color:#9ca3af;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;">Commands in action</p>
-      </div>
-    </div>
+    <!-- Slack screenshots -->
     <div class="row">
-      <div class="col-md-4 col-12" style="margin-bottom:16px;">
-        <div style="border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
-          <img src="screenshot_login.png" alt="/login command in Slack" style="width:100%;display:block;"/>
-        </div>
-        <p style="color:#6b7280;font-size:12px;text-align:center;margin-top:8px;"><i class="fa fa-slack" style="margin-right:4px;color:#10b981;"></i>/login &#x2192; instant Odoo check-in</p>
+      <div class="col-md-4 col-12" style="margin-bottom:12px;">
+        <img src="screenshot_login.png" alt="/login" style="width:100%;border-radius:8px;border:1px solid #e5e7eb;display:block;"/>
+        <p style="color:#9ca3af;font-size:11px;margin-top:6px;">/login response</p>
       </div>
-      <div class="col-md-4 col-12" style="margin-bottom:16px;">
-        <div style="border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
-          <img src="screenshot_break_resume.png" alt="/break and /resume in Slack" style="width:100%;display:block;"/>
-        </div>
-        <p style="color:#6b7280;font-size:12px;text-align:center;margin-top:8px;"><i class="fa fa-slack" style="margin-right:4px;color:#f59e0b;"></i>/break and /resume with duration</p>
+      <div class="col-md-4 col-12" style="margin-bottom:12px;">
+        <img src="screenshot_break_resume.png" alt="/break /resume" style="width:100%;border-radius:8px;border:1px solid #e5e7eb;display:block;"/>
+        <p style="color:#9ca3af;font-size:11px;margin-top:6px;">/break and /resume</p>
       </div>
-      <div class="col-md-4 col-12" style="margin-bottom:16px;">
-        <div style="border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
-          <img src="screenshot_logout.png" alt="/logout with net hours" style="width:100%;display:block;"/>
-        </div>
-        <p style="color:#6b7280;font-size:12px;text-align:center;margin-top:8px;"><i class="fa fa-slack" style="margin-right:4px;color:#6366f1;"></i>/logout with net working hours</p>
+      <div class="col-md-4 col-12" style="margin-bottom:12px;">
+        <img src="screenshot_logout.png" alt="/logout" style="width:100%;border-radius:8px;border:1px solid #e5e7eb;display:block;"/>
+        <p style="color:#9ca3af;font-size:11px;margin-top:6px;">/logout with net hours</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── SMART FEATURES ─────────────────────────────────────────────── -->
-<section style="background-color:#f8f9fa;padding:56px 0;">
+<!-- Features -->
+<section style="background-color:#f9fafb;padding:56px 0;">
   <div class="container">
-    <div class="row justify-content-center text-center" style="margin-bottom:40px;">
-      <div class="col-md-8 col-12">
-        <p style="color:#10b981;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">SMART FEATURES</p>
-        <h2 style="font-size:32px;font-weight:800;color:#1a202c;">Thoughtful details that matter.</h2>
+    <p style="color:#6b7280;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:32px;">FEATURES</p>
+    <div class="row" style="margin-bottom:48px;">
+      <div class="col-md-4 col-12" style="margin-bottom:24px;">
+        <h5 style="color:#111827;font-weight:700;font-size:15px;margin-bottom:6px;">Grace minutes</h5>
+        <p style="color:#6b7280;font-size:14px;line-height:1.6;margin:0;">/login at 10:00 with 5-min grace records 9:55. Configurable per installation.</p>
       </div>
-    </div>
-    <div class="row" style="margin-bottom:40px;">
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div class="d-flex shadow-sm" style="background-color:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:22px;gap:16px;align-items:flex-start;">
-          <div style="background-color:#f0fdf4;border-radius:12px;width:46px;height:46px;line-height:46px;text-align:center;flex-shrink:0;">
-            <i class="fa fa-clock-o" style="color:#10b981;font-size:22px;"></i>
-          </div>
-          <div>
-            <h5 style="color:#1a202c;font-weight:700;margin-bottom:6px;">Login Grace Minutes</h5>
-            <p style="color:#6b7280;font-size:14px;margin:0;line-height:1.6;">Type <code>/login</code> at 10:00 AM with a 5-minute grace window? Odoo records 9:55 AM. No more punishing employees for being 30 seconds late to type.</p>
-          </div>
-        </div>
+      <div class="col-md-4 col-12" style="margin-bottom:24px;">
+        <h5 style="color:#111827;font-weight:700;font-size:15px;margin-bottom:6px;">Break threshold</h5>
+        <p style="color:#6b7280;font-size:14px;line-height:1.6;margin:0;">Breaks under the minimum (default 5 min) are saved but not deducted from net hours.</p>
       </div>
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div class="d-flex shadow-sm" style="background-color:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:22px;gap:16px;align-items:flex-start;">
-          <div style="background-color:#fffbeb;border-radius:12px;width:46px;height:46px;line-height:46px;text-align:center;flex-shrink:0;">
-            <i class="fa fa-coffee" style="color:#f59e0b;font-size:22px;"></i>
-          </div>
-          <div>
-            <h5 style="color:#1a202c;font-weight:700;margin-bottom:6px;">Minimum Break Threshold</h5>
-            <p style="color:#6b7280;font-size:14px;margin:0;line-height:1.6;">Breaks under the configured minimum (e.g. 5 min) are <strong>saved but not deducted</strong> from working hours. A quick coffee doesn&#x27;t penalise your team.</p>
-          </div>
-        </div>
+      <div class="col-md-4 col-12" style="margin-bottom:24px;">
+        <h5 style="color:#111827;font-weight:700;font-size:15px;margin-bottom:6px;">Net working hours</h5>
+        <p style="color:#6b7280;font-size:14px;line-height:1.6;margin:0;">Net = Total − Counted breaks. Live in the Odoo attendance list and form view.</p>
       </div>
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div class="d-flex shadow-sm" style="background-color:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:22px;gap:16px;align-items:flex-start;">
-          <div style="background-color:#eff6ff;border-radius:12px;width:46px;height:46px;line-height:46px;text-align:center;flex-shrink:0;">
-            <i class="fa fa-calculator" style="color:#3b82f6;font-size:22px;"></i>
-          </div>
-          <div>
-            <h5 style="color:#1a202c;font-weight:700;margin-bottom:6px;">Net Working Hours</h5>
-            <p style="color:#6b7280;font-size:14px;margin:0;line-height:1.6;"><code>Net Hours = Total Hours &#x2212; Counted Breaks</code> — shown live in Odoo Attendance list and form view.</p>
-          </div>
-        </div>
+      <div class="col-md-4 col-12" style="margin-bottom:24px;">
+        <h5 style="color:#111827;font-weight:700;font-size:15px;margin-bottom:6px;">HMAC-SHA256 security</h5>
+        <p style="color:#6b7280;font-size:14px;line-height:1.6;margin:0;">Every request verified with your Slack Signing Secret. Replay attacks blocked.</p>
       </div>
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div class="d-flex shadow-sm" style="background-color:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:22px;gap:16px;align-items:flex-start;">
-          <div style="background-color:#eef2ff;border-radius:12px;width:46px;height:46px;line-height:46px;text-align:center;flex-shrink:0;">
-            <i class="fa fa-lock" style="color:#6366f1;font-size:22px;"></i>
-          </div>
-          <div>
-            <h5 style="color:#1a202c;font-weight:700;margin-bottom:6px;">HMAC-SHA256 Verification</h5>
-            <p style="color:#6b7280;font-size:14px;margin:0;line-height:1.6;">Every Slack request verified with your Signing Secret before any DB action. Replay attacks blocked with a 5-minute window.</p>
-          </div>
-        </div>
+      <div class="col-md-4 col-12" style="margin-bottom:24px;">
+        <h5 style="color:#111827;font-weight:700;font-size:15px;margin-bottom:6px;">Per-employee timezone</h5>
+        <p style="color:#6b7280;font-size:14px;line-height:1.6;margin:0;">Reads timezone from the HR employee record. No hardcoded values.</p>
       </div>
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div class="d-flex shadow-sm" style="background-color:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:22px;gap:16px;align-items:flex-start;">
-          <div style="background-color:#fff1f2;border-radius:12px;width:46px;height:46px;line-height:46px;text-align:center;flex-shrink:0;">
-            <i class="fa fa-globe" style="color:#ef4444;font-size:22px;"></i>
-          </div>
-          <div>
-            <h5 style="color:#1a202c;font-weight:700;margin-bottom:6px;">Per-Employee Timezone</h5>
-            <p style="color:#6b7280;font-size:14px;margin:0;line-height:1.6;">Times shown in each employee&#x27;s own timezone — read from their HR record. Works globally.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div class="d-flex shadow-sm" style="background-color:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:22px;gap:16px;align-items:flex-start;">
-          <div style="background-color:#f0fdf4;border-radius:12px;width:46px;height:46px;line-height:46px;text-align:center;flex-shrink:0;">
-            <i class="fa fa-bell" style="color:#10b981;font-size:22px;"></i>
-          </div>
-          <div>
-            <h5 style="color:#1a202c;font-weight:700;margin-bottom:6px;">Missed Logout Alerts</h5>
-            <p style="color:#6b7280;font-size:14px;margin:0;line-height:1.6;">Employees who forgot to <code>/logout</code> get an automatic Slack DM reminder. No more dangling open records.</p>
-          </div>
-        </div>
+      <div class="col-md-4 col-12" style="margin-bottom:24px;">
+        <h5 style="color:#111827;font-weight:700;font-size:15px;margin-bottom:6px;">Missed logout alert</h5>
+        <p style="color:#6b7280;font-size:14px;line-height:1.6;margin:0;">Daily cron sends a DM to anyone who checked in but never checked out.</p>
       </div>
     </div>
 
-    <!-- ── SCREENSHOTS: Odoo attendance views ── -->
-    <div class="row justify-content-center text-center" style="margin-bottom:16px;">
-      <div class="col-12">
-        <p style="color:#9ca3af;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;">Odoo attendance — live data</p>
-      </div>
-    </div>
+    <!-- Odoo screenshots -->
     <div class="row">
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div style="border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
-          <img src="screenshot_attendance_list.png" alt="Odoo Attendance List View" style="width:100%;display:block;"/>
-        </div>
-        <p style="color:#6b7280;font-size:12px;text-align:center;margin-top:8px;"><i class="fa fa-table" style="margin-right:4px;color:#3b82f6;"></i>Attendance list — net hours &amp; break columns</p>
+      <div class="col-md-6 col-12" style="margin-bottom:12px;">
+        <img src="screenshot_attendance_list.png" alt="Attendance list view" style="width:100%;border-radius:8px;border:1px solid #e5e7eb;display:block;"/>
+        <p style="color:#9ca3af;font-size:11px;margin-top:6px;">Attendance list — net hours and break columns</p>
       </div>
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div style="border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
-          <img src="screenshot_attendance_form.png" alt="Odoo Attendance Form with Breaks" style="width:100%;display:block;"/>
-        </div>
-        <p style="color:#6b7280;font-size:12px;text-align:center;margin-top:8px;"><i class="fa fa-file-text-o" style="margin-right:4px;color:#3b82f6;"></i>Attendance form — break detail tab</p>
+      <div class="col-md-6 col-12" style="margin-bottom:12px;">
+        <img src="screenshot_attendance_form.png" alt="Attendance form with breaks" style="width:100%;border-radius:8px;border:1px solid #e5e7eb;display:block;"/>
+        <p style="color:#9ca3af;font-size:11px;margin-top:6px;">Attendance form — break detail tab</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── AI FEATURE ─────────────────────────────────────────────────── -->
-<section style="background-color:#0a0e1a;padding:56px 0;">
+<!-- AI Summaries -->
+<section style="background-color:#0d1117;padding:56px 0;">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-md-6 col-12" style="margin-bottom:28px;">
-        <p style="color:#10b981;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">
-          <i class="fa fa-magic" style="margin-right:6px;"></i>AI FEATURE
-        </p>
-        <h2 style="color:#f0f5fa;font-size:34px;font-weight:800;line-height:1.2;margin-bottom:14px;">
-          Personalised daily<br/>summaries via AI
-        </h2>
-        <p style="color:#8899aa;font-size:15px;line-height:1.7;margin-bottom:20px;">
-          Enable AI mode with a free Gemini API key. Each employee gets a tailored Slack DM — referencing <strong style="color:#d1fae5;">their</strong> actual hours, streak, and target. Not a generic template.
-        </p>
+      <div class="col-md-5 col-12" style="margin-bottom:32px;">
+        <p style="color:#10b981;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;">AI SUMMARIES</p>
+        <h2 style="color:#f0f6fc;font-size:28px;font-weight:700;line-height:1.3;margin-bottom:16px;letter-spacing:-0.3px;">Daily Slack DM — personalised per employee.</h2>
+        <p style="color:#8b949e;font-size:14px;line-height:1.7;margin-bottom:20px;">Enable with a free Google Gemini key. The message references actual hours, daily target, and streak — not a template.</p>
         <ul style="list-style:none;padding:0;margin:0;">
-          <li style="color:#8899aa;font-size:14px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06);">
-            <i class="fa fa-check-circle" style="color:#10b981;margin-right:8px;"></i>Supports Google Gemini (free) and Claude
+          <li style="color:#8b949e;font-size:13px;padding:5px 0;border-bottom:1px solid #21262d;">
+            <span style="color:#10b981;margin-right:8px;">&#x2713;</span>Google Gemini (free) or Claude
           </li>
-          <li style="color:#8899aa;font-size:14px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06);">
-            <i class="fa fa-check-circle" style="color:#10b981;margin-right:8px;"></i>Streak tracking — consecutive days on target
+          <li style="color:#8b949e;font-size:13px;padding:5px 0;border-bottom:1px solid #21262d;">
+            <span style="color:#10b981;margin-right:8px;">&#x2713;</span>Streak tracking across days
           </li>
-          <li style="color:#8899aa;font-size:14px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06);">
-            <i class="fa fa-check-circle" style="color:#10b981;margin-right:8px;"></i>Plain-text fallback if AI is disabled
+          <li style="color:#8b949e;font-size:13px;padding:5px 0;border-bottom:1px solid #21262d;">
+            <span style="color:#10b981;margin-right:8px;">&#x2713;</span>Falls back to plain text if AI disabled
           </li>
-          <li style="color:#8899aa;font-size:14px;padding:6px 0;">
-            <i class="fa fa-check-circle" style="color:#10b981;margin-right:8px;"></i>API key visible to Odoo admins only
+          <li style="color:#8b949e;font-size:13px;padding:5px 0;">
+            <span style="color:#10b981;margin-right:8px;">&#x2713;</span>API key admin-only field
           </li>
         </ul>
       </div>
-      <div class="col-md-6 col-12">
-        <!-- Real AI summary screenshot -->
-        <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.12);">
-          <img src="screenshot_ai_summary.png" alt="AI Daily Summary Slack DM" style="width:100%;display:block;"/>
-        </div>
-        <p style="color:#4a5568;font-size:12px;text-align:center;margin-top:10px;">
-          <i class="fa fa-magic" style="margin-right:4px;color:#10b981;"></i>Real AI-generated summary — personalised per employee
-        </p>
+      <div class="col-md-7 col-12">
+        <img src="screenshot_ai_summary.png" alt="AI daily summary Slack DM" style="width:100%;border-radius:10px;border:1px solid #21262d;display:block;"/>
+        <p style="color:#484f58;font-size:11px;margin-top:8px;">AI-generated summary — sent automatically at end of day</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── SETUP STEPS ────────────────────────────────────────────────── -->
-<section style="background-color:#fff;padding:56px 0;">
+<!-- Setup -->
+<section style="background-color:#ffffff;padding:56px 0;">
   <div class="container">
-    <div class="row justify-content-center text-center" style="margin-bottom:40px;">
-      <div class="col-md-8 col-12">
-        <p style="color:#10b981;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">SETUP</p>
-        <h2 style="font-size:32px;font-weight:800;color:#1a202c;">Live in 5 steps.</h2>
+    <p style="color:#6b7280;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:32px;">SETUP</p>
+    <div class="row" style="margin-bottom:48px;">
+      <div class="col-md col-sm-6 col-12" style="margin-bottom:20px;">
+        <div style="font-size:12px;font-weight:700;color:#10b981;margin-bottom:8px;">01</div>
+        <h6 style="font-weight:700;color:#111827;margin-bottom:4px;font-size:14px;">Install</h6>
+        <p style="color:#6b7280;font-size:13px;margin:0;line-height:1.5;">Add to addons path, restart, install from Apps</p>
       </div>
-    </div>
-    <div class="row text-center" style="margin-bottom:48px;">
-      <div class="col-md col-sm-6 col-12" style="margin-bottom:24px;">
-        <div style="width:52px;height:52px;border-radius:50%;background-color:#10b981;color:#fff;font-size:20px;font-weight:800;line-height:52px;margin:0 auto 14px;">1</div>
-        <h6 style="font-weight:700;color:#1a202c;margin-bottom:6px;">Install Module</h6>
-        <p style="color:#6b7280;font-size:13px;line-height:1.5;">Add to addons path, restart Odoo, install from Apps menu</p>
+      <div class="col-md col-sm-6 col-12" style="margin-bottom:20px;">
+        <div style="font-size:12px;font-weight:700;color:#10b981;margin-bottom:8px;">02</div>
+        <h6 style="font-weight:700;color:#111827;margin-bottom:4px;font-size:14px;">Create Slack App</h6>
+        <p style="color:#6b7280;font-size:13px;margin:0;line-height:1.5;">Add 4 slash commands at api.slack.com/apps</p>
       </div>
-      <div class="col-md col-sm-6 col-12" style="margin-bottom:24px;">
-        <div style="width:52px;height:52px;border-radius:50%;background-color:#10b981;color:#fff;font-size:20px;font-weight:800;line-height:52px;margin:0 auto 14px;">2</div>
-        <h6 style="font-weight:700;color:#1a202c;margin-bottom:6px;">Create Slack App</h6>
-        <p style="color:#6b7280;font-size:13px;line-height:1.5;">Add 4 slash commands at api.slack.com/apps</p>
+      <div class="col-md col-sm-6 col-12" style="margin-bottom:20px;">
+        <div style="font-size:12px;font-weight:700;color:#10b981;margin-bottom:8px;">03</div>
+        <h6 style="font-weight:700;color:#111827;margin-bottom:4px;font-size:14px;">Configure</h6>
+        <p style="color:#6b7280;font-size:13px;margin:0;line-height:1.5;">Paste Bot Token, Signing Secret, Webhook URL</p>
       </div>
-      <div class="col-md col-sm-6 col-12" style="margin-bottom:24px;">
-        <div style="width:52px;height:52px;border-radius:50%;background-color:#10b981;color:#fff;font-size:20px;font-weight:800;line-height:52px;margin:0 auto 14px;">3</div>
-        <h6 style="font-weight:700;color:#1a202c;margin-bottom:6px;">Configure</h6>
-        <p style="color:#6b7280;font-size:13px;line-height:1.5;">Paste Bot Token, Signing Secret &amp; Webhook URL in Odoo</p>
-      </div>
-      <div class="col-md col-sm-6 col-12" style="margin-bottom:24px;">
-        <div style="width:52px;height:52px;border-radius:50%;background-color:#10b981;color:#fff;font-size:20px;font-weight:800;line-height:52px;margin:0 auto 14px;">4</div>
-        <h6 style="font-weight:700;color:#1a202c;margin-bottom:6px;">Link Employees</h6>
-        <p style="color:#6b7280;font-size:13px;line-height:1.5;">Add Slack User ID to each HR employee record</p>
-      </div>
-      <div class="col-md col-sm-6 col-12" style="margin-bottom:24px;">
-        <div style="width:52px;height:52px;border-radius:50%;background-color:#0d9668;color:#fff;font-size:22px;font-weight:800;line-height:52px;margin:0 auto 14px;">
-          <i class="fa fa-check"></i>
-        </div>
-        <h6 style="font-weight:700;color:#1a202c;margin-bottom:6px;">Done!</h6>
-        <p style="color:#6b7280;font-size:13px;line-height:1.5;">Team uses /login from Slack — Odoo updates in real time</p>
+      <div class="col-md col-sm-6 col-12" style="margin-bottom:20px;">
+        <div style="font-size:12px;font-weight:700;color:#10b981;margin-bottom:8px;">04</div>
+        <h6 style="font-weight:700;color:#111827;margin-bottom:4px;font-size:14px;">Link employees</h6>
+        <p style="color:#6b7280;font-size:13px;margin:0;line-height:1.5;">Add Slack User ID to each HR employee record</p>
       </div>
     </div>
 
-    <!-- ── SCREENSHOTS: Odoo config screens ── -->
-    <div class="row justify-content-center text-center" style="margin-bottom:16px;">
-      <div class="col-12">
-        <p style="color:#9ca3af;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;">Configuration screens</p>
-      </div>
-    </div>
+    <!-- Config screenshots -->
     <div class="row">
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div style="border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
-          <img src="screenshot_slack_settings.png" alt="Odoo Slack Settings" style="width:100%;display:block;"/>
-        </div>
-        <p style="color:#6b7280;font-size:12px;text-align:center;margin-top:8px;"><i class="fa fa-cog" style="margin-right:4px;color:#10b981;"></i>Attendances &#x2192; Slack Settings</p>
+      <div class="col-md-6 col-12" style="margin-bottom:12px;">
+        <img src="screenshot_slack_settings.png" alt="Slack Settings" style="width:100%;border-radius:8px;border:1px solid #e5e7eb;display:block;"/>
+        <p style="color:#9ca3af;font-size:11px;margin-top:6px;">Attendances &#x2192; Slack Settings</p>
       </div>
-      <div class="col-md-6 col-12" style="margin-bottom:16px;">
-        <div style="border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
-          <img src="screenshot_employee.png" alt="Employee Slack User ID field" style="width:100%;display:block;"/>
-        </div>
-        <p style="color:#6b7280;font-size:12px;text-align:center;margin-top:8px;"><i class="fa fa-user" style="margin-right:4px;color:#10b981;"></i>HR Employee — Slack User ID field</p>
+      <div class="col-md-6 col-12" style="margin-bottom:12px;">
+        <img src="screenshot_employee.png" alt="Employee Slack User ID" style="width:100%;border-radius:8px;border:1px solid #e5e7eb;display:block;"/>
+        <p style="color:#9ca3af;font-size:11px;margin-top:6px;">HR Employee — Slack User ID field</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── CONFIG TABLE ───────────────────────────────────────────────── -->
-<section style="background-color:#f8f9fa;padding:56px 0;">
+<!-- Footer -->
+<section style="background-color:#0d1117;padding:28px 0;">
   <div class="container">
-    <div class="row justify-content-center text-center" style="margin-bottom:36px;">
-      <div class="col-md-8 col-12">
-        <p style="color:#10b981;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">CONFIGURATION</p>
-        <h2 style="font-size:32px;font-weight:800;color:#1a202c;">All settings in one place.</h2>
-      </div>
+    <div class="d-flex flex-wrap align-items-center justify-content-between" style="gap:12px;">
+      <span style="color:#484f58;font-size:13px;">Built by <strong style="color:#8b949e;">Anmol Patil</strong> &nbsp;·&nbsp; LGPL-3 &nbsp;·&nbsp; Odoo 19.0</span>
+      <a href="mailto:your-email@example.com" style="color:#10b981;font-size:13px;text-decoration:none;">your-email@example.com</a>
     </div>
-    <div class="row justify-content-center">
-      <div class="col-md-10 col-12">
-        <div class="shadow-sm" style="border-radius:14px;overflow:hidden;border:1px solid #e5e7eb;">
-          <table style="width:100%;border-collapse:collapse;font-size:14px;background-color:#fff;">
-            <thead>
-              <tr style="background-color:#0a0e1a;">
-                <th style="color:#10b981;padding:14px 18px;text-align:left;font-weight:700;font-size:12px;letter-spacing:.5px;text-transform:uppercase;">Setting</th>
-                <th style="color:#8899aa;padding:14px 18px;text-align:left;font-weight:700;font-size:12px;letter-spacing:.5px;text-transform:uppercase;">Default</th>
-                <th style="color:#8899aa;padding:14px 18px;text-align:left;font-weight:700;font-size:12px;letter-spacing:.5px;text-transform:uppercase;">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom:1px solid #f1f5f9;">
-                <td style="padding:13px 18px;font-weight:600;color:#1a202c;">Login Grace Minutes</td>
-                <td style="padding:13px 18px;"><code style="background:#f0fdf4;color:#065f46;padding:2px 8px;border-radius:5px;">5</code></td>
-                <td style="padding:13px 18px;color:#6b7280;">Subtract N minutes from actual check-in time</td>
-              </tr>
-              <tr style="border-bottom:1px solid #f1f5f9;background-color:#fafafa;">
-                <td style="padding:13px 18px;font-weight:600;color:#1a202c;">Minimum Break Minutes</td>
-                <td style="padding:13px 18px;"><code style="background:#f0fdf4;color:#065f46;padding:2px 8px;border-radius:5px;">5</code></td>
-                <td style="padding:13px 18px;color:#6b7280;">Breaks below this are saved but not deducted from hours</td>
-              </tr>
-              <tr style="border-bottom:1px solid #f1f5f9;">
-                <td style="padding:13px 18px;font-weight:600;color:#1a202c;">Minimum Working Hours</td>
-                <td style="padding:13px 18px;"><code style="background:#f0fdf4;color:#065f46;padding:2px 8px;border-radius:5px;">8.0</code></td>
-                <td style="padding:13px 18px;color:#6b7280;">Daily target for summary comparison and alerts</td>
-              </tr>
-              <tr style="border-bottom:1px solid #f1f5f9;background-color:#fafafa;">
-                <td style="padding:13px 18px;font-weight:600;color:#1a202c;">Send Daily Summary</td>
-                <td style="padding:13px 18px;"><code style="background:#f0fdf4;color:#065f46;padding:2px 8px;border-radius:5px;">True</code></td>
-                <td style="padding:13px 18px;color:#6b7280;">Enable end-of-day Slack DM to each employee</td>
-              </tr>
-              <tr style="border-bottom:1px solid #f1f5f9;">
-                <td style="padding:13px 18px;font-weight:600;color:#1a202c;">Summary Time</td>
-                <td style="padding:13px 18px;"><code style="background:#f0fdf4;color:#065f46;padding:2px 8px;border-radius:5px;">18:00</code></td>
-                <td style="padding:13px 18px;color:#6b7280;">Hour (24h) when the daily cron fires</td>
-              </tr>
-              <tr style="border-bottom:1px solid #f1f5f9;background-color:#fafafa;">
-                <td style="padding:13px 18px;font-weight:600;color:#1a202c;">AI Provider</td>
-                <td style="padding:13px 18px;"><code style="background:#f0fdf4;color:#065f46;padding:2px 8px;border-radius:5px;">Gemini</code></td>
-                <td style="padding:13px 18px;color:#6b7280;">Google Gemini (free) or Anthropic Claude</td>
-              </tr>
-              <tr>
-                <td style="padding:13px 18px;font-weight:600;color:#1a202c;">AI API Key</td>
-                <td style="padding:13px 18px;"><code style="background:#fafafa;color:#6b7280;padding:2px 8px;border-radius:5px;">&#x2014;</code></td>
-                <td style="padding:13px 18px;color:#6b7280;">Gemini: free at aistudio.google.com — admin-only field</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ─────────────────────────────────────────────────────── -->
-<section style="background-color:#0a0e1a;padding:40px 0;">
-  <div class="container text-center">
-    <p style="color:#4a5568;font-size:13px;margin-bottom:8px;">
-      Built with &#x2764; by <strong style="color:#8899aa;">Anmol Patil</strong>
-      &nbsp;&#x2022;&nbsp; LGPL-3 &nbsp;&#x2022;&nbsp; Free &nbsp;&#x2022;&nbsp; Odoo 19.0
-    </p>
-    <p style="color:#2d3748;font-size:12px;margin:0;">
-      Support: <a href="mailto:your-email@example.com" style="color:#10b981;">your-email@example.com</a>
-    </p>
   </div>
 </section>
