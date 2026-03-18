@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="view_slack_config_form" model="ir.ui.view">
+      <field name="name">slack.config.form</field>
+      <field name="model">slack.config</field>
+      <field name="arch" type="xml">
+        <form string="Slack Configuration">
+          <sheet>
+            <group string="Slack Credentials">
+              <field name="name"/>
+              <field name="signing_secret" password="True"/>
+              <field name="bot_token" password="True"/>
+              <field name="webhook_url"/>
+              <field name="active"/>
+            </group>
+            <group string="Attendance Rules">
+              <field name="min_working_hours"/>
+              <field name="login_grace_minutes"/>
+              <field name="min_break_minutes"/>
+            </group>
+            <group string="Daily Summary">
+              <field name="send_daily_summary"/>
+              <field name="summary_time"
+                     attrs="{'invisible':[('send_daily_summary','=',False)]}"/>
+            </group>
+            <group string="AI Summary (Optional)">
+              <field name="ai_enabled"/>
+              <field name="ai_provider"
+                     attrs="{'invisible':[('ai_enabled','=',False)]}"/>
+              <field name="ai_api_key" password="True"
+                     attrs="{'invisible':[('ai_enabled','=',False)],
+                             'required':[('ai_enabled','=',True)]}"
+                     groups="base.group_system"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_slack_config_tree" model="ir.ui.view">
+      <field name="name">slack.config.tree</field>
+      <field name="model">slack.config</field>
+      <field name="arch" type="xml">
+        <tree string="Slack Configurations">
+          <field name="name"/>
+          <field name="active"/>
+          <field name="min_working_hours"/>
+          <field name="ai_enabled"/>
+          <field name="ai_provider"/>
+          <field name="send_daily_summary"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="action_slack_config" model="ir.actions.act_window">
+      <field name="name">Slack Settings</field>
+      <field name="res_model">slack.config</field>
+      <field name="view_mode">form,tree</field>
+    </record>
+
+    <menuitem id="menu_slack_config"
+              name="Slack Settings"
+              parent="hr_attendance.menu_hr_attendance_root"
+              action="action_slack_config"
+              sequence="100"/>
+
+  </data>
+</odoo>
