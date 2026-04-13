@@ -1,249 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.2/css/bootstrap.min.css"/>
-<style>
-  body { font-family: 'Segoe UI', sans-serif; color: #212529; background: #fff; }
-  .hero { background: #4A154B; color: #fff; padding: 60px 40px; text-align: center; }
-  .hero h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 12px; }
-  .hero p { font-size: 1.15rem; opacity: .85; max-width: 620px; margin: 0 auto 32px; }
-  .cmd-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-  .cmd-badge { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.35); border-radius: 8px; padding: 8px 22px; font-family: monospace; font-size: 1.1rem; font-weight: 600; color: #fff; }
-
-  .section-title { font-size: 1.7rem; font-weight: 700; margin-bottom: 8px; }
-  .section-sub { color: #6c757d; font-size: 1rem; margin-bottom: 36px; }
-
-  .step-card { border: 1px solid #e9ecef; border-radius: 12px; padding: 28px 24px; height: 100%; }
-  .step-num { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #adb5bd; margin-bottom: 8px; }
-  .step-cmd { font-family: monospace; font-size: 1.15rem; font-weight: 700; color: #4A154B; margin-bottom: 8px; }
-  .step-desc { font-size: .9rem; color: #6c757d; }
-
-  .feat-card { border: 1px solid #e9ecef; border-radius: 12px; padding: 28px 24px; height: 100%; }
-  .feat-icon { font-size: 2rem; margin-bottom: 12px; }
-  .feat-title { font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
-  .feat-desc { font-size: .88rem; color: #6c757d; }
-
-  .config-box { background: #f8f9fa; border-radius: 12px; padding: 28px; }
-  .config-box h5 { font-size: .75rem; letter-spacing: 2px; text-transform: uppercase; color: #868e96; font-weight: 600; margin-bottom: 16px; }
-  .config-row { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; font-size: .88rem; }
-  .config-key { font-family: monospace; background: #e9ecef; border-radius: 5px; padding: 2px 9px; white-space: nowrap; font-size: .8rem; color: #495057; }
-  .config-val { color: #6c757d; }
-
-  .slack-preview { background: #fff; border: 1px solid #dee2e6; border-radius: 12px; padding: 24px; max-width: 400px; margin: 0 auto; }
-  .slack-avatar { width: 36px; height: 36px; border-radius: 6px; background: #4A154B; color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: .85rem; }
-  .slack-name { font-weight: 700; font-size: .95rem; }
-  .slack-time { color: #adb5bd; font-size: .8rem; margin-left: 6px; }
-  .slack-body { font-size: .92rem; margin-top: 6px; line-height: 1.6; }
-
-  .tech-tag { display: inline-block; background: #f1f3f5; border: 1px solid #dee2e6; border-radius: 6px; padding: 4px 12px; font-size: .8rem; color: #495057; margin: 4px; }
-
-  .divider { border: none; border-top: 1px solid #e9ecef; margin: 0; }
-  .highlight-bar { width: 48px; height: 4px; background: #4A154B; border-radius: 2px; margin-bottom: 20px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Project Task Kanban Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin: 10px 0;
+            width: 100%;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 5px;
+            display: inline-block;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1 class="text-center">Custom Project Task Kanban Examples</h1>
+    </header>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>Slack Attendance Integration</h1>
-  <p>Let employees check-in, take breaks, and check-out using simple Slack slash commands — directly synced to Odoo HR Attendance.</p>
-  <div class="cmd-row">
-    <span class="cmd-badge">/login</span>
-    <span class="cmd-badge">/break</span>
-    <span class="cmd-badge">/resume</span>
-    <span class="cmd-badge">/logout</span>
-  </div>
-</div>
+    <section>
+        <img style="width: 100%;" src="cover.gif" alt="Cover">
+    </section>
 
-<!-- HOW IT WORKS -->
-<div class="container py-5">
-  <div class="highlight-bar"></div>
-  <h2 class="section-title">How It Works</h2>
-  <p class="section-sub">Employees use 4 Slack slash commands. Every action is instantly recorded in Odoo — no forms, no manual entries.</p>
+    <section
+            style="background-color: RGBA(113, 75, 103, 1); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
+        <h2 style="font-size: 28px; margin-bottom: 15px; font-weight: bolder; color: inherit">📢 Available for Hire!</h2>
+        <p style="font-size: 18px; max-width: 700px; margin: auto;">
+            Looking for a skilled and reliable <b>Odoo Developer</b> to bring your business ideas to life? or to fix
+            things? or to analyze unwanted results? or to do whatever in odoo
+        </p>
+        <p style="font-size: 18px; max-width: 700px; margin: auto;">
+            Let’s build something great together! I specialize in custom module development, ERP implementation,
+            and performance tuning tailored to your needs.
+        </p>
+        <br>
+        <a href="mailto:rjlrjpt@gmail.com"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            📬 Hire Me
+        </a>
+        <a href="https://wa.me/923482852693"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-whatsapp" style="color: #128C7E"/> wa.me/923482852693
+        </a>
+        <a href="https://www.linkedin.com/in/rajeelzahid/"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-linkedin-square" style="color: #0072b1"/> /rajeelzahid
+        </a>
+    </section>
 
-  <div class="row">
-    <div class="col-md-3 mb-4">
-      <div class="step-card">
-        <div class="step-num">Step 01</div>
-        <div class="step-cmd">/login</div>
-        <div class="step-desc">Records check-in. Optional grace minutes can shift the recorded time (e.g. /login at 9:05 → recorded as 9:00).</div>
-      </div>
-    </div>
-    <div class="col-md-3 mb-4">
-      <div class="step-card">
-        <div class="step-num">Step 02</div>
-        <div class="step-cmd">/break</div>
-        <div class="step-desc">Starts a break session. Employee must be logged in. Blocked if a break is already active.</div>
-      </div>
-    </div>
-    <div class="col-md-3 mb-4">
-      <div class="step-card">
-        <div class="step-num">Step 03</div>
-        <div class="step-cmd">/resume</div>
-        <div class="step-desc">Ends the active break. Breaks shorter than the configured minimum are saved but not deducted from hours.</div>
-      </div>
-    </div>
-    <div class="col-md-3 mb-4">
-      <div class="step-card">
-        <div class="step-num">Step 04</div>
-        <div class="step-cmd">/logout</div>
-        <div class="step-desc">Records check-out time. Cannot proceed if employee is still on an active break.</div>
-      </div>
-    </div>
-  </div>
-</div>
+    <section>
+        <h2>Overview</h2>
+        <p>It is designed to enhance project management in Odoo by providing users with the ability to create and utilize custom Kanban boards.
+This module allows users to design their own Kanban examples tailored to their specific project needs and seamlessly integrate them with existing Kanban boards from other projects.</p>
+    </section>
 
-<hr class="divider"/>
+    <section>
+        <h3>How to use</h3>
+        <ul>
+            <li><strong>Go to Project > Configuration > Task Kanban Examples:</strong></li>
+            <img style="width: 100%;" src="1.png" alt="Screenshot1">
+            <br/>
 
-<!-- FEATURES -->
-<div class="container py-5">
-  <div class="highlight-bar"></div>
-  <h2 class="section-title">Features</h2>
-  <p class="section-sub">Smart rules, clean data, and real-time Slack feedback for every attendance action.</p>
+            <li><strong>You can create new examples. Change already created by default. Even change the sequence:</strong></li>
+            <img style="width: 100%;" src="2.png" alt="Screenshot2">
+            <br/>
 
-  <div class="row">
-    <div class="col-md-4 mb-4">
-      <div class="feat-card">
-        <div class="feat-icon">⚡</div>
-        <div class="feat-title">4 Slack Slash Commands</div>
-        <div class="feat-desc">Complete attendance lifecycle — login, break, resume, logout — handled entirely from Slack without switching apps.</div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="feat-card">
-        <div class="feat-icon">🕐</div>
-        <div class="feat-title">Login Grace Minutes</div>
-        <div class="feat-desc">Configure a grace period. If set to 5 minutes, a /login at 9:05 AM records as 9:00 AM — fair to employees, accurate for HR.</div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="feat-card">
-        <div class="feat-icon">☕</div>
-        <div class="feat-title">Smart Break Tracking</div>
-        <div class="feat-desc">Set a minimum break duration. Breaks shorter than the threshold are logged but not deducted from working hours.</div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="feat-card">
-        <div class="feat-icon">📊</div>
-        <div class="feat-title">Net Working Hours</div>
-        <div class="feat-desc">Auto-calculated on each attendance record: total hours minus counted break time = net worked hours.</div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="feat-card">
-        <div class="feat-icon">📬</div>
-        <div class="feat-title">Daily Summary DM</div>
-        <div class="feat-desc">At end of day, each employee gets a personalized Slack DM with check-in/out times, break duration, and a flag if hours are below the minimum.</div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="feat-card">
-        <div class="feat-icon">🔐</div>
-        <div class="feat-title">Secure Webhook Handling</div>
-        <div class="feat-desc">Slack Signing Secret verification on every request. SSL configured for Odoo.sh compatibility. No request is processed without validation.</div>
-      </div>
-    </div>
-  </div>
-</div>
+            <li><strong>Add/Edit Name, Description, Stages (choose stage to be folded or not):</strong></li>
+            <img style="width: 100%;" src="3.png" alt="Screenshot3">
+            <br/>
 
-<hr class="divider"/>
+            <li><strong>Now you can create new project and look for examples:</strong></li>
+            <img style="width: 100%;" src="4.png" alt="Screenshot4">
+            <img style="width: 100%;" src="5.png" alt="Screenshot5">
+            <br/>
 
-<!-- SLACK PREVIEW -->
-<div class="container py-5 text-center">
-  <div class="highlight-bar mx-auto"></div>
-  <h2 class="section-title">What Employees See in Slack</h2>
-  <p class="section-sub mx-auto" style="max-width:540px">Instant confirmation message after every command. Employees always know their status.</p>
+            <li><strong>It is done</strong></li>
+            <img style="width: 100%;" src="6.png" alt="Screenshot6">
+        </ul>
+    </section>
 
-  <div class="slack-preview">
-    <div class="d-flex align-items-center mb-2">
-      <div class="slack-avatar mr-2">SA</div>
-      <div>
-        <span class="slack-name">Attendance Bot</span>
-        <span class="slack-time">6:01 PM</span>
-      </div>
-    </div>
-    <div class="slack-body">
-      📊 <strong>Daily Attendance Summary</strong><br><br>
-      Check-in: <strong>9:00 AM</strong><br>
-      Check-out: <strong>6:01 PM</strong><br>
-      Working time: <strong>8h 46m</strong><br>
-      Break time: <strong>15m</strong><br><br>
-      ✅ Great work today!
-    </div>
-  </div>
-</div>
+    <section>
+        <h3>Manage settings</h3>
+        <p>You can allow user to use stages from created project by following settings</p>
+        <img style="width: 100%;" src="settings.png" alt="Screenshot-settings">
+        <img style="width: 100%;" src="settings2.png" alt="Screenshot-settings">
+    </section>
 
-<hr class="divider"/>
 
-<!-- CONFIGURATION -->
-<div class="container py-5">
-  <div class="highlight-bar"></div>
-  <h2 class="section-title">Configuration</h2>
-  <p class="section-sub">One configuration record inside Odoo. No external tools required.</p>
+<section>
+    <h5>Found any issue? Raise here -> https://github.com/RajeelZahid/OdooModules/issues/new</h5>
+</section>
 
-  <div class="row">
-    <div class="col-md-6 mb-4">
-      <div class="config-box">
-        <h5>Slack Credentials</h5>
-        <div class="config-row"><span class="config-key">Signing Secret</span><span class="config-val">Verifies every incoming Slack request</span></div>
-        <div class="config-row"><span class="config-key">Bot Token</span><span class="config-val">xoxb- token used to send DMs to employees</span></div>
-        <div class="config-row"><span class="config-key">Webhook URL</span><span class="config-val">Incoming webhook for channel notifications</span></div>
-      </div>
-    </div>
-    <div class="col-md-6 mb-4">
-      <div class="config-box">
-        <h5>Attendance Rules</h5>
-        <div class="config-row"><span class="config-key">Grace Minutes</span><span class="config-val">Shift login time back by N minutes (default: 5)</span></div>
-        <div class="config-row"><span class="config-key">Min Break Minutes</span><span class="config-val">Minimum break to deduct from hours (default: 5)</span></div>
-        <div class="config-row"><span class="config-key">Min Working Hours</span><span class="config-val">Expected hours/day for daily summary flag (default: 8h)</span></div>
-      </div>
-    </div>
-    <div class="col-md-6 mb-4">
-      <div class="config-box">
-        <h5>Employee Setup</h5>
-        <div class="config-row"><span class="config-key">Slack User ID</span><span class="config-val">Add each employee's Slack User ID (e.g. U01234ABCDE) on their HR Employee profile to link their Slack account.</span></div>
-      </div>
-    </div>
-    <div class="col-md-6 mb-4">
-      <div class="config-box">
-        <h5>Slack App Setup (Required)</h5>
-        <div class="config-row"><span class="config-key">Endpoint</span><span class="config-val font-weight-bold" style="font-family:monospace">POST /slack/attendance</span></div>
-        <div class="config-row" style="font-size:.85rem;color:#6c757d;">Register this URL as the <strong>Request URL</strong> for each slash command in your Slack App's configuration panel. This module requires a Slack App with slash commands and a bot token.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr class="divider"/>
-
-<!-- REQUIREMENTS -->
-<div class="container py-5">
-  <div class="highlight-bar"></div>
-  <h2 class="section-title">Requirements &amp; Dependencies</h2>
-  <p class="section-sub">This module requires an active Slack workspace with a configured Slack App (slash commands + bot token + incoming webhook). No paid external services are required beyond your Slack plan.</p>
-
-  <div>
-    <span class="tech-tag">Odoo 19.0</span>
-    <span class="tech-tag">Depends: hr_attendance</span>
-    <span class="tech-tag">Depends: hr</span>
-    <span class="tech-tag">Depends: base</span>
-    <span class="tech-tag">Requires: Slack App (Slash Commands)</span>
-    <span class="tech-tag">Requires: Slack Bot Token</span>
-    <span class="tech-tag">Requires: Incoming Webhook</span>
-    <span class="tech-tag">Odoo.sh Compatible</span>
-    <span class="tech-tag">License: LGPL-3</span>
-  </div>
-</div>
-
-<hr class="divider"/>
-
-<!-- FOOTER -->
-<div class="container py-4 text-center text-muted" style="font-size:.85rem;">
-  <p class="mb-1"><strong>SPOPLI Slack Attendance Integration</strong> · Version 19.0.1.0.0 · LGPL-3</p>
-  <p>By SPOPLI · <a href="https://www.spopli.com" style="color:#4A154B;">www.spopli.com</a></p>
-</div>
-
+<footer>
+        <p style="text-align: center;">Custom Project Task Kanban Examples | Compatible with Odoo Community, Enterprise, and Odoo.sh</p>
+        <br/>
+        <section
+            style="background-color: RGBA(113, 75, 103, 1); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
+        <h4 style="font-size: 28px; margin-bottom: 15px; font-weight: bolder; color: inherit">Contact Details</h4>
+        <a href="mailto:rjlrjpt@gmail.com"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            📬 Email
+        </a>
+        <a href="https://wa.me/923482852693"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-whatsapp" style="color: #128C7E"/> wa.me/923482852693
+        </a>
+        <a href="https://www.linkedin.com/in/rajeelzahid/"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-linkedin-square" style="color: #0072b1"/> /rajeelzahid
+        </a>
+        <a href="https://apps.odoo.com/apps/modules/browse?author=Rajeel"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-cubes"/> Explore Other Apps
+        </a>
+    </section>
+    </footer>
 </body>
 </html>
