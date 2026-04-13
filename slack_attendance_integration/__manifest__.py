@@ -20,7 +20,7 @@ Slack Attendance Integration
     """,
     'author': 'Anmol Patil',
     'website': 'https://github.com/anmol6213',
-    'support': 'your-email@example.com',
+    'support': 'anmol621314@gmail.com',
     'license': 'LGPL-3',
     'depends': ['base', 'hr', 'hr_attendance'],
     'data': [
