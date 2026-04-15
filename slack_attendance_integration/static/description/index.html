@@ -1,169 +1,137 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Slack Attendance Integration</title>
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f6f6f6;
-    color: #333;
-}
-
-.header {
-    background: #4A154B;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 32px;
-}
-
-.section {
-    max-width: 900px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-h2 {
-    color: #4A154B;
-    margin-bottom: 10px;
-}
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 10px;
-}
-
-.box {
-    background: #fafafa;
-    padding: 12px;
-    border-left: 4px solid #4A154B;
-    border-radius: 4px;
-}
-
-img {
-    width: 100%;
-    border-radius: 6px;
-    margin-top: 10px;
-}
-
-.cta {
-    text-align: center;
-    background: #4A154B;
-    color: white;
-    padding: 25px;
-    border-radius: 8px;
-}
-
-.hire {
-    text-align: center;
-    background: #f0f0f0;
-    padding: 20px;
-    border-radius: 8px;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slack Attendance Integration</title>
 </head>
+<body style="margin:0; font-family: Arial, sans-serif; color: #333; background: #fafafa;">
 
-<body>
+    <!-- Header -->
+    <section style="background: #4A154B; color: white; text-align: center; padding: 50px 20px;">
+        <h1 style="margin: 0 0 10px; font-size: 32px;">Slack Attendance Integration</h1>
+        <p style="margin: 0; font-size: 18px; opacity: 0.9;">Mark attendance directly from Slack — /login, /break, /resume, /logout</p>
+    </section>
 
-<div class="header">
-    <h1>Slack Attendance Integration</h1>
-    <p>Manage Attendance Directly from Slack 🚀</p>
-</div>
+    <!-- Cover Image -->
+    <section style="text-align: center; padding: 30px 20px; background: white;">
+        <img src="cover.gif" alt="Slack Attendance Demo" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+    </section>
 
-<div class="section">
-    <img src="cover.gif">
-</div>
+    <!-- Overview -->
+    <section style="max-width: 800px; margin: 0 auto; padding: 30px 20px; text-align: center;">
+        <h2 style="color: #4A154B;">Overview</h2>
+        <p style="font-size: 16px; line-height: 1.6;">
+            Let your employees check in, take breaks, and check out — all from Slack. 
+            Seamlessly syncs with Odoo Attendance with secure verification, timezone support, and optional AI summaries.
+        </p>
+    </section>
 
-<div class="section">
-    <h2>Overview</h2>
-    <p>
-        Mark attendance directly from Slack using simple commands like 
-        <b>/login</b>, <b>/break</b>, <b>/resume</b>, and <b>/logout</b>.
-        No need to open Odoo.
-    </p>
-</div>
+    <!-- Features -->
+    <section style="max-width: 900px; margin: 0 auto; padding: 20px;">
+        <h2 style="text-align: center; color: #4A154B;">Features</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px;">
+            <div style="background: white; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
+                <div style="font-size: 28px;">💬</div>
+                <strong>Slack Commands</strong>
+                <p style="font-size: 14px; color: #666;">/login, /break, /resume, /logout</p>
+            </div>
+            <div style="background: white; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
+                <div style="font-size: 28px;">🔐</div>
+                <strong>HMAC Security</strong>
+                <p style="font-size: 14px; color: #666;">Secure request verification</p>
+            </div>
+            <div style="background: white; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
+                <div style="font-size: 28px;">⏱️</div>
+                <strong>Break Management</strong>
+                <p style="font-size: 14px; color: #666;">Track breaks with grace time</p>
+            </div>
+            <div style="background: white; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
+                <div style="font-size: 28px;">🌍</div>
+                <strong>Timezone Support</strong>
+                <p style="font-size: 14px; color: #666;">Works across all timezones</p>
+            </div>
+            <div style="background: white; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
+                <div style="font-size: 28px;">📊</div>
+                <strong>Attendance Tracking</strong>
+                <p style="font-size: 14px; color: #666;">Auto-synced with Odoo</p>
+            </div>
+            <div style="background: white; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
+                <div style="font-size: 28px;">🤖</div>
+                <strong>AI Summary</strong>
+                <p style="font-size: 14px; color: #666;">Optional daily AI reports</p>
+            </div>
+        </div>
+    </section>
 
-<div class="section">
-    <h2>Features</h2>
-    <div class="features">
-        <div class="box">Slack Commands Integration</div>
-        <div class="box">Secure HMAC Verification</div>
-        <div class="box">Attendance Tracking</div>
-        <div class="box">Break Management</div>
-        <div class="box">Grace Time Handling</div>
-        <div class="box">Timezone Support</div>
-        <div class="box">AI Summary (Optional)</div>
-    </div>
-</div>
+    <!-- How It Works -->
+    <section style="max-width: 900px; margin: 0 auto; padding: 30px 20px;">
+        <h2 style="text-align: center; color: #4A154B;">How It Works</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
+            <div style="text-align: center;">
+                <p style="font-weight: bold; color: #4A154B;">1. Configure</p>
+                <img src="config.png" alt="Configuration" style="max-width: 100%; border-radius: 6px; box-shadow: 0 1px 6px rgba(0,0,0,0.1);">
+                <p style="font-size: 14px; color: #666;">Set up Slack app credentials in Odoo</p>
+            </div>
+            <div style="text-align: center;">
+                <p style="font-weight: bold; color: #4A154B;">2. Link Employees</p>
+                <img src="employee.png" alt="Employee Setup" style="max-width: 100%; border-radius: 6px; box-shadow: 0 1px 6px rgba(0,0,0,0.1);">
+                <p style="font-size: 14px; color: #666;">Map Slack users to Odoo employees</p>
+            </div>
+            <div style="text-align: center;">
+                <p style="font-weight: bold; color: #4A154B;">3. Use Slack</p>
+                <img src="slack.png" alt="Slack Commands" style="max-width: 100%; border-radius: 6px; box-shadow: 0 1px 6px rgba(0,0,0,0.1);">
+                <p style="font-size: 14px; color: #666;">Employees use slash commands</p>
+            </div>
+            <div style="text-align: center;">
+                <p style="font-weight: bold; color: #4A154B;">4. Track</p>
+                <img src="attendance.png" alt="Attendance Records" style="max-width: 100%; border-radius: 6px; box-shadow: 0 1px 6px rgba(0,0,0,0.1);">
+                <p style="font-size: 14px; color: #666;">View attendance in Odoo</p>
+            </div>
+        </div>
+    </section>
 
-<div class="section">
-    <h2>How It Works</h2>
+    <!-- Screenshots -->
+    <section style="max-width: 900px; margin: 0 auto; padding: 30px 20px; text-align: center;">
+        <h2 style="color: #4A154B;">Screenshots</h2>
+        <img src="screen1.png" alt="Screenshot 1" style="max-width: 100%; border-radius: 6px; margin: 10px 0; box-shadow: 0 1px 6px rgba(0,0,0,0.1);">
+        <img src="screen2.png" alt="Screenshot 2" style="max-width: 100%; border-radius: 6px; margin: 10px 0; box-shadow: 0 1px 6px rgba(0,0,0,0.1);">
+        <img src="break.png" alt="Break Management" style="max-width: 100%; border-radius: 6px; margin: 10px 0; box-shadow: 0 1px 6px rgba(0,0,0,0.1);">
+    </section>
 
-```
-<b>1. Configure Slack</b>
-<img src="config.png">
+    <!-- Configuration -->
+    <section style="max-width: 800px; margin: 0 auto; padding: 30px 20px;">
+        <h2 style="text-align: center; color: #4A154B;">Configuration</h2>
+        <ul style="font-size: 15px; line-height: 2;">
+            <li>Add Slack Bot Token & Signing Secret in Odoo Settings</li>
+            <li>Map employee Slack User IDs</li>
+            <li>Set grace time & timezone preferences</li>
+            <li>Enable/disable AI summary feature</li>
+        </ul>
+    </section>
 
-<b>2. Map Employee</b>
-<img src="employee.png">
+    <!-- Security -->
+    <section style="max-width: 800px; margin: 0 auto; padding: 10px 20px 30px; text-align: center;">
+        <h2 style="color: #4A154B;">Security</h2>
+        <p>All requests are verified using Slack's HMAC-SHA256 signature — no unauthorized access possible.</p>
+    </section>
 
-<b>3. Use Commands</b>
-<img src="slack.png">
+    <!-- CTA -->
+    <section style="background: #4A154B; color: white; text-align: center; padding: 30px 20px;">
+        <h2 style="margin: 0 0 10px;">Ready to simplify attendance?</h2>
+        <p style="margin: 0; opacity: 0.9;">Install now and let your team check in from Slack in seconds.</p>
+    </section>
 
-<b>4. Track Attendance</b>
-<img src="attendance.png">
-```
-
-</div>
-
-<div class="section">
-    <h2>Screenshots</h2>
-    <img src="screen1.png">
-    <img src="screen2.png">
-    <img src="break.png">
-</div>
-
-<div class="section">
-    <h2>Configuration</h2>
-    <ul>
-        <li>Signing Secret</li>
-        <li>Webhook URL</li>
-        <li>Grace Minutes</li>
-        <li>Minimum Break Duration</li>
-    </ul>
-</div>
-
-<div class="section">
-    <h2>Security</h2>
-    <p>All Slack requests are verified using HMAC SHA256.</p>
-</div>
-
-<div class="section cta">
-    <h2>Start managing attendance from Slack</h2>
-</div>
-
-<div class="section hire">
-    <h3>Available for Odoo Development</h3>
-    <p>Custom modules • Integration • Support</p>
-
-```
-<a href="mailto:your@email.com">Email</a> |
-<a href="https://wa.me/your-number">WhatsApp</a> |
-<a href="#">LinkedIn</a>
-```
-
-</div>
+    <!-- Hiring -->
+    <footer style="background: #3b1139; color: white; text-align: center; padding: 40px 20px;">
+        <h2 style="margin: 0 0 10px;">📢 Available for Odoo Development</h2>
+        <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 20px;">Custom modules, ERP implementation, integrations & performance tuning.</p>
+        <div>
+            <a href="mailto:rajeelzahid@gmail.com" style="display: inline-block; margin: 8px; padding: 10px 22px; background: white; color: #4A154B; font-weight: bold; text-decoration: none; border-radius: 5px;">📬 Email</a>
+            <a href="https://wa.me/923482852693" style="display: inline-block; margin: 8px; padding: 10px 22px; background: white; color: #4A154B; font-weight: bold; text-decoration: none; border-radius: 5px;">💬 WhatsApp</a>
+            <a href="https://www.linkedin.com/in/rajeelzahid/" style="display: inline-block; margin: 8px; padding: 10px 22px; background: white; color: #4A154B; font-weight: bold; text-decoration: none; border-radius: 5px;">🔗 LinkedIn</a>
+        </div>
+    </footer>
 
 </body>
 </html>
