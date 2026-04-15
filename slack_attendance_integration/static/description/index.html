@@ -1,146 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Project Task Kanban Examples</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #007BFF;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        section {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #f4f4f4;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        img {
-            max-width: 100%;
-            border-radius: 5px;
-            margin: 10px 0;
-            width: 100%;
-        }
-        code {
-            background: #f0f0f0;
-            padding: 5px;
-            display: inline-block;
-            border-radius: 5px;
-            font-family: monospace;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Slack Attendance Integration</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f6f6f6;
+    color: #333;
+}
+
+.header {
+    background: #4A154B;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.section {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #4A154B;
+    margin-bottom: 10px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 10px;
+}
+
+.box {
+    background: #fafafa;
+    padding: 12px;
+    border-left: 4px solid #4A154B;
+    border-radius: 4px;
+}
+
+img {
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.cta {
+    text-align: center;
+    background: #4A154B;
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.hire {
+    text-align: center;
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+}
+</style>
+
 </head>
+
 <body>
-    <header>
-        <h1 class="text-center">Custom Project Task Kanban Examples</h1>
-    </header>
 
-    <section>
-        <img style="width: 100%;" src="cover.gif" alt="Cover">
-    </section>
+<div class="header">
+    <h1>Slack Attendance Integration</h1>
+    <p>Manage Attendance Directly from Slack 🚀</p>
+</div>
 
-    <section
-            style="background-color: RGBA(113, 75, 103, 1); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
-        <h2 style="font-size: 28px; margin-bottom: 15px; font-weight: bolder; color: inherit">📢 Available for Hire!</h2>
-        <p style="font-size: 18px; max-width: 700px; margin: auto;">
-            Looking for a skilled and reliable <b>Odoo Developer</b> to bring your business ideas to life? or to fix
-            things? or to analyze unwanted results? or to do whatever in odoo
-        </p>
-        <p style="font-size: 18px; max-width: 700px; margin: auto;">
-            Let’s build something great together! I specialize in custom module development, ERP implementation,
-            and performance tuning tailored to your needs.
-        </p>
-        <br>
-        <a href="mailto:rjlrjpt@gmail.com"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
-            📬 Hire Me
-        </a>
-        <a href="https://wa.me/923482852693"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
-            <i class="fa fa-whatsapp" style="color: #128C7E"/> wa.me/923482852693
-        </a>
-        <a href="https://www.linkedin.com/in/rajeelzahid/"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
-            <i class="fa fa-linkedin-square" style="color: #0072b1"/> /rajeelzahid
-        </a>
-    </section>
+<div class="section">
+    <img src="cover.gif">
+</div>
 
-    <section>
-        <h2>Overview</h2>
-        <p>It is designed to enhance project management in Odoo by providing users with the ability to create and utilize custom Kanban boards.
-This module allows users to design their own Kanban examples tailored to their specific project needs and seamlessly integrate them with existing Kanban boards from other projects.</p>
-    </section>
+<div class="section">
+    <h2>Overview</h2>
+    <p>
+        Mark attendance directly from Slack using simple commands like 
+        <b>/login</b>, <b>/break</b>, <b>/resume</b>, and <b>/logout</b>.
+        No need to open Odoo.
+    </p>
+</div>
 
-    <section>
-        <h3>How to use</h3>
-        <ul>
-            <li><strong>Go to Project > Configuration > Task Kanban Examples:</strong></li>
-            <img style="width: 100%;" src="1.png" alt="Screenshot1">
-            <br/>
+<div class="section">
+    <h2>Features</h2>
+    <div class="features">
+        <div class="box">Slack Commands Integration</div>
+        <div class="box">Secure HMAC Verification</div>
+        <div class="box">Attendance Tracking</div>
+        <div class="box">Break Management</div>
+        <div class="box">Grace Time Handling</div>
+        <div class="box">Timezone Support</div>
+        <div class="box">AI Summary (Optional)</div>
+    </div>
+</div>
 
-            <li><strong>You can create new examples. Change already created by default. Even change the sequence:</strong></li>
-            <img style="width: 100%;" src="2.png" alt="Screenshot2">
-            <br/>
+<div class="section">
+    <h2>How It Works</h2>
 
-            <li><strong>Add/Edit Name, Description, Stages (choose stage to be folded or not):</strong></li>
-            <img style="width: 100%;" src="3.png" alt="Screenshot3">
-            <br/>
+```
+<b>1. Configure Slack</b>
+<img src="config.png">
 
-            <li><strong>Now you can create new project and look for examples:</strong></li>
-            <img style="width: 100%;" src="4.png" alt="Screenshot4">
-            <img style="width: 100%;" src="5.png" alt="Screenshot5">
-            <br/>
+<b>2. Map Employee</b>
+<img src="employee.png">
 
-            <li><strong>It is done</strong></li>
-            <img style="width: 100%;" src="6.png" alt="Screenshot6">
-        </ul>
-    </section>
+<b>3. Use Commands</b>
+<img src="slack.png">
 
-    <section>
-        <h3>Manage settings</h3>
-        <p>You can allow user to use stages from created project by following settings</p>
-        <img style="width: 100%;" src="settings.png" alt="Screenshot-settings">
-        <img style="width: 100%;" src="settings2.png" alt="Screenshot-settings">
-    </section>
+<b>4. Track Attendance</b>
+<img src="attendance.png">
+```
 
+</div>
 
-<section>
-    <h5>Found any issue? Raise here -> https://github.com/RajeelZahid/OdooModules/issues/new</h5>
-</section>
+<div class="section">
+    <h2>Screenshots</h2>
+    <img src="screen1.png">
+    <img src="screen2.png">
+    <img src="break.png">
+</div>
 
-<footer>
-        <p style="text-align: center;">Custom Project Task Kanban Examples | Compatible with Odoo Community, Enterprise, and Odoo.sh</p>
-        <br/>
-        <section
-            style="background-color: RGBA(113, 75, 103, 1); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
-        <h4 style="font-size: 28px; margin-bottom: 15px; font-weight: bolder; color: inherit">Contact Details</h4>
-        <a href="mailto:rjlrjpt@gmail.com"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
-            📬 Email
-        </a>
-        <a href="https://wa.me/923482852693"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
-            <i class="fa fa-whatsapp" style="color: #128C7E"/> wa.me/923482852693
-        </a>
-        <a href="https://www.linkedin.com/in/rajeelzahid/"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
-            <i class="fa fa-linkedin-square" style="color: #0072b1"/> /rajeelzahid
-        </a>
-        <a href="https://apps.odoo.com/apps/modules/browse?author=Rajeel"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
-            <i class="fa fa-cubes"/> Explore Other Apps
-        </a>
-    </section>
-    </footer>
+<div class="section">
+    <h2>Configuration</h2>
+    <ul>
+        <li>Signing Secret</li>
+        <li>Webhook URL</li>
+        <li>Grace Minutes</li>
+        <li>Minimum Break Duration</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Security</h2>
+    <p>All Slack requests are verified using HMAC SHA256.</p>
+</div>
+
+<div class="section cta">
+    <h2>Start managing attendance from Slack</h2>
+</div>
+
+<div class="section hire">
+    <h3>Available for Odoo Development</h3>
+    <p>Custom modules • Integration • Support</p>
+
+```
+<a href="mailto:your@email.com">Email</a> |
+<a href="https://wa.me/your-number">WhatsApp</a> |
+<a href="#">LinkedIn</a>
+```
+
+</div>
+
 </body>
 </html>
