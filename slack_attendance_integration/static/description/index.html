@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +14,7 @@
         header {
             background: #4A154B;
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 20px;
             text-align: center;
         }
         section {
@@ -24,16 +23,20 @@
             padding: 20px;
             background: #f4f4f4;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         img {
             max-width: 100%;
             border-radius: 5px;
             margin: 10px 0;
-            width: 100%;
+        }
+        code {
+            background: #eee;
+            padding: 4px 6px;
+            border-radius: 5px;
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -41,102 +44,119 @@
 </header>
 
 <section>
-    <img src="cover.gif" alt="Cover">
+    <img src="cover.gif" alt="Demo">
 </section>
 
-<section style="background-color:#4A154B; color:white; text-align:center;">
-    <h2>📢 Available for Hire!</h2>
+<!-- HIRE SECTION -->
+<section style="background-color:#4A154B;color:white;text-align:center;">
+    <h2>📢 Available for Hire</h2>
     <p>
-        Looking for a skilled Odoo Developer to build or customize your system?
+        Need a reliable <b>Odoo Developer</b> for custom modules, integrations, or fixing issues?
     </p>
     <p>
-        I specialize in custom module development, integrations, and performance optimization.
+        I build scalable Odoo solutions tailored to your business.
     </p>
-    <br>
-    <a href="mailto:your@email.com" style="padding:10px 20px; background:white; color:#4A154B; text-decoration:none;">📬 Hire Me</a>
-    <a href="https://wa.me/your-number" style="padding:10px 20px; background:white; color:#4A154B; text-decoration:none;">WhatsApp</a>
-    <a href="#" style="padding:10px 20px; background:white; color:#4A154B; text-decoration:none;">LinkedIn</a>
+
+    <a href="mailto:anmolp8303@gmail.com" style="display:inline-block;margin:10px;padding:10px 20px;background:white;color:#4A154B;text-decoration:none;border-radius:5px;">📬 Email</a>
+
+    <a href="https://wa.me/918208240374" style="display:inline-block;margin:10px;padding:10px 20px;background:white;color:#4A154B;text-decoration:none;border-radius:5px;">💬 WhatsApp</a>
+
+    <a href="http://linkedin.com/in/anmolpatil83" style="display:inline-block;margin:10px;padding:10px 20px;background:white;color:#4A154B;text-decoration:none;border-radius:5px;">🔗 LinkedIn</a>
 </section>
 
+<!-- OVERVIEW -->
 <section>
     <h2>Overview</h2>
     <p>
         This module allows employees to manage attendance directly from Slack using simple commands.
-    </p>
-    <p>
-        Commands like <b>/login</b>, <b>/break</b>, <b>/resume</b>, and <b>/logout</b> help track attendance, breaks, and working hours in real-time without opening Odoo.
+        No need to open Odoo — everything is handled inside Slack.
     </p>
 </section>
 
+<!-- FEATURES -->
 <section>
-    <h3>How to use</h3>
+    <h2>Features</h2>
     <ul>
+        <li><code>/login</code> Check-in with grace time</li>
+        <li><code>/break</code> Start break</li>
+        <li><code>/resume</code> End break</li>
+        <li><code>/logout</code> Check-out with net hours</li>
+        <li>Timezone support per employee</li>
+        <li>Break threshold configuration</li>
+        <li>Missed logout alerts</li>
+        <li>Optional AI daily summary</li>
+        <li>Secure Slack request verification (HMAC-SHA256)</li>
+    </ul>
+</section>
 
-```
-    <li><strong>Configure Slack Integration (Webhook + Signing Secret):</strong></li>
+<!-- HOW TO USE -->
+<section>
+    <h2>How to Use</h2>
+
+    <p><b>1. Configure Slack in Odoo:</b></p>
     <img src="config.png">
 
-    <li><strong>Assign Slack User ID to Employee:</strong></li>
+    <p><b>2. Add Slack User ID in Employee:</b></p>
     <img src="employee.png">
 
-    <li><strong>Use Slack Commands:</strong></li>
+    <p><b>3. Use commands in Slack:</b></p>
     <img src="slack.png">
 
-    <li><strong>Track Attendance in Odoo:</strong></li>
+    <p><b>4. Attendance auto updates in Odoo:</b></p>
     <img src="attendance.png">
+</section>
 
-    <li><strong>Break Tracking System:</strong></li>
+<!-- SCREENSHOTS -->
+<section>
+    <h2>Screenshots</h2>
+    <img src="screen1.png">
+    <img src="screen2.png">
     <img src="break.png">
-
-</ul>
-```
-
 </section>
 
+<!-- SETTINGS -->
 <section>
-    <h3>Manage settings</h3>
-    <p>Configure module behavior using below options:</p>
-
-```
-<ul>
-    <li>Signing Secret</li>
-    <li>Webhook URL</li>
-    <li>Grace Minutes</li>
-    <li>Minimum Break Duration</li>
-</ul>
-
-<img src="settings.png">
-```
-
+    <h2>Configuration</h2>
+    <ul>
+        <li>Set Login Grace Minutes</li>
+        <li>Set Minimum Break Duration</li>
+        <li>Define Working Hours</li>
+        <li>Enable/Disable AI Summary</li>
+        <li>Set Daily Summary Time</li>
+    </ul>
 </section>
 
+<!-- SECURITY -->
 <section>
-    <h3>Security</h3>
+    <h2>Security</h2>
     <p>
-        All Slack requests are securely verified using HMAC SHA256 signature validation to prevent unauthorized access.
+        All Slack requests are verified using HMAC-SHA256 signature validation.
+        Unauthorized or replayed requests are blocked.
     </p>
 </section>
 
+<!-- ISSUE -->
 <section>
-    <h5>Found any issue? Contact: your@email.com</h5>
+    <h4>
+        Found any issue? Raise here →
+        <a href="https://github.com/anmol6213/OdoosApps/issues/new">GitHub Issues</a>
+    </h4>
 </section>
 
 <footer>
-    <p style="text-align: center;">
-        Slack Attendance Integration | Compatible with Odoo Community, Enterprise, and Odoo.sh
+    <p style="text-align:center;">
+        Slack Attendance Integration | Compatible with Odoo Community, Enterprise, Odoo.sh
     </p>
 
-```
-<section style="background-color:#4A154B; color:white; text-align:center;">
-    <h4>Contact Details</h4>
+    <section style="background:#4A154B;color:white;text-align:center;">
+        <h3>Contact</h3>
 
-    <a href="anmolp8303@gmail.com" style="padding:10px 20px; background:white; color:#4A154B; text-decoration:none;">Email</a>
-    <a href="https://wa.me/8208240347" style="padding:10px 20px; background:white; color:#4A154B; text-decoration:none;">WhatsApp</a>
-    <a href="http://linkedin.com/in/anmolpatil83" style="padding:10px 20px; background:white; color:#4A154B; text-decoration:none;">LinkedIn</a>
+        <a href="mailto:anmolp8303@gmail.com" style="display:inline-block;margin:10px;padding:10px 20px;background:white;color:#4A154B;text-decoration:none;border-radius:5px;">Email</a>
 
-</section>
-```
+        <a href="https://wa.me/918208240374" style="display:inline-block;margin:10px;padding:10px 20px;background:white;color:#4A154B;text-decoration:none;border-radius:5px;">WhatsApp</a>
 
+        <a href="http://linkedin.com/in/anmolpatil83" style="display:inline-block;margin:10px;padding:10px 20px;background:white;color:#4A154B;text-decoration:none;border-radius:5px;">LinkedIn</a>
+    </section>
 </footer>
 
 </body>
