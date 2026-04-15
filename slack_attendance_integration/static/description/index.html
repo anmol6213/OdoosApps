@@ -1,873 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Slack Attendance Integration — Odoo Module by Anmol Patil</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --slack-purple: #4A154B;
-      --slack-green:  #2EB67D;
-      --slack-yellow: #ECB22E;
-      --slack-red:    #E01E5A;
-      --slack-blue:   #36C5F0;
-      --bg:           #0D0D0D;
-      --surface:      #141414;
-      --border:       rgba(255,255,255,0.07);
-      --text:         #F0F0F0;
-      --muted:        #888;
-      --accent:       #2EB67D;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Syne', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* ── NOISE OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      opacity: 0.4;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 20px 40px;
-      background: rgba(13,13,13,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo {
-      display: flex; align-items: center; gap: 10px;
-      font-family: 'Space Mono', monospace;
-      font-size: 13px; font-weight: 700; letter-spacing: 0.05em;
-      color: var(--text);
-    }
-    .nav-logo .hash { color: var(--slack-green); }
-    .nav-links { display: flex; gap: 32px; }
-    .nav-links a {
-      color: var(--muted); font-size: 14px; text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-cta {
-      background: var(--slack-green); color: #000;
-      padding: 10px 22px; border-radius: 6px;
-      font-weight: 700; font-size: 13px; text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(46,182,125,0.35); }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative; z-index: 1;
-      min-height: 100vh;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center;
-      padding: 120px 24px 80px;
-      overflow: hidden;
-    }
-
-    /* Radial glow blobs */
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(46,182,125,0.1) 0%, transparent 70%);
-      top: 50%; left: 50%; transform: translate(-50%, -60%);
-      pointer-events: none;
-    }
-
-    /* Slack four-color cross grid */
-    .slack-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
-      width: 60px; height: 60px;
-      margin: 0 auto 32px;
-      animation: spinIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-    }
-    .slack-grid span {
-      border-radius: 6px;
-    }
-    .sg-tl { background: var(--slack-yellow); }
-    .sg-tr { background: var(--slack-blue); }
-    .sg-bl { background: var(--slack-red); }
-    .sg-br { background: var(--slack-green); }
-
-    @keyframes spinIn {
-      from { opacity:0; transform: scale(0.4) rotate(-90deg); }
-      to   { opacity:1; transform: scale(1) rotate(0deg); }
-    }
-
-    .badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(46,182,125,0.1); border: 1px solid rgba(46,182,125,0.3);
-      color: var(--slack-green); font-size: 12px; font-weight: 600;
-      padding: 6px 14px; border-radius: 999px;
-      margin-bottom: 28px; letter-spacing: 0.06em;
-      animation: fadeUp 0.6s 0.2s both;
-    }
-    .badge-dot { width:7px; height:7px; background:var(--slack-green); border-radius:50%;
-      animation: pulse 1.4s ease infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
-
-    h1 {
-      font-size: clamp(3rem, 7vw, 6.5rem);
-      font-weight: 800; line-height: 1.0;
-      letter-spacing: -0.03em;
-      animation: fadeUp 0.7s 0.3s both;
-    }
-    h1 .accent { color: var(--slack-green); }
-    h1 .dim { color: var(--muted); }
-
-    .hero-sub {
-      max-width: 600px; margin: 28px auto 0;
-      font-size: 18px; line-height: 1.65;
-      color: #aaa; font-weight: 400;
-      animation: fadeUp 0.7s 0.45s both;
-    }
-
-    .hero-actions {
-      display: flex; flex-wrap: wrap; gap: 14px;
-      justify-content: center; margin-top: 44px;
-      animation: fadeUp 0.7s 0.55s both;
-    }
-
-    .btn-primary {
-      background: var(--slack-green); color: #000;
-      padding: 15px 34px; border-radius: 8px;
-      font-weight: 700; font-size: 15px; text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s;
-      display: inline-flex; align-items: center; gap: 8px;
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(46,182,125,0.4); }
-
-    .btn-ghost {
-      background: transparent; color: var(--text);
-      padding: 14px 32px; border-radius: 8px;
-      font-weight: 600; font-size: 15px; text-decoration: none;
-      border: 1px solid var(--border);
-      transition: border-color 0.2s, color 0.2s;
-      display: inline-flex; align-items: center; gap: 8px;
-    }
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.3); color: #fff; }
-
-    .hero-meta {
-      margin-top: 48px;
-      display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;
-      animation: fadeUp 0.7s 0.65s both;
-    }
-    .meta-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-    .meta-val { font-size: 28px; font-weight: 800; color: var(--text); }
-    .meta-label { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; }
-
-    /* terminal mock */
-    .terminal-wrapper {
-      position: relative; z-index: 1;
-      width: min(700px, 92vw); margin: 72px auto 0;
-      animation: fadeUp 0.8s 0.7s both;
-    }
-    .terminal {
-      background: #0e1117; border: 1px solid var(--border);
-      border-radius: 12px; overflow: hidden;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
-    }
-    .terminal-bar {
-      background: #1a1a1a; padding: 12px 16px;
-      display: flex; align-items: center; gap: 8px;
-      border-bottom: 1px solid var(--border);
-    }
-    .dot { width: 12px; height: 12px; border-radius: 50%; }
-    .dot-r { background: #ff5f57; }
-    .dot-y { background: #ffbd2e; }
-    .dot-g { background: #28c940; }
-    .terminal-title {
-      flex: 1; text-align: center;
-      font-family: 'Space Mono', monospace; font-size: 12px; color: #555;
-    }
-    .terminal-body {
-      padding: 24px 28px;
-      font-family: 'Space Mono', monospace; font-size: 14px;
-      line-height: 2.0;
-    }
-    .t-cmd  { color: var(--slack-blue); }
-    .t-resp { color: var(--slack-green); }
-    .t-note { color: #666; }
-    .t-warn { color: var(--slack-yellow); }
-    .t-user { color: var(--slack-yellow); }
-    .t-caret { display: inline-block; width: 9px; height: 17px;
-      background: var(--slack-green); vertical-align: middle;
-      animation: blink 1s step-end infinite; margin-left: 2px; }
-    @keyframes blink { 50%{ opacity:0; } }
-
-    @keyframes fadeUp {
-      from { opacity:0; transform: translateY(24px); }
-      to   { opacity:1; transform: translateY(0); }
-    }
-
-    /* ── SECTION COMMON ── */
-    section { position: relative; z-index: 1; }
-
-    .section-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: 'Space Mono', monospace;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
-      color: var(--slack-green); margin-bottom: 14px;
-    }
-    .section-tag::before { content:''; width: 24px; height: 1px; background: var(--slack-green); }
-
-    .section-title {
-      font-size: clamp(2rem, 4.5vw, 3.4rem);
-      font-weight: 800; line-height: 1.1; letter-spacing: -0.025em;
-    }
-    .section-desc {
-      margin-top: 16px; color: var(--muted);
-      font-size: 17px; line-height: 1.7; max-width: 520px;
-    }
-
-    /* ── COMMANDS ── */
-    .commands-section {
-      padding: 100px 40px;
-      max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-    }
-    .cmd-grid { display: grid; gap: 14px; }
-    .cmd-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 22px 26px;
-      display: flex; align-items: center; gap: 20px;
-      transition: border-color 0.2s, transform 0.2s;
-      cursor: default;
-    }
-    .cmd-card:hover { border-color: rgba(46,182,125,0.4); transform: translateX(4px); }
-    .cmd-slash {
-      font-family: 'Space Mono', monospace; font-size: 18px; font-weight: 700;
-      color: var(--slack-green); min-width: 100px;
-    }
-    .cmd-info h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-    .cmd-info p { font-size: 13px; color: var(--muted); line-height: 1.4; }
-    .cmd-color { width: 4px; height: 100%; border-radius: 4px; align-self: stretch; min-height: 48px; }
-
-    /* ── FEATURES GRID ── */
-    .features-section {
-      padding: 100px 40px;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .features-inner { max-width: 1100px; margin: 0 auto; }
-    .features-header { text-align: center; margin-bottom: 60px; }
-    .features-header .section-desc { margin: 16px auto 0; }
-
-    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .feat-card {
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: 14px; padding: 32px 28px;
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-    .feat-card:hover {
-      border-color: rgba(46,182,125,0.3);
-      box-shadow: 0 12px 40px rgba(46,182,125,0.08);
-    }
-    .feat-icon {
-      width: 44px; height: 44px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px; margin-bottom: 18px;
-    }
-    .feat-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
-    .feat-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
-
-    /* ── HOW IT WORKS ── */
-    .how-section {
-      padding: 100px 40px;
-      max-width: 1100px; margin: 0 auto;
-    }
-    .how-header { text-align: center; margin-bottom: 60px; }
-    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
-    .step {
-      display: flex; flex-direction: column; align-items: center;
-      text-align: center; padding: 0 20px;
-      position: relative;
-    }
-    .step:not(:last-child)::after {
-      content: '';
-      position: absolute; top: 28px; left: 60%; right: -10%;
-      height: 1px; background: var(--border); z-index: 0;
-    }
-    .step-num {
-      width: 56px; height: 56px; border-radius: 50%;
-      border: 2px solid var(--slack-green);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Space Mono', monospace; font-size: 16px; font-weight: 700;
-      color: var(--slack-green); margin-bottom: 18px; z-index: 1;
-      background: var(--bg);
-    }
-    .step h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
-    .step p { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-    /* ── AI SECTION ── */
-    .ai-section {
-      margin: 0 40px 100px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      max-width: 1100px;
-      margin-left: auto; margin-right: auto;
-      background: linear-gradient(135deg, #0d1117 0%, #0a1a12 100%);
-    }
-    .ai-inner {
-      display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 0;
-    }
-    .ai-content { padding: 60px 56px; }
-    .ai-demo { padding: 40px; background: rgba(255,255,255,0.02);
-      border-left: 1px solid var(--border); }
-
-    .ai-pill {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(236,178,46,0.1); border: 1px solid rgba(236,178,46,0.25);
-      color: var(--slack-yellow); font-size: 11px; font-weight: 700;
-      padding: 5px 12px; border-radius: 999px; margin-bottom: 20px;
-      letter-spacing: 0.08em;
-    }
-
-    .slack-message {
-      background: #fff; border-radius: 10px; padding: 20px 22px;
-      color: #1d1c1d; font-size: 14px; line-height: 1.6;
-    }
-    .slack-msg-header {
-      display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
-    }
-    .avatar {
-      width: 36px; height: 36px; border-radius: 6px;
-      background: linear-gradient(135deg, #4A154B, #2EB67D);
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 14px; font-weight: 700;
-    }
-    .slack-msg-meta { display: flex; flex-direction: column; }
-    .slack-name { font-weight: 700; font-size: 14px; color: #1d1c1d; }
-    .slack-time { font-size: 12px; color: #616061; }
-    .slack-msg-body { color: #1d1c1d; }
-    .slack-bold { font-weight: 700; }
-    .slack-green-t { color: #2EB67D; font-weight: 700; }
-    .slack-divider { height: 1px; background: #e0e0e0; margin: 12px 0; }
-
-    /* ── CONFIG TABLE ── */
-    .config-section {
-      padding: 100px 40px;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-    }
-    .config-inner { max-width: 900px; margin: 0 auto; }
-    .config-header { text-align: center; margin-bottom: 50px; }
-    table { width: 100%; border-collapse: collapse; }
-    thead th {
-      text-align: left; padding: 12px 20px;
-      font-family: 'Space Mono', monospace; font-size: 11px;
-      letter-spacing: 0.08em; color: var(--muted);
-      border-bottom: 1px solid var(--border);
-    }
-    tbody tr {
-      border-bottom: 1px solid var(--border);
-      transition: background 0.15s;
-    }
-    tbody tr:hover { background: rgba(255,255,255,0.02); }
-    tbody td { padding: 16px 20px; font-size: 14px; }
-    td:first-child {
-      font-family: 'Space Mono', monospace;
-      color: var(--slack-blue); font-size: 13px;
-    }
-    td:last-child { color: var(--muted); line-height: 1.5; }
-
-    /* ── SECURITY ── */
-    .security-section {
-      padding: 100px 40px;
-      max-width: 1100px; margin: 0 auto;
-    }
-    .security-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 50px; }
-    .sec-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 14px; padding: 30px;
-      display: flex; gap: 20px;
-    }
-    .sec-icon {
-      font-size: 28px; min-width: 44px; height: 44px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .sec-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-    .sec-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-    /* ── CONTACT ── */
-    .contact-section {
-      padding: 100px 40px;
-      text-align: center;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-    }
-    .contact-inner { max-width: 700px; margin: 0 auto; }
-    .contact-grid {
-      display: flex; flex-wrap: wrap; gap: 14px;
-      justify-content: center; margin-top: 44px;
-    }
-    .contact-card {
-      display: inline-flex; align-items: center; gap: 12px;
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: 10px; padding: 14px 24px;
-      text-decoration: none; color: var(--text);
-      font-size: 14px; font-weight: 600;
-      transition: border-color 0.2s, transform 0.15s;
-    }
-    .contact-card:hover { border-color: var(--slack-green); transform: translateY(-2px); }
-    .contact-card .icon { font-size: 20px; }
-
-    /* ── FOOTER ── */
-    footer {
-      position: relative; z-index: 1;
-      padding: 28px 40px;
-      border-top: 1px solid var(--border);
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 12px;
-    }
-    .footer-left { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--muted); }
-    .footer-right { display: flex; gap: 20px; }
-    .footer-right a { font-size: 13px; color: var(--muted); text-decoration: none; }
-    .footer-right a:hover { color: var(--text); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      nav { padding: 16px 20px; }
-      .nav-links { display: none; }
-      .commands-section { grid-template-columns: 1fr; gap: 48px; padding: 60px 20px; }
-      .features-grid { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-      .step::after { display: none; }
-      .ai-inner { grid-template-columns: 1fr; }
-      .ai-demo { border-left: none; border-top: 1px solid var(--border); }
-      .security-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Project Task Kanban Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin: 10px 0;
+            width: 100%;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 5px;
+            display: inline-block;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1 class="text-center">Custom Project Task Kanban Examples</h1>
+    </header>
 
-<!-- ── NAV ── -->
-<nav>
-  <div class="nav-logo">
-    <span class="hash">#</span> slack_attendance_integration
-  </div>
-  <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#how">Setup</a>
-    <a href="#config">Config</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <a href="https://github.com/anmol6213/slack_attendance_integration" target="_blank" class="nav-cta">↗ GitHub</a>
-</nav>
+    <section>
+        <img style="width: 100%;" src="cover.gif" alt="Cover">
+    </section>
 
-<!-- ── HERO ── -->
-<section class="hero">
-  <div class="slack-grid" aria-hidden="true">
-    <span class="sg-tl"></span>
-    <span class="sg-tr"></span>
-    <span class="sg-bl"></span>
-    <span class="sg-br"></span>
-  </div>
-
-  <div class="badge">
-    <span class="badge-dot"></span>
-    Odoo 17 · 18 · 19 — Free &amp; Open Source (LGPL-3)
-  </div>
-
-  <h1>
-    Attendance.<br>
-    <span class="accent">Right from Slack.</span>
-  </h1>
-
-  <p class="hero-sub">
-    Four slash commands. Zero browser tabs. Real-time sync with Odoo HR Attendance —
-    with AI-powered daily summaries and HMAC-verified security.
-  </p>
-
-  <div class="hero-actions">
-    <a href="https://github.com/anmol6213/slack_attendance_integration" target="_blank" class="btn-primary">
-      ⬇ Install Module
-    </a>
-    <a href="#how" class="btn-ghost">
-      See Setup Guide →
-    </a>
-  </div>
-
-  <div class="hero-meta">
-    <div class="meta-item">
-      <span class="meta-val">4</span>
-      <span class="meta-label">SLASH COMMANDS</span>
-    </div>
-    <div class="meta-item">
-      <span class="meta-val">2</span>
-      <span class="meta-label">AI PROVIDERS</span>
-    </div>
-    <div class="meta-item">
-      <span class="meta-val">HMAC</span>
-      <span class="meta-label">SECURITY</span>
-    </div>
-    <div class="meta-item">
-      <span class="meta-val">₹0</span>
-      <span class="meta-label">LICENSE COST</span>
-    </div>
-  </div>
-
-  <div class="terminal-wrapper">
-    <div class="terminal">
-      <div class="terminal-bar">
-        <span class="dot dot-r"></span>
-        <span class="dot dot-y"></span>
-        <span class="dot dot-g"></span>
-        <span class="terminal-title">Slack — #attendance-bot</span>
-      </div>
-      <div class="terminal-body">
-        <div><span class="t-user">anmol</span> &nbsp;<span class="t-note">9:57 AM</span></div>
-        <div><span class="t-cmd">/login</span></div>
-        <div class="t-resp">✅ <strong>Anmol Patil</strong> — Logged in at 9:55 AM <span class="t-note">(5 min grace applied)</span></div>
-        <br>
-        <div><span class="t-user">anmol</span> &nbsp;<span class="t-note">1:02 PM</span></div>
-        <div><span class="t-cmd">/break</span></div>
-        <div class="t-resp">☕ Break started</div>
-        <br>
-        <div><span class="t-user">anmol</span> &nbsp;<span class="t-note">1:18 PM</span></div>
-        <div><span class="t-cmd">/resume</span></div>
-        <div class="t-resp">💼 Break ended — resumed work <span class="t-note">(16 min counted)</span></div>
-        <br>
-        <div><span class="t-user">anmol</span> &nbsp;<span class="t-note">6:05 PM</span></div>
-        <div><span class="t-cmd">/logout</span></div>
-        <div class="t-resp">👋 Logged out at 6:05 PM — Net: 7h 54m</div>
-        <br>
-        <div><span class="t-warn">🤖 Attendance Bot</span> &nbsp;<span class="t-note">6:30 PM</span></div>
-        <div class="t-resp">*Anmol, you nailed it today!* 7h 54m net. <br>Keep the 5-day streak going — you're on fire 🔥</div>
-        <div><span class="t-caret"></span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── COMMANDS ── -->
-<section id="commands">
-  <div class="commands-section">
-    <div>
-      <div class="section-tag">COMMANDS</div>
-      <h2 class="section-title">Four commands.<br>Full attendance cycle.</h2>
-      <p class="section-desc">
-        No forms, no dashboards — employees track their entire workday without leaving Slack.
-        Every action syncs instantly to Odoo's HR Attendance module.
-      </p>
-    </div>
-    <div class="cmd-grid">
-      <div class="cmd-card">
-        <div class="cmd-color" style="background: var(--slack-green);"></div>
-        <div class="cmd-slash">/login</div>
-        <div class="cmd-info">
-          <h4>Check In</h4>
-          <p>Records attendance in Odoo. Grace minutes applied automatically.</p>
-        </div>
-      </div>
-      <div class="cmd-card">
-        <div class="cmd-color" style="background: var(--slack-yellow);"></div>
-        <div class="cmd-slash">/break</div>
-        <div class="cmd-info">
-          <h4>Start Break</h4>
-          <p>Begins a timed break. Short breaks below the threshold are saved but not counted.</p>
-        </div>
-      </div>
-      <div class="cmd-card">
-        <div class="cmd-color" style="background: var(--slack-blue);"></div>
-        <div class="cmd-slash">/resume</div>
-        <div class="cmd-info">
-          <h4>End Break</h4>
-          <p>Returns to active work. Break duration is automatically evaluated against the minimum.</p>
-        </div>
-      </div>
-      <div class="cmd-card">
-        <div class="cmd-color" style="background: var(--slack-red);"></div>
-        <div class="cmd-slash">/logout</div>
-        <div class="cmd-info">
-          <h4>Check Out</h4>
-          <p>Closes the attendance record. Net working hours are computed and stored.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FEATURES ── -->
-<section id="features">
-  <div class="features-section">
-    <div class="features-inner">
-      <div class="features-header">
-        <div class="section-tag">FEATURES</div>
-        <h2 class="section-title">Everything you'd actually need.</h2>
-        <p class="section-desc">
-          Built for real workplaces — not just demos. Every edge case is handled.
+    <section
+            style="background-color: RGBA(113, 75, 103, 1); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
+        <h2 style="font-size: 28px; margin-bottom: 15px; font-weight: bolder; color: inherit">📢 Available for Hire!</h2>
+        <p style="font-size: 18px; max-width: 700px; margin: auto;">
+            Looking for a skilled and reliable <b>Odoo Developer</b> to bring your business ideas to life? or to fix
+            things? or to analyze unwanted results? or to do whatever in odoo
         </p>
-      </div>
-      <div class="features-grid">
-        <div class="feat-card">
-          <div class="feat-icon" style="background: rgba(46,182,125,0.12);">⏱</div>
-          <h3>Login Grace Time</h3>
-          <p>Configure a grace window (e.g. 5 min) so an employee who types <code>/login</code> at 10:00 AM is recorded as 9:55 AM. No more clock-racing anxiety.</p>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon" style="background: rgba(54,197,240,0.12);">☕</div>
-          <h3>Break Threshold</h3>
-          <p>Quick bathroom breaks below the minimum threshold are saved but not deducted from working hours. Only meaningful breaks count.</p>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon" style="background: rgba(236,178,46,0.12);">🧮</div>
-          <h3>Net Working Hours</h3>
-          <p>Every record shows: <strong>Net Hours = Total − Counted Breaks</strong>. Transparent and accurate — always.</p>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon" style="background: rgba(224,30,90,0.12);">🌍</div>
-          <h3>Per-Employee Timezone</h3>
-          <p>No hardcoded timezones. Each employee's timezone flows from their HR record → company → IST fallback.</p>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon" style="background: rgba(46,182,125,0.12);">🔔</div>
-          <h3>Missed Logout Alerts</h3>
-          <p>Employees who forgot to <code>/logout</code> get an automatic DM reminder. No ghost attendance records ever again.</p>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon" style="background: rgba(236,178,46,0.12);">🤖</div>
-          <h3>AI Daily Summaries</h3>
-          <p>Optional personalised DMs powered by Gemini (free) or Claude. References actual hours, streaks and targets — not a generic template.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── HOW IT WORKS ── -->
-<section id="how">
-  <div class="how-section">
-    <div class="how-header">
-      <div class="section-tag">SETUP</div>
-      <h2 class="section-title">Up in under 10 minutes.</h2>
-      <p class="section-desc" style="margin:16px auto 0;">Four steps and you're live. No cloud subscription. No vendor lock-in.</p>
-    </div>
-    <div class="steps-grid">
-      <div class="step">
-        <div class="step-num">01</div>
-        <h4>Install the Module</h4>
-        <p>Copy the folder to your Odoo addons path, restart, and install from Apps.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <h4>Configure Slack App</h4>
-        <p>Create 4 slash commands in Slack, all pointing to <code>/slack/attendance</code> on your Odoo domain.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <h4>Enter Credentials</h4>
-        <p>Add your Signing Secret, Bot Token, and Webhook URL in <em>Attendances → Configuration → Slack Settings</em>.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <h4>Link Employees</h4>
-        <p>Open each HR employee record and paste their Slack Member ID. Done — they can start using commands instantly.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── AI SECTION ── -->
-<section>
-  <div class="ai-section" style="margin: 0 40px 100px; max-width:1100px; margin-left:auto; margin-right:auto;">
-    <div class="ai-inner">
-      <div class="ai-content">
-        <div class="ai-pill">✨ OPTIONAL AI FEATURE</div>
-        <h2 class="section-title" style="font-size: clamp(1.8rem, 3vw, 2.8rem);">Personalised summaries.<br>Not robot templates.</h2>
-        <p class="section-desc">
-          Enable AI summaries with a Gemini (free) or Claude API key. Each employee receives a
-          unique end-of-day message referencing their real hours, daily streak, and gap from target.
-          The API key is stored in an admin-only field — no one else sees it.
+        <p style="font-size: 18px; max-width: 700px; margin: auto;">
+            Let’s build something great together! I specialize in custom module development, ERP implementation,
+            and performance tuning tailored to your needs.
         </p>
-        <div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;">
-          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#aaa;">
-            <span style="color:var(--slack-green)">✓</span> Google Gemini — free tier
-          </div>
-          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#aaa;">
-            <span style="color:var(--slack-green)">✓</span> Anthropic Claude
-          </div>
-          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#aaa;">
-            <span style="color:var(--slack-green)">✓</span> Plain summary fallback
-          </div>
-        </div>
-      </div>
-      <div class="ai-demo">
-        <div style="font-family:'Space Mono',monospace;font-size:11px;color:#555;margin-bottom:16px;">PREVIEW — SLACK DM</div>
-        <div class="slack-message">
-          <div class="slack-msg-header">
-            <div class="avatar">🤖</div>
-            <div class="slack-msg-meta">
-              <span class="slack-name">Attendance Bot</span>
-              <span class="slack-time">Today at 6:30 PM</span>
-            </div>
-          </div>
-          <div class="slack-msg-body">
-            <p><span class="slack-bold">Great work today, Anmol! 💪</span></p>
-            <p>You logged <span class="slack-green-t">7h 54m</span> net after a 16-min break — just 6 minutes shy of your 8h target.</p>
-            <p>You're on a <span class="slack-bold">5-day streak</span> — the team's watching. Keep it going tomorrow! 🔥</p>
-            <div class="slack-divider"></div>
-            <p style="font-size:12px;color:#888;">Check-in 9:55 AM · Check-out 6:05 PM · Break 16m</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <br>
+        <a href="mailto:rjlrjpt@gmail.com"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            📬 Hire Me
+        </a>
+        <a href="https://wa.me/923482852693"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-whatsapp" style="color: #128C7E"/> wa.me/923482852693
+        </a>
+        <a href="https://www.linkedin.com/in/rajeelzahid/"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-linkedin-square" style="color: #0072b1"/> /rajeelzahid
+        </a>
+    </section>
 
-<!-- ── CONFIG TABLE ── -->
-<section id="config">
-  <div class="config-section">
-    <div class="config-inner">
-      <div class="config-header">
-        <div class="section-tag">CONFIGURATION</div>
-        <h2 class="section-title">Every knob is yours.</h2>
-        <p class="section-desc" style="margin: 16px auto 0;">Configure from <em>Attendances → Configuration → Slack Settings</em>.</p>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>FIELD</th>
-            <th>DEFAULT</th>
-            <th>DESCRIPTION</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>login_grace_minutes</td>
-            <td>5</td>
-            <td>Subtracts N minutes from actual login time — removes clock-racing pressure.</td>
-          </tr>
-          <tr>
-            <td>min_break_minutes</td>
-            <td>5</td>
-            <td>Breaks shorter than this are saved but not deducted from net working hours.</td>
-          </tr>
-          <tr>
-            <td>min_working_hours</td>
-            <td>8.0</td>
-            <td>Daily hour target used in summary comparison and AI prompt context.</td>
-          </tr>
-          <tr>
-            <td>send_daily_summary</td>
-            <td>True</td>
-            <td>Toggle end-of-day Slack DMs on or off globally.</td>
-          </tr>
-          <tr>
-            <td>summary_time</td>
-            <td>18.0</td>
-            <td>24-hour time when the daily cron fires (e.g. 18.0 = 6:00 PM).</td>
-          </tr>
-          <tr>
-            <td>ai_enabled</td>
-            <td>False</td>
-            <td>Enable AI-powered personalised summaries instead of the plain template.</td>
-          </tr>
-          <tr>
-            <td>ai_provider</td>
-            <td>gemini</td>
-            <td>Choose between Google Gemini (free) or Anthropic Claude.</td>
-          </tr>
-          <tr>
-            <td>ai_api_key</td>
-            <td>—</td>
-            <td>API key stored in an admin-only field group. Never exposed to regular users.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
+    <section>
+        <h2>Overview</h2>
+        <p>It is designed to enhance project management in Odoo by providing users with the ability to create and utilize custom Kanban boards.
+This module allows users to design their own Kanban examples tailored to their specific project needs and seamlessly integrate them with existing Kanban boards from other projects.</p>
+    </section>
 
-<!-- ── SECURITY ── -->
+    <section>
+        <h3>How to use</h3>
+        <ul>
+            <li><strong>Go to Project > Configuration > Task Kanban Examples:</strong></li>
+            <img style="width: 100%;" src="1.png" alt="Screenshot1">
+            <br/>
+
+            <li><strong>You can create new examples. Change already created by default. Even change the sequence:</strong></li>
+            <img style="width: 100%;" src="2.png" alt="Screenshot2">
+            <br/>
+
+            <li><strong>Add/Edit Name, Description, Stages (choose stage to be folded or not):</strong></li>
+            <img style="width: 100%;" src="3.png" alt="Screenshot3">
+            <br/>
+
+            <li><strong>Now you can create new project and look for examples:</strong></li>
+            <img style="width: 100%;" src="4.png" alt="Screenshot4">
+            <img style="width: 100%;" src="5.png" alt="Screenshot5">
+            <br/>
+
+            <li><strong>It is done</strong></li>
+            <img style="width: 100%;" src="6.png" alt="Screenshot6">
+        </ul>
+    </section>
+
+    <section>
+        <h3>Manage settings</h3>
+        <p>You can allow user to use stages from created project by following settings</p>
+        <img style="width: 100%;" src="settings.png" alt="Screenshot-settings">
+        <img style="width: 100%;" src="settings2.png" alt="Screenshot-settings">
+    </section>
+
+
 <section>
-  <div class="security-section">
-    <div class="section-tag">SECURITY</div>
-    <h2 class="section-title">Enterprise-grade.<br>Zero compromises.</h2>
-    <div class="security-grid">
-      <div class="sec-card">
-        <div class="sec-icon">🔐</div>
-        <div>
-          <h4>HMAC-SHA256 Signature Verification</h4>
-          <p>Every inbound Slack request is verified with your Signing Secret before any database action is performed.</p>
-        </div>
-      </div>
-      <div class="sec-card">
-        <div class="sec-icon">🛡</div>
-        <div>
-          <h4>Replay Attack Protection</h4>
-          <p>Requests older than 5 minutes are automatically rejected. HMAC's <code>compare_digest</code> prevents timing attacks.</p>
-        </div>
-      </div>
-      <div class="sec-card">
-        <div class="sec-icon">🔒</div>
-        <div>
-          <h4>certifi SSL — No CERT_NONE</h4>
-          <p>All outbound HTTPS uses the certifi CA bundle. No certificate verification bypass, ever.</p>
-        </div>
-      </div>
-      <div class="sec-card">
-        <div class="sec-icon">👁</div>
-        <div>
-          <h4>Admin-Only API Key Storage</h4>
-          <p>The AI API key field is gated behind <code>base.group_system</code> — invisible to all non-admin users.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+    <h5>Found any issue? Raise here -> https://github.com/RajeelZahid/OdooModules/issues/new</h5>
 </section>
 
-<!-- ── CONTACT ── -->
-<section id="contact">
-  <div class="contact-section">
-    <div class="contact-inner">
-      <div class="section-tag" style="justify-content:center;">AUTHOR</div>
-      <h2 class="section-title">Built by Anmol Patil.</h2>
-      <p class="section-desc" style="margin: 16px auto 0;">
-        Open to Odoo module development, custom integrations, ERP implementation,
-        and anything in between. Let's build something worth shipping.
-      </p>
-      <div class="contact-grid">
-        <a href="https://github.com/anmol6213" target="_blank" class="contact-card">
-          <span class="icon">🐙</span> github.com/anmol6213
-        </a>
-        <a href="https://github.com/anmol6213/slack_attendance_integration/issues" target="_blank" class="contact-card">
-          <span class="icon">🐛</span> Report an Issue
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ── -->
 <footer>
-  <div class="footer-left">
-    slack_attendance_integration · v19.0.1.0.0 · LGPL-3 · Odoo 17 / 18 / 19
-  </div>
-  <div class="footer-right">
-    <a href="https://github.com/anmol6213/slack_attendance_integration" target="_blank">GitHub</a>
-    <a href="https://github.com/anmol6213/slack_attendance_integration/issues" target="_blank">Issues</a>
-  </div>
-</footer>
-
+        <p style="text-align: center;">Custom Project Task Kanban Examples | Compatible with Odoo Community, Enterprise, and Odoo.sh</p>
+        <br/>
+        <section
+            style="background-color: RGBA(113, 75, 103, 1); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
+        <h4 style="font-size: 28px; margin-bottom: 15px; font-weight: bolder; color: inherit">Contact Details</h4>
+        <a href="mailto:rjlrjpt@gmail.com"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            📬 Email
+        </a>
+        <a href="https://wa.me/923482852693"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-whatsapp" style="color: #128C7E"/> wa.me/923482852693
+        </a>
+        <a href="https://www.linkedin.com/in/rajeelzahid/"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-linkedin-square" style="color: #0072b1"/> /rajeelzahid
+        </a>
+        <a href="https://apps.odoo.com/apps/modules/browse?author=Rajeel"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-cubes"/> Explore Other Apps
+        </a>
+    </section>
+    </footer>
 </body>
 </html>
