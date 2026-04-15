@@ -4,154 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slack Attendance Integration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #4A154B;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin: 10px 0;
+            width: 100%;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 5px;
+            display: inline-block;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+    </style>
 </head>
-<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: #333;">
+<body>
 
-    <!-- Header -->
-    <header style="background-color: #4A154B; color: white; text-align: center; padding: 40px 20px;">
-        <h1 style="margin: 0; font-size: 28px;">Slack Attendance Integration</h1>
-    </header>
+<header>
+    <h1 class="text-center">Slack Attendance Integration</h1>
+</header>
 
-    <!-- Cover Image -->
-    <section style="text-align: center; padding: 20px; background-color: #f8f9fa;">
-        <img src="cover.gif" alt="Slack Attendance Integration Demo" style="max-width: 100%; border-radius: 8px;">
-    </section>
+<section>
+    <img style="width: 100%;" src="cover.gif" alt="Cover">
+</section>
 
-    <!-- Hiring Section -->
-    <section style="background-color: #4A154B; color: white; padding: 40px 20px; text-align: center;">
-        <h2 style="margin-bottom: 15px;">📢 Available for Hire!</h2>
-        <p style="max-width: 700px; margin: 0 auto 10px;">
-            Looking for a skilled and reliable Odoo Developer to bring your business ideas to life? or to fix
-            things? or to analyze unwanted results? or to do whatever in odoo
-        </p>
-        <p style="max-width: 700px; margin: 0 auto 20px;">
-            Let's build something great together! I specialize in custom module development, ERP implementation,
-            and performance tuning tailored to your needs.
-        </p>
-        <div>
-        <a href="mailto:anmolp8303@gmail.com"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: #4A154B; font-weight: bold; text-decoration: none; border-radius: 5px;">
-            📬 Hire Me
-        </a>
-        <a href="https://wa.me/918208245035"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: #4A154B; font-weight: bold; text-decoration: none; border-radius: 5px;">
-            wa.me/918208245035
-        </a>
-        <a href="http://linkedin.com/in/anmolpatil83"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: #4A154B; font-weight: bold; text-decoration: none; border-radius: 5px;">
-            /anmolpatil83
-        </a>
-        </div>
-    </section>
+<section
+    style="background-color: RGBA(74,21,75,1); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
+    
+    <h2 style="font-size: 28px; margin-bottom: 15px; font-weight: bolder; color: inherit">📢 Available for Hire!</h2>
 
-    <!-- Overview -->
-    <section style="max-width: 900px; margin: 30px auto; padding: 20px;">
-        <h2 style="color: #4A154B; border-bottom: 2px solid #4A154B; padding-bottom: 8px;">Overview</h2>
-        <p>Slack Attendance Integration allows employees to mark attendance directly from Slack using simple commands:
-        <b>/login</b>, <b>/break</b>, <b>/resume</b>, <b>/logout</b>. It integrates seamlessly with Odoo's HR Attendance module
-        with secure HMAC verification, timezone support, grace time, and optional AI summary.</p>
-    </section>
-
-    <!-- Features -->
-    <section style="max-width: 900px; margin: 30px auto; padding: 20px;">
-        <h2 style="color: #4A154B; border-bottom: 2px solid #4A154B; padding-bottom: 8px;">Features</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #4A154B; text-align: center;">
-                <h3 style="color: #4A154B; margin-top: 0;">Slack Commands</h3>
-                <p style="color: #666;">/login, /break, /resume, /logout</p>
-            </div>
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #4A154B; text-align: center;">
-                <h3 style="color: #4A154B; margin-top: 0;">HMAC Security</h3>
-                <p style="color: #666;">Secure request verification</p>
-            </div>
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #4A154B; text-align: center;">
-                <h3 style="color: #4A154B; margin-top: 0;">Break Management</h3>
-                <p style="color: #666;">Track breaks with ease</p>
-            </div>
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #4A154B; text-align: center;">
-                <h3 style="color: #4A154B; margin-top: 0;">Grace Time</h3>
-                <p style="color: #666;">Configurable grace periods</p>
-            </div>
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #4A154B; text-align: center;">
-                <h3 style="color: #4A154B; margin-top: 0;">Timezone Support</h3>
-                <p style="color: #666;">Works across timezones</p>
-            </div>
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #4A154B; text-align: center;">
-                <h3 style="color: #4A154B; margin-top: 0;">AI Summary</h3>
-                <p style="color: #666;">Optional AI attendance summary</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section style="max-width: 900px; margin: 30px auto; padding: 20px;">
-        <h2 style="color: #4A154B; border-bottom: 2px solid #4A154B; padding-bottom: 8px;">How It Works</h2>
-        <div>
-            <p><b>Step 1:</b> Configure Slack integration in Odoo settings:</p>
-            <img src="config.png" alt="Configuration" style="max-width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid #eee;">
-
-            <p><b>Step 2:</b> Employee links their Slack account:</p>
-            <img src="employee.png" alt="Employee Setup" style="max-width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid #eee;">
-
-            <p><b>Step 3:</b> Use Slack commands to mark attendance:</p>
-            <img src="slack.png" alt="Slack Commands" style="max-width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid #eee;">
-
-            <p><b>Step 4:</b> Attendance is recorded in Odoo:</p>
-            <img src="attendance.png" alt="Attendance Record" style="max-width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid #eee;">
-        </div>
-    </section>
-
-    <!-- Screenshots -->
-    <section style="max-width: 900px; margin: 30px auto; padding: 20px;">
-        <h2 style="color: #4A154B; border-bottom: 2px solid #4A154B; padding-bottom: 8px;">Screenshots</h2>
-        <img src="screen1.png" alt="Screenshot 1" style="max-width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid #eee;">
-        <img src="screen2.png" alt="Screenshot 2" style="max-width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid #eee;">
-        <img src="break.png" alt="Break Management" style="max-width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid #eee;">
-    </section>
-
-    <!-- Configuration -->
-    <section style="max-width: 900px; margin: 30px auto; padding: 20px;">
-        <h2 style="color: #4A154B; border-bottom: 2px solid #4A154B; padding-bottom: 8px;">Configuration</h2>
-        <ul>
-            <li>Set Slack Bot Token & Signing Secret in Odoo Settings</li>
-            <li>Configure grace time and timezone preferences</li>
-            <li>Enable/disable AI summary feature</li>
-            <li>Map employee emails with Slack user IDs</li>
-        </ul>
-    </section>
-
-    <!-- Security -->
-    <section style="max-width: 900px; margin: 30px auto; padding: 20px;">
-        <h2 style="color: #4A154B; border-bottom: 2px solid #4A154B; padding-bottom: 8px;">Security</h2>
-        <p>All Slack requests are verified using HMAC-SHA256 signature validation to ensure authenticity.</p>
-    </section>
-
-    <!-- Issue -->
-    <p style="text-align: center; padding: 20px;">
-        Found any issue? Raise here -> <a href="https://github.com/anmol6213/OdoosApps/issues/new" style="color: #4A154B; font-weight: bold;">https://github.com/anmol6213/OdoosApps/issues/new</a>
+    <p style="font-size: 18px; max-width: 700px; margin: auto;">
+        Looking for a skilled and reliable <b>Odoo Developer</b> to build, fix or customize your Odoo system?
     </p>
 
-    <!-- Footer -->
-    <footer style="background-color: #4A154B; color: white; text-align: center; padding: 30px 20px;">
-        <p style="font-size: 16px; font-weight: bold;">Slack Attendance Integration | Compatible with Odoo Community, Enterprise, and Odoo.sh</p>
-        <hr style="border-color: rgba(255,255,255,0.3); max-width: 600px; margin: 15px auto;">
-        <p>Contact Details</p>
+    <p style="font-size: 18px; max-width: 700px; margin: auto;">
+        Let’s build something great together! I specialize in custom module development, ERP implementation,
+        integrations, and performance optimization.
+    </p>
+
+    <br>
+
+    <a href="mailto:anmolp8303@gmail.com"
+       style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+        📬 Hire Me
+    </a>
+
+    <a href="https://wa.me/918208245035"
+       style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+        💬 wa.me/918208245035
+    </a>
+
+    <a href="http://linkedin.com/in/anmolpatil83"
+       style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+        🔗 /anmolpatil83
+    </a>
+</section>
+
+<section>
+    <h2>Overview</h2>
+    <p>
+        This module allows employees to mark attendance directly from Slack using simple slash commands.
+        It integrates seamlessly with Odoo Attendance and provides real-time tracking without opening Odoo.
+    </p>
+</section>
+
+<section>
+    <h3>How to use</h3>
+    <ul>
+
+        <li><strong>Go to Settings > Slack Configuration:</strong></li>
+        <img style="width: 100%;" src="config.png">
+
+        <li><strong>Add Slack User ID in Employee:</strong></li>
+        <img style="width: 100%;" src="employee.png">
+
+        <li><strong>Use commands like /login, /break, /resume, /logout:</strong></li>
+        <img style="width: 100%;" src="slack.png">
+
+        <li><strong>Attendance is tracked automatically in Odoo:</strong></li>
+        <img style="width: 100%;" src="attendance.png">
+
+    </ul>
+</section>
+
+<section>
+    <h3>Features</h3>
+    <ul>
+        <li><code>/login</code> Check-in with grace time</li>
+        <li><code>/break</code> Break tracking</li>
+        <li><code>/resume</code> Resume work</li>
+        <li><code>/logout</code> Check-out with net hours</li>
+        <li>Timezone support per employee</li>
+        <li>Break threshold configuration</li>
+        <li>Missed logout alerts</li>
+        <li>Optional AI daily summaries</li>
+        <li>Secure Slack request verification (HMAC-SHA256)</li>
+    </ul>
+</section>
+
+<section>
+    <h3>Screenshots</h3>
+    <img style="width: 100%;" src="screen1.png">
+    <img style="width: 100%;" src="screen2.png">
+    <img style="width: 100%;" src="break.png">
+</section>
+
+<section>
+    <h3>Manage settings</h3>
+    <p>You can configure module settings from Odoo:</p>
+    <img style="width: 100%;" src="settings.png">
+    <img style="width: 100%;" src="settings2.png">
+</section>
+
+<section>
+    <h5>
+        Found any issue? Raise here -> 
+        <a href="https://github.com/anmol6213/OdoosApps/issues/new">
+            GitHub Issues
+        </a>
+    </h5>
+</section>
+
+<footer>
+    <p style="text-align: center;">
+        Slack Attendance Integration | Compatible with Odoo Community, Enterprise, and Odoo.sh
+    </p>
+
+    <br/>
+
+    <section
+        style="background-color: RGBA(74,21,75,1); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
+        
+        <h4 style="font-size: 28px; margin-bottom: 15px; font-weight: bolder;">Contact Details</h4>
+
         <a href="mailto:anmolp8303@gmail.com"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: #4A154B; font-weight: bold; text-decoration: none; border-radius: 5px;">
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
             📬 Email
         </a>
+
         <a href="https://wa.me/918208245035"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: #4A154B; font-weight: bold; text-decoration: none; border-radius: 5px;">
-            wa.me/918208245035
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            💬 WhatsApp
         </a>
+
         <a href="http://linkedin.com/in/anmolpatil83"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: #4A154B; font-weight: bold; text-decoration: none; border-radius: 5px;">
-            /anmolpatil83
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            🔗 LinkedIn
         </a>
-        <a href="https://apps.odoo.com/apps/modules/browse?author=Anmol"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: #4A154B; font-weight: bold; text-decoration: none; border-radius: 5px;">
-            Explore Other Apps
-        </a>
-    </footer>
+
+    </section>
+</footer>
+
 </body>
 </html>
