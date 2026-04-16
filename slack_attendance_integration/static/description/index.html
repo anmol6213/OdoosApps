@@ -126,7 +126,7 @@
                             href="#nav-0"
                             aria-controls="nav0"
                             aria-selected="true"
-                        > Global Prevention of Auto-Save</a>
+                        > Slack Commands</a>
                         <a
                             data-bs-toggle="tab"
                             type="button"
@@ -137,7 +137,7 @@
                             href="#nav-1"
                             aria-controls="nav1"
                             aria-selected="false"
-                        > Specific Model Selection</a>
+                        > Attendance Tracking</a>
                         <a
                             data-bs-toggle="tab"
                             type="button"
@@ -148,7 +148,7 @@
                             href="#nav-2"
                             aria-controls="nav2"
                             aria-selected="false"
-                        > Popup Warning on Navigation</a>
+                        > Break Management</a>
                         <a
                             data-bs-toggle="tab"
                             type="button"
@@ -159,7 +159,7 @@
                             href="#nav-3"
                             aria-controls="nav3"
                             aria-selected="false"
-                        > Re Enable Auto Save</a>
+                        > Security & Control</a>
                     </div>
                 </nav>
                 <div id="nav-tabContent" class="tab-content pt-3">
@@ -169,14 +169,19 @@
                         id="nav-0"
                         aria-labelledby="nav-tab0"
                     >
-                        <img
+                        <!-- <img
                             alt="image"
                             class="w-100 rounded"
                             id="0"
                             src="images/1773735708737-globl_prevention_auto_save.png"
-                        >
-                        <h6 class="font-weight-bold mt-3" style="font-size: 20px; color: #333;">Global Prevention of Auto-Save</h6>
-                        <p style="font-size: 14px; color: #555;">Prevent Auto Save globally prevents all the models from auto saving.</p>
+                        > -->
+                        <h6 class="font-weight-bold mt-3" style="font-size: 20px; color: #333;">Slack Commands</h6>
+                        <p style="font-size: 14px; color: #555;">Employees can easily manage attendance directly from Slack using simple slash commands:
+                            <br><br>
+                            <code>/login</code> – Check-in to start the workday<br>
+                            <code>/break</code> – Start break<br>
+                            <code>/resume</code> – Resume work after break<br>
+                            <code>/logout</code> – Check-out with total worked hours</p>
                     </div>
                     <div
                         role="tabpanel"
@@ -184,14 +189,15 @@
                         id="nav-1"
                         aria-labelledby="nav-tab1"
                     >
-                        <img
+                        <!-- <img
                             alt="image"
                             class="w-100 rounded"
                             id="1"
                             src="images/1773735715455-specific_model_selection.png"
-                        >
-                        <h6 class="font-weight-bold mt-3" style="font-size: 20px; color: #333;">Specific Model Selection</h6>
-                        <p style="font-size: 14px; color: #555;">Prevent auto save for specific model enables to select specific model for preventing auto save</p>
+                        > -->
+                        <h6 class="font-weight-bold mt-3" style="font-size: 20px; color: #333;">Attendance Tracking</h6>
+                        <p style="font-size: 14px; color: #555;">All attendance actions performed from Slack are automatically synced with Odoo.
+                            Login, break time, resume time, and logout are recorded in real-time without any manual effort.</p>
                     </div>
                     <div
                         role="tabpanel"
@@ -199,14 +205,15 @@
                         id="nav-2"
                         aria-labelledby="nav-tab2"
                     >
-                        <img
+                        <!-- <img
                             alt="image"
                             class="w-100 rounded"
                             id="2"
                             src="images/1773735721129-popup_warning.png"
-                        >
-                        <h6 class="font-weight-bold mt-3" style="font-size: 20px; color: #333;">Popup Warning on Navigation</h6>
-                        <p style="font-size: 14px; color: #555;">A popup shows when form is not saved manually.</p>
+                        > -->
+                        <h6 class="font-weight-bold mt-3" style="font-size: 20px; color: #333;">Break Management</h6>
+                        <p style="font-size: 14px; color: #555;">Track employee breaks efficiently with support for break start and resume actions.
+                            Configure break rules and monitor total break duration directly in Odoo.</p>
                     </div>
                     <div
                         role="tabpanel"
@@ -214,14 +221,15 @@
                         id="nav-3"
                         aria-labelledby="nav-tab3"
                     >
-                        <img
+                        <!-- <img
                             alt="image"
                             class="w-100 rounded"
                             id="3"
                             src="images/1773735727045-re_enable_auto_save.png"
-                        >
-                        <h6 class="font-weight-bold mt-3" style="font-size: 20px; color: #333;">Re Enable Auto Save</h6>
-                        <p style="font-size: 14px; color: #555;">Re Enables auto save by unchecking the checkboxes.</p>
+                        > -->
+                        <h6 class="font-weight-bold mt-3" style="font-size: 20px; color: #333;">Security & Control</h6>
+                        <p style="font-size: 14px; color: #555;">Secure integration using Slack request verification (HMAC-SHA256).
+                            Supports employee mapping, timezone handling, and configurable attendance rules.</p>
                     </div>
                 </div>
             </div>
