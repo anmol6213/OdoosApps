@@ -16,8 +16,8 @@
         <xpath expr="//sheet" position="inside">
             <notebook>
                 <page string="Breaks" name="breaks">
-                    <field name="break_ids">
-                        <list editable="bottom">
+                   <field name="break_ids" context="{'default_employee_id': employee_id, 'default_attendance_id': id}">
+    <list editable="bottom">
                             <field name="break_start"/>
                             <field name="break_end"/>
                             <field name="duration" widget="float_time"/>
@@ -44,6 +44,17 @@
         </field>
     </record>
 
+    <record id="view_attendance_pivot_breaks" model="ir.ui.view">
+        <field name="name">hr.attendance.pivot.breaks</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_pivot"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='expected_hours']" position="after">
+                 <field name="total_break_duration" type="measure" widget="float_time"/>
+                <field name="net_worked_hours" type="measure" widget="float_time"/>
+            </xpath>
+        </field>
+    </record>
 
 
     <!-- Extend Attendance kanban view (if it exists) -->
@@ -59,7 +70,6 @@
         </field>
     </record> -->
 </odoo>
-
 
 
 
