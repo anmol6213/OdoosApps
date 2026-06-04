@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='work_phone']" position="after">
                 <field name="slack_user_id" 
-                       placeholder="e.g., U01234ABCDE"
+                       placeholder="Slack Member ID"
                        help="Find this in Slack: Profile → More → Copy member ID"/>
             </xpath>
         </field>
