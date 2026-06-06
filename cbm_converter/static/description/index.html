@@ -3,298 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBM Converter - Odoo App</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <title>CBM Converter</title>
     <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --accent: #f59e0b;
-            --dark: #0f172a;
-            --gray: #64748b;
-            --light: #f8fafc;
-            --border: #e2e8f0;
-        }
-
         body {
-            font-family: 'DM Sans', sans-serif;
-            background: #fff;
-            color: var(--dark);
+            font-family: Arial, sans-serif;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
-
-        /* HEADER */
         header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 60%, #3b82f6 100%);
-            color: white;
-            padding: 60px 20px 50px;
+            background: #2563eb;
+            color: #fff;
+            padding: 10px 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
-        header::before {
-            content: '';
-            position: absolute;
-            top: -60px; right: -60px;
-            width: 300px; height: 300px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-        }
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: -80px; left: -40px;
-            width: 250px; height: 250px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.04);
-        }
-        header h1 {
-            font-size: 42px;
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 12px;
-        }
-        header p {
-            font-size: 18px;
-            opacity: 0.85;
-            max-width: 600px;
-            margin: 0 auto 24px;
-        }
-        .badge-row {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .badge {
-            background: rgba(255,255,255,0.15);
-            border: 1px solid rgba(255,255,255,0.25);
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        /* SECTIONS */
         section {
             max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        section h2 {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--dark);
-        }
-        section h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        section p {
-            color: var(--gray);
-            font-size: 15px;
-            margin-bottom: 12px;
-        }
-
-        /* HIRE BANNER */
-        .hire-banner {
-            background: linear-gradient(135deg, #1e3a8a, #2563eb);
-            color: white;
-            padding: 40px 30px;
-            margin: 40px auto;
-            max-width: 900px;
-            border-radius: 16px;
-            text-align: center;
-        }
-        .hire-banner h2 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: white;
-        }
-        .hire-banner p {
-            font-size: 16px;
-            color: rgba(255,255,255,0.85);
-            max-width: 600px;
-            margin: 0 auto 20px;
-        }
-        .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-        .btn {
-            display: inline-block;
-            padding: 11px 24px;
-            background: white;
-            color: #1e3a8a;
-            font-weight: 700;
-            font-size: 14px;
-            text-decoration: none;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f4f4f4;
             border-radius: 8px;
-            border: 2px solid white;
-            transition: opacity 0.2s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .btn:hover { opacity: 0.85; }
-
-        /* FEATURE CARDS */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin: 10px 0;
+            width: 100%;
         }
-        .feature-card {
-            background: var(--light);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-        }
-        .feature-card .icon {
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
-        .feature-card h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .feature-card p {
-            font-size: 14px;
-            color: var(--gray);
-            margin: 0;
-        }
-
-        /* HOW IT WORKS */
-        .steps { margin-top: 20px; }
-        .step {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            margin-bottom: 24px;
-        }
-        .step-num {
-            min-width: 40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 16px;
-        }
-        .step-content h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
-        .step-content p { font-size: 14px; color: var(--gray); margin: 0; }
-
-        /* CODE BLOCK */
-        .code-block {
-            background: #0f172a;
-            color: #e2e8f0;
-            padding: 20px 24px;
-            border-radius: 12px;
-            font-family: 'DM Mono', monospace;
-            font-size: 14px;
-            line-height: 1.8;
-            margin: 16px 0;
-            overflow-x: auto;
-        }
-        .code-block .comment { color: #64748b; }
-        .code-block .keyword { color: #93c5fd; }
-        .code-block .string { color: #86efac; }
-        .code-block .number { color: #fcd34d; }
-
-        /* COMPATIBILITY */
-        .compat-row {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-top: 12px;
-        }
-        .compat-tag {
-            background: #eff6ff;
-            color: var(--primary);
-            border: 1px solid #bfdbfe;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        /* ISSUE SECTION */
-        .issue-box {
-            background: var(--light);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 20px 24px;
-            margin-top: 20px;
-        }
-        .issue-box a { color: var(--primary); text-decoration: none; font-weight: 500; }
-
-        /* FOOTER */
-        footer {
-            background: var(--dark);
-            color: rgba(255,255,255,0.6);
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 14px;
-            margin-top: 60px;
-        }
-        footer .footer-links {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 16px;
-        }
-        footer a {
+        code {
+            background: #f0f0f0;
+            padding: 5px;
             display: inline-block;
-            padding: 8px 18px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 500;
+            border-radius: 5px;
+            font-family: monospace;
         }
-
-        hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
     </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
     <h1>📦 CBM Converter</h1>
-    <p>Auto-convert CBM quantity to Pieces for construction materials — Sale Orders, Invoices & Deliveries</p>
-    <div class="badge-row">
-        <span class="badge">✅ Odoo 19</span>
-        <span class="badge">🏗️ Construction</span>
-        <span class="badge">⚡ No Loop</span>
-        <span class="badge">🔄 Bidirectional</span>
-        <span class="badge">Free</span>
-    </div>
 </header>
 
-<!-- HIRE BANNER -->
-<div class="hire-banner">
-    <h2>📢 Available for Hire!</h2>
-    <p>Looking for a skilled Odoo Developer to build, fix, or customize your Odoo system? Let's build something great together!</p>
-    <div class="btn-row">
-        <a href="mailto:anmol621314@gmail.com" class="btn">📬 Hire Me</a>
-        <a href="https://wa.me/918208245035" class="btn">💬 WhatsApp</a>
-        <a href="http://linkedin.com/in/anmolpatil83" class="btn">🔗 LinkedIn</a>
-    </div>
-</div>
+<!-- Demo Video -->
+<section>
+    <video style="width: 100%;" autoplay muted loop playsinline>
+        <source src="demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</section>
 
-<!-- OVERVIEW -->
+<!-- Hire Banner -->
+<section
+    style="background-color: rgb(37, 99, 235); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
+    
+    <h2 style="font-size: 28px; margin-bottom: 15px; font-weight: bolder; color: inherit">📢 Available for Hire!</h2>
+
+    <p style="font-size: 18px; max-width: 700px; margin: auto;">
+        Looking for a skilled and reliable <b>Odoo Developer</b> to build, fix or customize your Odoo system?
+    </p>
+
+    <p style="font-size: 18px; max-width: 700px; margin: auto;">
+        Let's build something great together! I specialize in custom module development, ERP implementation,
+        integrations, and performance optimization.
+    </p>
+
+    <br>
+
+    <a href="mailto:anmol621314@gmail.com"
+       style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+        📬 Hire Me
+    </a>
+
+    <a href="https://wa.me/918208245035"
+       style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+        💬 wa.me/+91 82082 45035
+    </a>
+
+    <a href="http://linkedin.com/in/anmolpatil83"
+       style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+        🔗 /anmolpatil83
+    </a>
+</section>
+
+<!-- Overview -->
 <section>
     <h2>Overview</h2>
     <p>
         CBM Converter automatically calculates the number of pieces from CBM (Cubic Meter) quantity
         for construction materials like AAC Blocks. It extracts dimensions directly from the product name
-        (e.g. <strong>600x200x225</strong>) and computes the correct piece count — no manual entry needed.
+        (e.g. <code>600x200x225</code>) and computes the correct piece count — no manual entry needed.
     </p>
     <p>
         Works seamlessly across Sale Orders, Customer Invoices, and Stock Deliveries.
@@ -302,158 +101,141 @@
     </p>
 </section>
 
-<hr>
+<!-- Key Features Tabs -->
+<div style="max-width: 900px; margin: 20px auto; padding: 0 20px;">
+    <div style="background-color: #f0f1fd; border: 1px solid #0249FF33; border-radius: 16px; padding: 40px;">
+        <h1 style="text-align: center; font-weight: bold; margin-bottom: 30px; font-size: 36px;">Key Features</h1>
 
-<!-- KEY FEATURES -->
-<section>
-    <h2>Key Features</h2>
-    <div class="features-grid">
-        <div class="feature-card">
-            <div class="icon">📐</div>
-            <h4>Auto Dimension Parsing</h4>
-            <p>Extracts L×W×H from product name automatically. No extra configuration needed.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🔄</div>
-            <h4>Bidirectional Conversion</h4>
-            <p>Enter CBM → get Pieces. Enter Pieces → get CBM. Both directions work seamlessly.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">⚡</div>
-            <h4>No Infinite Loop</h4>
-            <p>Smart onchange logic prevents quantity from overwriting itself — no more looping issues.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🏗️</div>
-            <h4>3 Models Covered</h4>
-            <p>Works on Sale Order Lines, Invoice Lines, and Stock Move Lines.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🔢</div>
-            <h4>Ceiling Rounding</h4>
-            <p>Pieces are always rounded up (ceiling) — you never order fewer blocks than needed.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🎯</div>
-            <h4>Optional Column</h4>
-            <p>Pcs column is optional — users can show/hide it per their preference.</p>
-        </div>
-    </div>
-</section>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
 
-<hr>
-
-<!-- HOW IT WORKS -->
-<section>
-    <h2>How It Works</h2>
-    <div class="steps">
-        <div class="step">
-            <div class="step-num">1</div>
-            <div class="step-content">
-                <h4>Product Name Contains Dimensions</h4>
-                <p>Product name must have dimensions in format like <strong>600x200x225</strong> (L×W×H in mm). Example: "INFRA.MARKET AAC BLOCKS 600x200x225 Grade 1"</p>
+            <div style="background: white; border-radius: 12px; padding: 24px; width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <div style="font-size: 28px; margin-bottom: 10px;">📐</div>
+                <h4 style="margin-bottom: 8px;">Auto Dimension Parsing</h4>
+                <p style="font-size: 14px; color: #555;">Extracts L×W×H from product name automatically. No extra setup needed.</p>
             </div>
-        </div>
-        <div class="step">
-            <div class="step-num">2</div>
-            <div class="step-content">
-                <h4>Enter Quantity (CBM)</h4>
-                <p>Enter the quantity in CBM on Sale Order, Invoice, or Delivery. Pieces field auto-calculates instantly.</p>
+
+            <div style="background: white; border-radius: 12px; padding: 24px; width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <div style="font-size: 28px; margin-bottom: 10px;">🔄</div>
+                <h4 style="margin-bottom: 8px;">Bidirectional Conversion</h4>
+                <p style="font-size: 14px; color: #555;">CBM → Pieces and Pieces → CBM. Both directions work seamlessly.</p>
             </div>
-        </div>
-        <div class="step">
-            <div class="step-num">3</div>
-            <div class="step-content">
-                <h4>Or Enter Pieces</h4>
-                <p>Enter pieces directly — CBM quantity updates automatically. Perfect for ordering by piece count.</p>
+
+            <div style="background: white; border-radius: 12px; padding: 24px; width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <div style="font-size: 28px; margin-bottom: 10px;">⚡</div>
+                <h4 style="margin-bottom: 8px;">No Infinite Loop</h4>
+                <p style="font-size: 14px; color: #555;">Smart onchange logic prevents quantity from looping — stable and reliable.</p>
             </div>
+
+            <div style="background: white; border-radius: 12px; padding: 24px; width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <div style="font-size: 28px; margin-bottom: 10px;">🏗️</div>
+                <h4 style="margin-bottom: 8px;">3 Models Covered</h4>
+                <p style="font-size: 14px; color: #555;">Sale Orders, Invoices, and Delivery Orders — all in one module.</p>
+            </div>
+
+            <div style="background: white; border-radius: 12px; padding: 24px; width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <div style="font-size: 28px; margin-bottom: 10px;">🔢</div>
+                <h4 style="margin-bottom: 8px;">Ceiling Rounding</h4>
+                <p style="font-size: 14px; color: #555;">Pieces always rounded up — you never order fewer blocks than needed.</p>
+            </div>
+
+            <div style="background: white; border-radius: 12px; padding: 24px; width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <div style="font-size: 28px; margin-bottom: 10px;">🎯</div>
+                <h4 style="margin-bottom: 8px;">Optional Column</h4>
+                <p style="font-size: 14px; color: #555;">Pcs column is optional — show or hide per preference.</p>
+            </div>
+
         </div>
     </div>
-</section>
+</div>
 
-<hr>
-
-<!-- CALCULATION EXAMPLE -->
+<!-- How to Use -->
 <section>
-    <h2>Calculation Example</h2>
-    <div class="code-block">
-<span class="comment"># Product: AAC BLOCKS 600x200x225</span>
-<span class="comment"># Volume per block = 600mm × 200mm × 225mm</span>
+    <h3>How to Use</h3>
+    <ul>
+        <li><strong>Product name must have dimensions:</strong> e.g. <code>AAC BLOCKS 600x200x225</code></li>
+        <img src="product.png" alt="Product Name">
 
-vol = (<span class="number">600</span> × <span class="number">200</span> × <span class="number">225</span>) / <span class="number">1_000_000_000</span>
-    = <span class="number">0.027</span> CBM per piece
+        <li><strong>Enter Quantity (CBM) on Sale Order / Invoice / Delivery:</strong></li>
+        <img src="sale.png" alt="Sale Order">
 
-<span class="comment"># CBM → Pieces</span>
-qty = <span class="number">7.67</span> CBM
-pieces = ceil(<span class="number">7.67</span> / <span class="number">0.027</span>) = ceil(<span class="number">284.07</span>) = <span class="number">285</span> pcs ✅
+        <li><strong>Pieces auto-calculated instantly:</strong></li>
+        <img src="invoice.png" alt="Invoice">
 
-<span class="comment"># Pieces → CBM</span>
-pieces = <span class="number">285</span>
-qty = <span class="number">285</span> × <span class="number">0.027</span> = <span class="number">7.695</span> CBM ✅
-    </div>
+        <li><strong>Or enter Pieces — CBM updates automatically:</strong></li>
+        <img src="delivery.png" alt="Delivery">
+    </ul>
 </section>
 
-<hr>
-
-<!-- SUPPORTED MODELS -->
+<!-- Calculation Example -->
 <section>
-    <h2>Supported Models</h2>
-    <div class="features-grid">
-        <div class="feature-card">
-            <div class="icon">🛒</div>
-            <h4>Sale Order Lines</h4>
-            <p>Pcs column added after Quantity on all Sale Orders and Quotations.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🧾</div>
-            <h4>Invoice Lines</h4>
-            <p>Pcs column added on Customer Invoices and Vendor Bills.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🚚</div>
-            <h4>Stock Move Lines</h4>
-            <p>Pcs column added on Delivery Orders and Receipts.</p>
-        </div>
-    </div>
+    <h3>Calculation Example</h3>
+    <p>Product: <code>AAC BLOCKS 600x200x225</code></p>
+    <p>Volume = 600 × 200 × 225 / 1,000,000,000 = <strong>0.027 CBM</strong> per piece</p>
+    <p>Quantity 7.67 CBM → 7.67 / 0.027 = 284.07 → ceil → <strong>285 pieces ✅</strong></p>
+    <p>285 pieces → 285 × 0.027 = <strong>7.695 CBM ✅</strong></p>
 </section>
 
-<hr>
-
-<!-- COMPATIBILITY -->
+<!-- Screenshots -->
 <section>
-    <h2>Compatibility</h2>
-    <div class="compat-row">
-        <span class="compat-tag">Odoo 19.0</span>
-        <span class="compat-tag">Community</span>
-        <span class="compat-tag">Enterprise</span>
-        <span class="compat-tag">Odoo.sh</span>
-    </div>
-    <p style="margin-top: 16px;">Depends on: <strong>account</strong>, <strong>sale_management</strong>, <strong>stock</strong></p>
+    <h3>Screenshots</h3>
+    <img src="sale.png" alt="Sale Order with Pieces">
+    <img src="invoice.png" alt="Invoice with Pieces">
+    <img src="delivery.png" alt="Delivery with Pieces">
 </section>
 
-<hr>
-
-<!-- ISSUE -->
+<!-- Compatibility -->
 <section>
-    <div class="issue-box">
-        <h3>🐛 Found an Issue?</h3>
-        <p style="margin: 8px 0 0;">Raise it here →
-            <a href="https://github.com/anmol6213/OdoosApps/issues/new">
-                github.com/anmol6213/OdoosApps/issues/new
-            </a>
-        </p>
-    </div>
+    <h3>Compatibility</h3>
+    <ul>
+        <li>✅ Odoo 19.0</li>
+        <li>✅ Community, Enterprise & Odoo.sh</li>
+        <li>Depends on: <code>account</code>, <code>sale_management</code>, <code>stock</code></li>
+    </ul>
 </section>
 
-<!-- FOOTER -->
+<!-- Issue -->
+<section>
+    <h5>
+        Found any issue? Raise here →
+        <a href="https://github.com/anmol6213/OdoosApps/issues/new">
+            https://github.com/anmol6213/OdoosApps/issues/new
+        </a>
+    </h5>
+</section>
+
+<!-- Footer -->
 <footer>
-    <div class="footer-links">
-        <a href="mailto:anmol621314@gmail.com">📬 Email</a>
-        <a href="https://wa.me/918208245035">💬 WhatsApp</a>
-        <a href="http://linkedin.com/in/anmolpatil83">🔗 LinkedIn</a>
-        <a href="https://apps.odoo.com/apps/modules/browse?author=Anmol Patil">📦 More Apps</a>
-    </div>
-    <p>CBM Converter | Compatible with Odoo 19 Community, Enterprise & Odoo.sh</p>
+    <p style="text-align: center;">
+        CBM Converter | Compatible with Odoo 19 Community, Enterprise & Odoo.sh
+    </p>
+
+    <br/>
+
+    <section
+        style="background-color: rgb(37, 99, 235); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
+        
+        <h4 style="font-size: 28px; margin-bottom: 15px; font-weight: bolder; color: inherit">Contact Details</h4>
+
+        <a href="mailto:anmol621314@gmail.com"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            📬 Email
+        </a>
+
+        <a href="https://wa.me/918208245035"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            💬 wa.me/+91 82082 45035
+        </a>
+
+        <a href="http://linkedin.com/in/anmolpatil83"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            🔗 /anmolpatil83
+        </a>
+
+        <a href="https://apps.odoo.com/apps/modules/browse?author=Anmol Patil"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            📦 Explore Other Apps
+        </a>
+    </section>
 </footer>
 
 </body>
