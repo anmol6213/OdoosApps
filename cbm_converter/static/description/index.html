@@ -45,9 +45,7 @@
 <header>
     <h1 class="text-center">📦 CBM Converter</h1>
 </header>
-    
 
-<!-- Demo Video -->
 <section>
     <video style="width: 100%;" autoplay muted loop playsinline>
         <source src="demo.mp4" type="video/mp4">
@@ -55,7 +53,6 @@
     </video>
 </section>
 
-<!-- Hire Banner -->
 <section
     style="background-color: rgb(37, 99, 235); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
     
@@ -79,16 +76,15 @@
 
     <a href="https://wa.me/918208245035"
        style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
-        💬 wa.me/+91 82082 45035
+        <i class="fa fa-whatsapp" style="color: #128C7E"/> wa.me/+91 82082 45035
     </a>
 
     <a href="http://linkedin.com/in/anmolpatil83"
        style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
-        🔗 /anmolpatil83
+        <i class="fa fa-linkedin-square" style="color: #0072b1"/> /anmolpatil83
     </a>
 </section>
 
-<!-- Overview -->
 <section>
     <h2>Overview</h2>
     <p>
@@ -102,112 +98,126 @@
     </p>
 </section>
 
-<!-- Key Features Tabs -->
-<div style="max-width: 900px; margin: 20px auto; padding: 0 20px;">
-    <div style="background-color: #f0f1fd; border: 1px solid #0249FF33; border-radius: 16px; padding: 40px;">
-        <h1 style="text-align: center; font-weight: bold; margin-bottom: 30px; font-size: 36px;">Key Features</h1>
-
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-
-            <div style="background: white; border-radius: 12px; padding: 24px; width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-                <div style="font-size: 28px; margin-bottom: 10px;">📐</div>
-                <h4 style="margin-bottom: 8px;">Auto Dimension Parsing</h4>
-                <p style="font-size: 14px; color: #555;">Extracts L×W×H from product name automatically. No extra setup needed.</p>
+<div class="ng-star-inserted">
+    <div style="padding: 20px 0px;" id="Feature" class="ng-star-inserted">
+        <div class="position-relative" style="background-color: #f0f1fd; border: 1px solid #0249FF33; border-radius: 16px; padding: 40px;">
+            <h1 class="text-center font-weight-bold mb-4 ng-star-inserted" style="font-size: 36px;">Key Features</h1>
+            <div class="pt-3">
+                <nav class="border-bottom">
+                    <div id="nav-tab" role="tablist"
+                        class="nav nav-tabs justify-content-center z-1 position-relative"
+                        style="background-color: transparent; z-index: 10;">
+                        <a data-bs-toggle="tab" type="button" role="tab"
+                            class="nav-link active ng-star-inserted" style="color: black;"
+                            id="nav-tab0" href="#nav-0" aria-controls="nav0" aria-selected="true">
+                            CBM to Pieces</a>
+                        <a data-bs-toggle="tab" type="button" role="tab"
+                            class="nav-link ng-star-inserted" style="color: black;"
+                            id="nav-tab1" href="#nav-1" aria-controls="nav1" aria-selected="false">
+                            Pieces to CBM</a>
+                        <a data-bs-toggle="tab" type="button" role="tab"
+                            class="nav-link ng-star-inserted" style="color: black;"
+                            id="nav-tab2" href="#nav-2" aria-controls="nav2" aria-selected="false">
+                            Smart Rounding</a>
+                        <a data-bs-toggle="tab" type="button" role="tab"
+                            class="nav-link ng-star-inserted" style="color: black;"
+                            id="nav-tab3" href="#nav-3" aria-controls="nav3" aria-selected="false">
+                            No Loop</a>
+                    </div>
+                </nav>
+                <div id="nav-tabContent" class="tab-content pt-3">
+                    <div role="tabpanel" class="tab-pane fade active show ng-star-inserted"
+                        id="nav-0" aria-labelledby="nav-tab0">
+                        <h6 class="font-weight-bold mt-3" style="font-size: 20px; color: #333;">CBM to Pieces</h6>
+                        <p style="font-size: 14px; color: #555;">
+                            Enter quantity in CBM — pieces are calculated automatically from product dimensions.
+                        </p>
+                        <ul style="font-size: 14px; color: #555; line-height: 1.8;">
+                            <li>Dimensions parsed from product name (e.g. <code>600x200x225</code>)</li>
+                            <li>Works on Sale Orders, Invoices, and Deliveries</li>
+                            <li>Ceiling rounding — never under-order</li>
+                            <li>Example: 7.67 CBM → 285 pieces</li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade ng-star-inserted"
+                        id="nav-1" aria-labelledby="nav-tab1">
+                        <h6 class="font-weight-bold mt-3" style="font-size: 20px; color: #333;">Pieces to CBM</h6>
+                        <p style="font-size: 14px; color: #555;">
+                            Enter pieces directly — CBM quantity updates automatically. Perfect for ordering by piece count.
+                        </p>
+                        <ul style="font-size: 14px; color: #555; line-height: 1.8;">
+                            <li>Enter 285 pieces → get 7.695 CBM</li>
+                            <li>Exact calculation, no rounding on reverse</li>
+                            <li>Works in all 3 models</li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade ng-star-inserted"
+                        id="nav-2" aria-labelledby="nav-tab2">
+                        <h6 class="font-weight-bold mt-3" style="font-size: 20px; color: #333;">Smart Rounding</h6>
+                        <p style="font-size: 14px; color: #555;">
+                            Pieces are always rounded up (ceiling) to ensure you never order fewer blocks than needed.
+                            Floating point errors handled with 4-decimal precision.
+                        </p>
+                        <ul style="font-size: 14px; color: #555; line-height: 1.8;">
+                            <li>7.67 / 0.027 = 284.07 → ceil → 285 ✅</li>
+                            <li>10.80 / 0.018 = 600.0 → 600 (not 601) ✅</li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade ng-star-inserted"
+                        id="nav-3" aria-labelledby="nav-tab3">
+                        <h6 class="font-weight-bold mt-3" style="font-size: 20px; color: #333;">No Infinite Loop</h6>
+                        <p style="font-size: 14px; color: #555;">
+                            Smart onchange logic prevents quantity from overwriting itself.
+                            Uses expected vs current pieces comparison to detect manual edits only.
+                        </p>
+                        <ul style="font-size: 14px; color: #555; line-height: 1.8;">
+                            <li>Quantity change → pieces update (compute)</li>
+                            <li>Pieces change → quantity update (onchange, UI only)</li>
+                            <li>No recursive triggers, no DB corruption</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-
-            <div style="background: white; border-radius: 12px; padding: 24px; width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-                <div style="font-size: 28px; margin-bottom: 10px;">🔄</div>
-                <h4 style="margin-bottom: 8px;">Bidirectional Conversion</h4>
-                <p style="font-size: 14px; color: #555;">CBM → Pieces and Pieces → CBM. Both directions work seamlessly.</p>
-            </div>
-
-            <div style="background: white; border-radius: 12px; padding: 24px; width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-                <div style="font-size: 28px; margin-bottom: 10px;">⚡</div>
-                <h4 style="margin-bottom: 8px;">No Infinite Loop</h4>
-                <p style="font-size: 14px; color: #555;">Smart onchange logic prevents quantity from looping — stable and reliable.</p>
-            </div>
-
-            <div style="background: white; border-radius: 12px; padding: 24px; width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-                <div style="font-size: 28px; margin-bottom: 10px;">🏗️</div>
-                <h4 style="margin-bottom: 8px;">3 Models Covered</h4>
-                <p style="font-size: 14px; color: #555;">Sale Orders, Invoices, and Delivery Orders — all in one module.</p>
-            </div>
-
-            <div style="background: white; border-radius: 12px; padding: 24px; width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-                <div style="font-size: 28px; margin-bottom: 10px;">🔢</div>
-                <h4 style="margin-bottom: 8px;">Ceiling Rounding</h4>
-                <p style="font-size: 14px; color: #555;">Pieces always rounded up — you never order fewer blocks than needed.</p>
-            </div>
-
-            <div style="background: white; border-radius: 12px; padding: 24px; width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-                <div style="font-size: 28px; margin-bottom: 10px;">🎯</div>
-                <h4 style="margin-bottom: 8px;">Optional Column</h4>
-                <p style="font-size: 14px; color: #555;">Pcs column is optional — show or hide per preference.</p>
-            </div>
-
         </div>
     </div>
 </div>
 
-<!-- How to Use -->
 <section>
     <h3>How to Use</h3>
     <ul>
-        <li><strong>Product name must have dimensions:</strong> e.g. <code>AAC BLOCKS 600x200x225</code></li>
-        <img src="product.png" alt="Product Name">
+        <li><strong>Product name must contain dimensions (e.g. 600x200x225):</strong></li>
+        <img style="width: 100%;" src="product.png">
 
-        <li><strong>Enter Quantity (CBM) on Sale Order / Invoice / Delivery:</strong></li>
-        <img src="sale.png" alt="Sale Order">
+        <li><strong>Enter Quantity (CBM) on Sale Order:</strong></li>
+        <img style="width: 100%;" src="sale.png">
 
-        <li><strong>Pieces auto-calculated instantly:</strong></li>
-        <img src="invoice.png" alt="Invoice">
+        <li><strong>Pieces auto-calculated on Invoice:</strong></li>
+        <img style="width: 100%;" src="invoice.png">
 
-        <li><strong>Or enter Pieces — CBM updates automatically:</strong></li>
-        <img src="delivery.png" alt="Delivery">
+        <li><strong>Works on Delivery Orders too:</strong></li>
+        <img style="width: 100%;" src="delivery.png">
     </ul>
 </section>
 
-<!-- Calculation Example -->
-<section>
-    <h3>Calculation Example</h3>
-    <p>Product: <code>AAC BLOCKS 600x200x225</code></p>
-    <p>Volume = 600 × 200 × 225 / 1,000,000,000 = <strong>0.027 CBM</strong> per piece</p>
-    <p>Quantity 7.67 CBM → 7.67 / 0.027 = 284.07 → ceil → <strong>285 pieces ✅</strong></p>
-    <p>285 pieces → 285 × 0.027 = <strong>7.695 CBM ✅</strong></p>
-</section>
-
-<!-- Screenshots -->
 <section>
     <h3>Screenshots</h3>
-    <img src="sale.png" alt="Sale Order with Pieces">
-    <img src="invoice.png" alt="Invoice with Pieces">
-    <img src="delivery.png" alt="Delivery with Pieces">
+    <img style="width: 100%;" src="sale.png">
+    <img style="width: 100%;" src="invoice.png">
+    <img style="width: 100%;" src="delivery.png">
 </section>
 
-<!-- Compatibility -->
-<section>
-    <h3>Compatibility</h3>
-    <ul>
-        <li>✅ Odoo 19.0</li>
-        <li>✅ Community, Enterprise & Odoo.sh</li>
-        <li>Depends on: <code>account</code>, <code>sale_management</code>, <code>stock</code></li>
-    </ul>
-</section>
-
-<!-- Issue -->
 <section>
     <h5>
-        Found any issue? Raise here →
+        Found any issue? Raise here ->
         <a href="https://github.com/anmol6213/OdoosApps/issues/new">
             https://github.com/anmol6213/OdoosApps/issues/new
         </a>
     </h5>
 </section>
 
-<!-- Footer -->
 <footer>
     <p style="text-align: center;">
-        CBM Converter | Compatible with Odoo 19 Community, Enterprise & Odoo.sh
+        CBM Converter | Compatible with Odoo 19 Community, Enterprise, and Odoo.sh
     </p>
 
     <br/>
@@ -224,17 +234,17 @@
 
         <a href="https://wa.me/918208245035"
            style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
-            💬 wa.me/+91 82082 45035
+            <i class="fa fa-whatsapp" style="color: #128C7E"/> wa.me/+91 82082 45035
         </a>
 
         <a href="http://linkedin.com/in/anmolpatil83"
            style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
-            🔗 /anmolpatil83
+            <i class="fa fa-linkedin-square" style="color: #0072b1"/> /anmolpatil83
         </a>
 
         <a href="https://apps.odoo.com/apps/modules/browse?author=Anmol Patil"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(74,21,75,1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
-            📦 Explore Other Apps
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-cubes"/> Explore Other Apps
         </a>
     </section>
 </footer>
