@@ -22,7 +22,7 @@ CBM Converter
     'data': [
         'views/cbm_views.xml',
     ],
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/banner (2).png'],
     'demo': [],
     'installable': True,
     'application': False,
