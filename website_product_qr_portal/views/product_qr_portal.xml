@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="page_product_qr_detail" name="Product QR Detail">
+        <t t-call="web.frontend_layout">
+            <t t-set="head">
+                <style>
+                    * { box-sizing: border-box; margin: 0; padding: 0; }
+                    body { background: #f4f6f9 !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+                    .qr-wrap { max-width: 480px; margin: 24px auto; padding: 0 16px 40px; }
+                    .qr-card { background: #fff; border-radius: 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); overflow: hidden; }
+
+                    .qr-header { background: linear-gradient(135deg, #714B67 0%, #9c6b8e 100%); padding: 24px 20px; color: #fff; display: flex; align-items: center; gap: 16px; }
+                    .qr-header-img { width: 72px; height: 72px; border-radius: 12px; object-fit: contain; background: rgba(255,255,255,0.15); flex-shrink: 0; border: 2px solid rgba(255,255,255,0.3); }
+                    .qr-header-placeholder { width: 72px; height: 72px; border-radius: 12px; background: rgba(255,255,255,0.15); flex-shrink: 0; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(255,255,255,0.3); }
+                    .qr-header-text h1 { font-size: 1.2rem; font-weight: 700; line-height: 1.3; margin-bottom: 4px; }
+                    .qr-header-text p { font-size: 0.78rem; opacity: 0.75; }
+
+                    .verified-wrap { padding: 14px 20px 0; }
+                    .verified { display: inline-flex; align-items: center; gap: 6px; background: #e8f5e9; color: #2e7d32; border-radius: 20px; padding: 5px 14px; font-size: 0.78rem; font-weight: 600; }
+
+                    .qr-body { padding: 14px 20px 20px; }
+                    .info-row { display: flex; justify-content: space-between; align-items: center; padding: 11px 0; border-bottom: 1px solid #f2f2f2; gap: 12px; }
+                    .info-row:last-child { border-bottom: none; }
+                    .info-label { font-size: 0.75rem; color: #aaa; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0; }
+                    .info-value { font-size: 0.92rem; color: #222; font-weight: 600; text-align: right; }
+                    .barcode-badge { background: #f3eef1; color: #714B67; border-radius: 20px; padding: 3px 12px; font-size: 0.82rem; font-weight: 700; }
+
+                    .variants-title { font-size: 0.72rem; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; padding: 16px 20px 8px; font-weight: 700; }
+                    .variant-card { margin: 0 20px 10px; background: #faf7f9; border-radius: 12px; padding: 14px 16px; border-left: 3px solid #714B67; }
+                    .variant-name { font-size: 0.9rem; font-weight: 700; color: #333; margin-bottom: 8px; }
+                    .variant-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: #777; padding: 3px 0; }
+                    .variant-row span:last-child { font-weight: 600; color: #444; }
+                    .no-barcode { color: #ccc; font-style: italic; }
+
+                    .qr-footer { text-align: center; padding: 14px 20px; font-size: 0.7rem; color: #ccc; border-top: 1px solid #f2f2f2; }
+
+                    /* Odoo default navbar hide on this page */
+                    #top, footer { display: none !important; }
+                </style>
+            </t>
+
+            <div class="qr-wrap">
+                <div class="qr-card">
+
+                    <!-- Header -->
+                    <div class="qr-header">
+                        <t t-if="product.image_128">
+                            <img t-att-src="image_data_uri(product.image_128 or product.product_tmpl_id.image_128)"/>
+                        </t>
+                        <t t-else="">
+                            <div class="qr-header-placeholder">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" opacity="0.7">
+                                    <rect x="2" y="3" width="20" height="18" rx="2"/>
+                                    <path d="M8 10h8M8 14h5"/>
+                                </svg>
+                            </div>
+                        </t>
+                        <div class="qr-header-text">
+                            <h1><t t-esc="product.name"/></h1>
+                            <p>Product Details</p>
+                        </div>
+                    </div>
+
+                    <!-- Verified badge -->
+                    <div class="verified-wrap">
+                        <span class="verified">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M9 12l2 2 4-4"/>
+                                <rect x="3" y="3" width="18" height="18" rx="3"/>
+                            </svg>
+                            Verified Product
+                        </span>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="qr-body">
+                        <div class="info-row">
+                            <span class="info-label">Category</span>
+                            <span class="info-value"><t t-esc="product.categ_id.name or '—'"/></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Sales Price</span>
+                            <span class="info-value">
+                                <t t-esc="product.currency_id.symbol"/>&#160;<t t-esc="'%.2f' % product.list_price"/>
+                            </span>
+                        </div>
+                        <t t-if="product.default_code">
+                            <div class="info-row">
+                                <span class="info-label">Reference</span>
+                                <span class="info-value"><t t-esc="product.default_code"/></span>
+                            </div>
+                        </t>
+                        <t t-if="product.product_variant_count &lt;= 1 and product.barcode">
+                            <div class="info-row">
+                                <span class="info-label">Barcode</span>
+                                <span class="info-value">
+                                    <span class="barcode-badge"><t t-esc="product.barcode"/></span>
+                                </span>
+                            </div>
+                        </t>
+                    </div>
+
+                    <!-- Variants -->
+                    <t t-if="product.product_variant_count &gt; 1">
+                        <div class="variants-title">Product Variants</div>
+                        <t t-foreach="product.product_variant_ids" t-as="variant">
+                            <div class="variant-card">
+                                <div class="variant-name"><t t-esc="variant.display_name"/></div>
+                                <div class="variant-row">
+                                    <span>Barcode</span>
+                                    <t t-if="variant.barcode">
+                                        <span class="barcode-badge"><t t-esc="variant.barcode"/></span>
+                                    </t>
+                                    <t t-else="">
+                                        <span class="no-barcode">Not set</span>
+                                    </t>
+                                </div>
+                                <t t-if="variant.default_code">
+                                    <div class="variant-row">
+                                        <span>Reference</span>
+                                        <span><t t-esc="variant.default_code"/></span>
+                                    </div>
+                                </t>
+                            </div>
+                        </t>
+                        <div style="height:10px;"/>
+                    </t>
+
+                    <div class="qr-footer">Powered by Odoo · Verified Product Information</div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Not found -->
+    <template id="page_product_not_found" name="Product QR Not Found">
+        <t t-call="web.frontend_layout">
+            <t t-set="head">
+                <style>
+                    body { background: #f4f6f9 !important; font-family: -apple-system, sans-serif; }
+                    #top, footer { display: none !important; }
+                    .nf-wrap { max-width: 400px; margin: 80px auto; text-align: center; padding: 24px; }
+                    .nf-wrap h2 { color: #714B67; margin: 16px 0 8px; font-size: 1.3rem; }
+                    .nf-wrap p { color: #999; font-size: 0.9rem; }
+                </style>
+            </t>
+            <div class="nf-wrap">
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 8v4M12 16h.01"/>
+                </svg>
+                <h2>Product Not Found</h2>
+                <p>This QR code does not match any active product.</p>
+            </div>
+        </t>
+    </template>
+
+</odoo>

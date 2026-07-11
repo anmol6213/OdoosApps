@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_view_qr" model="ir.ui.view">
+        <field name="name">product.template.form.qr</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+
+            <!-- 1. Sheet च्या आधी Header + Button add करणे -->
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button string="Generate QR Code"
+                            icon="fa-qrcode"
+                            type="object"
+                            class="oe_highlight"
+                            name="action_generate_qr_code"/>
+                </header>
+            </xpath>
+
+            <!-- 2. QR Code image → product image च्या नंतर -->
+            <field name="image_1920" position="after">
+                <field name="qr_code_image"
+                       widget="image"
+                       options="{'size': [140, 140]}"
+                       readonly="1"
+                       class="oe_avatar"
+                       invisible="not qr_code_image"/>
+            </field>
+
+        </field>
+    </record>
+</odoo>

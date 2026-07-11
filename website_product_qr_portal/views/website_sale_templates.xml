@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="website_sale_check_availability_inherit"
+              name="Product Page - Check Availability"
+              inherit_id="website_sale.product">
+
+        <!-- variant_info block ke baad, cta_wrapper section ke pehle insert karte hain -->
+        <xpath expr="//t[@name='variant_info']" position="after">
+            <div class="o_wsale_product_details_content_section mt-3 p-3"
+                 style="border:1px solid #dee2e6; border-radius:8px; background:#f8f9fa;">
+                <strong>Check Availability</strong>
+                <div class="mt-2 d-flex align-items-center gap-2">
+                    <label style="font-size:0.85rem;">Qty:</label>
+                    <input type="number" id="avail_qty" value="1" min="1"
+                           style="width:80px; padding:4px 8px; border:1px solid #ccc; border-radius:6px;"/>
+                    <button type="button" id="avail_check_btn"
+                            style="background:#714B67; color:white; border:none; padding:6px 16px; border-radius:6px; cursor:pointer;">
+                        Check
+                    </button>
+                </div>
+                <div id="avail_result" class="mt-2" style="font-weight:600;"/>
+            </div>
+        </xpath>
+
+    </template>
+
+</odoo>
