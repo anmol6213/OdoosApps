@@ -17,6 +17,7 @@ QR Code & Stock Availability Checker
     'author': 'Anmol Patil',
     'website': 'https://github.com/anmol6213',
     'support': 'anmol621314@gmail.com',
+    'license': 'LGPL-3',
     'depends': ['product', 'website', 'website_sale'],
     'external_dependencies': {
         'python': ['qrcode', 'Pillow'],
