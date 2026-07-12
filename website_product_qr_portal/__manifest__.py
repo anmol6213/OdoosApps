@@ -32,7 +32,7 @@ QR Code & Stock Availability Checker
             'website_product_qr_portal/static/src/js/check_availability.js',
         ],
     },
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/qr_banner.gif'],
     'demo': [],
     'installable': True,
     'application': False,
