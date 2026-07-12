@@ -14,7 +14,9 @@ QR Code & Stock Availability Checker
 * Adds a "Check Availability" widget on the eCommerce product page — customers
   can enter a quantity and instantly see if it's in stock before adding to cart.
     """,
-    'author': 'Custom Development',
+    'author': 'Anmol Patil',
+    'website': 'https://github.com/anmol6213',
+    'support': 'anmol621314@gmail.com',
     'depends': ['product', 'website', 'website_sale'],
     'external_dependencies': {
         'python': ['qrcode', 'Pillow'],
@@ -30,8 +32,11 @@ QR Code & Stock Availability Checker
             'website_product_qr_portal/static/src/js/check_availability.js',
         ],
     },
+    'images': ['static/description/banner.png'],
+    'demo': [],
     'installable': True,
-    'auto_install': False,
     'application': False,
-    'license': 'LGPL-3',
+    'auto_install': False,
+    'price': 0,
+    'currency': 'EUR',
 }
