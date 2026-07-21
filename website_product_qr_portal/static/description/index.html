@@ -1,66 +1,21 @@
-<style>
-/* ===== Mobile Responsive Overrides for Website Product QR Portal ===== */
-.wpqr-container img { max-width: 100%; height: auto; }
-
-@media (max-width: 767px) {
-    .wpqr-hero-icon { width:72px !important; height:72px !important; margin-bottom:12px !important; }
-    .wpqr-hero-title { font-size:26px !important; margin-bottom:8px !important; }
-    .wpqr-hero-sub { font-size:15px !important; }
-    .wpqr-hero-badges span { font-size:11px !important; padding:6px 12px !important; margin:3px !important; }
-
-    .wpqr-h2 { font-size:22px !important; }
-    .wpqr-overview-text { font-size:14px !important; padding:0 8px; }
-    .wpqr-tagline-wrap { padding:8px 10px !important; }
-    .wpqr-tagline { font-size:16px !important; padding:8px 10px !important; }
-
-    .wpqr-feature-card { padding:16px !important; }
-    .wpqr-feature-card h5 { font-size:15px !important; }
-    .wpqr-feature-card p { font-size:13px !important; }
-
-    .wpqr-step h6 { font-size:14px !important; }
-    .wpqr-step p { font-size:12px !important; }
-    .wpqr-step img { width:42px !important; height:42px !important; }
-
-    .wpqr-stats-title { font-size:20px !important; }
-    .wpqr-stat-num { font-size:24px !important; }
-    .wpqr-stat-label { font-size:12px !important; }
-
-    .wpqr-hire-title { font-size:20px !important; }
-    .wpqr-hire-text { font-size:14px !important; }
-    .wpqr-hire-btn { display:block !important; width:85% !important; margin:8px auto !important; text-align:center; }
-
-    .wpqr-footer-text { font-size:12px !important; }
-
-    /* generic column padding tighten on mobile */
-    .wpqr-container .row > div { padding-left:8px !important; padding-right:8px !important; }
-}
-
-@media (max-width: 480px) {
-    .wpqr-hero-title { font-size:21px !important; }
-    .wpqr-hero-sub { font-size:13px !important; }
-    .wpqr-h2 { font-size:19px !important; }
-    .wpqr-tagline { font-size:14px !important; }
-}
-</style>
-
-<section class="oe_container wpqr-container">
+<section class="oe_container">
 
     <!-- HERO -->
     <div class="position-relative" style="border-radius:14px; margin-bottom:35px; overflow:hidden;">
         <img src="hero_gradient.png" class="w-100" alt="background" style="display:block;"/>
-        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="padding:30px;">
+        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="padding:clamp(15px,5vw,30px);">
             <div style="text-align:center;">
-                <img src="icon.png" alt="Website Product QR Portal" class="wpqr-hero-icon" style="width:100px; height:100px; border-radius:22px; margin-bottom:18px; border:3px solid #ffffff;"/>
-                <h1 class="wpqr-hero-title" style="color:#ffffff; font-weight:bold; font-size:38px; margin-bottom:12px;">
+                <img src="icon.png" alt="Website Product QR Portal" class="img-fluid" style="width:clamp(64px,16vw,100px); height:clamp(64px,16vw,100px); border-radius:22px; margin-bottom:clamp(10px,3vw,18px); border:3px solid #ffffff;"/>
+                <h1 style="color:#ffffff; font-weight:bold; font-size:clamp(22px,6vw,38px); line-height:1.25; margin-bottom:clamp(6px,2vw,12px);">
                     Website Product QR Portal
                 </h1>
-                <h3 class="wpqr-hero-sub" style="color:#eef2fb; font-weight:normal; font-size:18px; margin:0; max-width:700px; margin-left:auto; margin-right:auto;">
+                <h3 class="col-12 col-md-8 mx-auto px-0" style="color:#eef2fb; font-weight:normal; font-size:clamp(13px,3.5vw,18px); line-height:1.4; margin:0;">
                     Generate Product QR Codes and Check Live Stock Availability - Right on the Product Page
                 </h3>
-                <div class="wpqr-hero-badges" style="margin-top:22px;">
-                    <span style="display:inline-block; background-color:#ffbd3e; color:#363a6e; font-weight:bold; font-size:13px; padding:8px 18px; border-radius:20px; margin:4px;">Odoo 19 Ready</span>
-                    <span style="display:inline-block; background-color:#ffbd3e; color:#363a6e; font-weight:bold; font-size:13px; padding:8px 18px; border-radius:20px; margin:4px;">Zero Configuration</span>
-                    <span style="display:inline-block; background-color:#ffbd3e; color:#363a6e; font-weight:bold; font-size:13px; padding:8px 18px; border-radius:20px; margin:4px;">Community and Enterprise</span>
+                <div style="margin-top:clamp(12px,4vw,22px);">
+                    <span style="display:inline-block; background-color:#ffbd3e; color:#363a6e; font-weight:bold; font-size:clamp(10px,2.6vw,13px); padding:clamp(5px,1.6vw,8px) clamp(10px,3.6vw,18px); border-radius:20px; margin:3px;">Odoo 19 Ready</span>
+                    <span style="display:inline-block; background-color:#ffbd3e; color:#363a6e; font-weight:bold; font-size:clamp(10px,2.6vw,13px); padding:clamp(5px,1.6vw,8px) clamp(10px,3.6vw,18px); border-radius:20px; margin:3px;">Zero Configuration</span>
+                    <span style="display:inline-block; background-color:#ffbd3e; color:#363a6e; font-weight:bold; font-size:clamp(10px,2.6vw,13px); padding:clamp(5px,1.6vw,8px) clamp(10px,3.6vw,18px); border-radius:20px; margin:3px;">Community and Enterprise</span>
                 </div>
             </div>
         </div>
@@ -68,9 +23,9 @@
 
     <!-- OVERVIEW -->
     <div class="row" style="margin-bottom:30px;">
-        <div class="col-md-12" style="text-align:center;">
-            <h2 class="wpqr-h2" style="color:#363a6e; font-weight:bold; font-size:27px; border-bottom:3px solid #5b9ecc; display:inline-block; padding-bottom:8px;">Overview</h2>
-            <p class="wpqr-overview-text" style="font-size:15px; color:#555555; max-width:750px; margin:16px auto 0 auto;">
+        <div class="col-12" style="text-align:center;">
+            <h2 style="color:#363a6e; font-weight:bold; font-size:clamp(20px,5vw,27px); border-bottom:3px solid #5b9ecc; display:inline-block; padding-bottom:8px;">Overview</h2>
+            <p class="col-12 col-md-9 mx-auto px-2" style="font-size:clamp(13px,3.2vw,15px); color:#555555; margin:16px auto 0 auto;">
                 Turn every product into a smart, scannable gateway. Generate a QR code directly from the
                 product form, print it on any box or shelf label, and let customers scan it to instantly view
                 product details and check real-time stock availability. No login, no app, no manual work.
@@ -80,8 +35,8 @@
 
     <!-- TAGLINE -->
     <div class="row" style="margin-bottom:40px;">
-        <div class="col-md-12 wpqr-tagline-wrap" style="text-align:center; padding:10px 40px;">
-            <p class="wpqr-tagline" style="font-size:20px; color:#363a6e; font-style:italic; font-weight:bold; margin:0; border-left:4px solid #5b9ecc; border-right:4px solid #5b9ecc; padding:12px 20px; display:inline-block;">
+        <div class="col-12" style="text-align:center; padding:10px clamp(10px,6vw,40px);">
+            <p style="font-size:clamp(14px,4vw,20px); color:#363a6e; font-style:italic; font-weight:bold; margin:0; border-left:4px solid #5b9ecc; border-right:4px solid #5b9ecc; padding:10px clamp(8px,3vw,20px); display:inline-block;">
                 "Scan it. See it. Stock it - all in one glance."
             </p>
         </div>
@@ -94,13 +49,13 @@
          to exactly: demo.gif  -> then place it in static/description/
          ============================================================ -->
     <div class="row" style="margin-bottom:40px;">
-        <div class="col-md-12" style="text-align:center; margin-bottom:20px;">
-            <h2 class="wpqr-h2" style="color:#363a6e; font-weight:bold; font-size:29px;">Watch It In Action</h2>
-            <p style="color:#7a86a8; font-size:14px;">Full walkthrough - desktop QR generation to mobile scan</p>
+        <div class="col-12" style="text-align:center; margin-bottom:20px;">
+            <h2 style="color:#363a6e; font-weight:bold; font-size:clamp(20px,5vw,29px);">Watch It In Action</h2>
+            <p style="color:#7a86a8; font-size:clamp(12px,3vw,14px);">Full walkthrough - desktop QR generation to mobile scan</p>
         </div>
-        <div class="col-md-12" style="text-align:center;">
+        <div class="col-12" style="text-align:center;">
             <!-- RENAME your exported gif to: demo.gif -->
-            <img src="demo.gif" alt="Website Product QR Portal - Full Demo" style="width:100%; max-width:900px; border-radius:12px; border:1px solid #dbe6f2;"/>
+            <img src="demo.gif" alt="Website Product QR Portal - Full Demo" class="img-fluid" style="width:100%; max-width:900px; border-radius:12px; border:1px solid #dbe6f2;"/>
         </div>
     </div>
 
@@ -115,127 +70,127 @@
            4. screenshot_4.png  -> Live stock availability check widget
          ============================================================ -->
     <div class="row" style="margin-bottom:40px;">
-        <div class="col-md-12" style="text-align:center; margin-bottom:25px;">
-            <h2 class="wpqr-h2" style="color:#363a6e; font-weight:bold; font-size:29px;">See It In Action</h2>
+        <div class="col-12" style="text-align:center; margin-bottom:25px;">
+            <h2 style="color:#363a6e; font-weight:bold; font-size:clamp(20px,5vw,29px);">See It In Action</h2>
         </div>
-        <div class="col-md-6" style="padding:10px;">
-            <img src="screenshot_1.png" alt="Generate QR from product form" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
+        <div class="col-12 col-md-6" style="padding:10px;">
+            <img src="screenshot_1.png" alt="Generate QR from product form" class="img-fluid" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
             <p style="text-align:center; font-size:13px; color:#7a86a8; margin-top:8px;">One-Click QR Generation</p>
         </div>
-        <div class="col-md-6" style="padding:10px;">
-            <img src="screenshot_2.png" alt="Public QR landing page" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
+        <div class="col-12 col-md-6" style="padding:10px;">
+            <img src="screenshot_2.png" alt="Public QR landing page" class="img-fluid" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
             <p style="text-align:center; font-size:13px; color:#7a86a8; margin-top:8px;">Public Product Landing Page</p>
         </div>
-        <div class="col-md-6" style="padding:10px;">
-            <img src="screenshot_3.png" alt="Mobile scan experience" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
+        <div class="col-12 col-md-6" style="padding:10px;">
+            <img src="screenshot_3.png" alt="Mobile scan experience" class="img-fluid" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
             <p style="text-align:center; font-size:13px; color:#7a86a8; margin-top:8px;">Instant Mobile Access</p>
         </div>
-        <div class="col-md-6" style="padding:10px;">
-            <img src="screenshot_4.png" alt="Check Availability widget on product page" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
+        <div class="col-12 col-md-6" style="padding:10px;">
+            <img src="screenshot_4.png" alt="Check Availability widget on product page" class="img-fluid" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
             <p style="text-align:center; font-size:13px; color:#7a86a8; margin-top:8px;">Live Stock Availability Check</p>
         </div>
     </div>
 
     <!-- KEY FEATURES -->
-    <div class="row" style="background-color:#f4f7fc; border-radius:18px; padding:35px 25px; margin-bottom:40px; border:1px solid #dbe6f2;">
-        <div class="col-md-12" style="text-align:center; margin-bottom:28px;">
-            <h2 class="wpqr-h2" style="color:#363a6e; font-weight:bold; font-size:29px;">Key Features</h2>
-            <p style="color:#7a86a8; font-size:14px;">Everything you need, nothing you don't</p>
+    <div class="row" style="background-color:#f4f7fc; border-radius:18px; padding:clamp(18px,5vw,35px) clamp(12px,4vw,25px); margin-bottom:40px; border:1px solid #dbe6f2;">
+        <div class="col-12" style="text-align:center; margin-bottom:28px;">
+            <h2 style="color:#363a6e; font-weight:bold; font-size:clamp(20px,5vw,29px);">Key Features</h2>
+            <p style="color:#7a86a8; font-size:clamp(12px,3vw,14px);">Everything you need, nothing you don't</p>
         </div>
 
-        <div class="col-md-6" style="padding:12px;">
-            <div class="wpqr-feature-card" style="background-color:#ffffff; border-radius:14px; padding:22px; height:100%; border-left:5px solid #5b9ecc;">
-                <h5 style="color:#363a6e; font-weight:bold; font-size:17px; margin-bottom:8px;">Instant QR Generation</h5>
-                <p style="font-size:14px; color:#555555; margin:0;">One click from the product form. No external QR tools, no manual work.</p>
+        <div class="col-12 col-md-6" style="padding:12px;">
+            <div style="background-color:#ffffff; border-radius:14px; padding:clamp(14px,4vw,22px); height:100%; border-left:5px solid #5b9ecc;">
+                <h5 style="color:#363a6e; font-weight:bold; font-size:clamp(15px,3.5vw,17px); margin-bottom:8px;">Instant QR Generation</h5>
+                <p style="font-size:clamp(13px,3vw,14px); color:#555555; margin:0;">One click from the product form. No external QR tools, no manual work.</p>
             </div>
         </div>
 
-        <div class="col-md-6" style="padding:12px;">
-            <div class="wpqr-feature-card" style="background-color:#ffffff; border-radius:14px; padding:22px; height:100%; border-left:5px solid #5b9ecc;">
-                <h5 style="color:#363a6e; font-weight:bold; font-size:17px; margin-bottom:8px;">Zero-Login Scan Access</h5>
-                <p style="font-size:14px; color:#555555; margin:0;">Anyone scans, anyone views. No account, no app download required.</p>
+        <div class="col-12 col-md-6" style="padding:12px;">
+            <div style="background-color:#ffffff; border-radius:14px; padding:clamp(14px,4vw,22px); height:100%; border-left:5px solid #5b9ecc;">
+                <h5 style="color:#363a6e; font-weight:bold; font-size:clamp(15px,3.5vw,17px); margin-bottom:8px;">Zero-Login Scan Access</h5>
+                <p style="font-size:clamp(13px,3vw,14px); color:#555555; margin:0;">Anyone scans, anyone views. No account, no app download required.</p>
             </div>
         </div>
 
-        <div class="col-md-6" style="padding:12px;">
-            <div class="wpqr-feature-card" style="background-color:#ffffff; border-radius:14px; padding:22px; height:100%; border-left:5px solid #5b9ecc;">
-                <h5 style="color:#363a6e; font-weight:bold; font-size:17px; margin-bottom:8px;">Live Stock Availability Check</h5>
-                <p style="font-size:14px; color:#555555; margin:0;">Customers enter a quantity and instantly see if it's in stock, before checkout.</p>
+        <div class="col-12 col-md-6" style="padding:12px;">
+            <div style="background-color:#ffffff; border-radius:14px; padding:clamp(14px,4vw,22px); height:100%; border-left:5px solid #5b9ecc;">
+                <h5 style="color:#363a6e; font-weight:bold; font-size:clamp(15px,3.5vw,17px); margin-bottom:8px;">Live Stock Availability Check</h5>
+                <p style="font-size:clamp(13px,3vw,14px); color:#555555; margin:0;">Customers enter a quantity and instantly see if it's in stock, before checkout.</p>
             </div>
         </div>
 
-        <div class="col-md-6" style="padding:12px;">
-            <div class="wpqr-feature-card" style="background-color:#ffffff; border-radius:14px; padding:22px; height:100%; border-left:5px solid #5b9ecc;">
-                <h5 style="color:#363a6e; font-weight:bold; font-size:17px; margin-bottom:8px;">Auto Product Landing Page</h5>
-                <p style="font-size:14px; color:#555555; margin:0;">Public page with name, price, category, barcode, reference, and variants.</p>
+        <div class="col-12 col-md-6" style="padding:12px;">
+            <div style="background-color:#ffffff; border-radius:14px; padding:clamp(14px,4vw,22px); height:100%; border-left:5px solid #5b9ecc;">
+                <h5 style="color:#363a6e; font-weight:bold; font-size:clamp(15px,3.5vw,17px); margin-bottom:8px;">Auto Product Landing Page</h5>
+                <p style="font-size:clamp(13px,3vw,14px); color:#555555; margin:0;">Public page with name, price, category, barcode, reference, and variants.</p>
             </div>
         </div>
 
-        <div class="col-md-6" style="padding:12px;">
-            <div class="wpqr-feature-card" style="background-color:#ffffff; border-radius:14px; padding:22px; height:100%; border-left:5px solid #5b9ecc;">
-                <h5 style="color:#363a6e; font-weight:bold; font-size:17px; margin-bottom:8px;">Native eCommerce Integration</h5>
-                <p style="font-size:14px; color:#555555; margin:0;">Built directly into the website_sale product page. No redirects, no clunky setup.</p>
+        <div class="col-12 col-md-6" style="padding:12px;">
+            <div style="background-color:#ffffff; border-radius:14px; padding:clamp(14px,4vw,22px); height:100%; border-left:5px solid #5b9ecc;">
+                <h5 style="color:#363a6e; font-weight:bold; font-size:clamp(15px,3.5vw,17px); margin-bottom:8px;">Native eCommerce Integration</h5>
+                <p style="font-size:clamp(13px,3vw,14px); color:#555555; margin:0;">Built directly into the website_sale product page. No redirects, no clunky setup.</p>
             </div>
         </div>
 
-        <div class="col-md-6" style="padding:12px;">
-            <div class="wpqr-feature-card" style="background-color:#ffffff; border-radius:14px; padding:22px; height:100%; border-left:5px solid #5b9ecc;">
-                <h5 style="color:#363a6e; font-weight:bold; font-size:17px; margin-bottom:8px;">Secure Role-Based Access</h5>
-                <p style="font-size:14px; color:#555555; margin:0;">Full access for staff, restricted and safe access for public visitors.</p>
+        <div class="col-12 col-md-6" style="padding:12px;">
+            <div style="background-color:#ffffff; border-radius:14px; padding:clamp(14px,4vw,22px); height:100%; border-left:5px solid #5b9ecc;">
+                <h5 style="color:#363a6e; font-weight:bold; font-size:clamp(15px,3.5vw,17px); margin-bottom:8px;">Secure Role-Based Access</h5>
+                <p style="font-size:clamp(13px,3vw,14px); color:#555555; margin:0;">Full access for staff, restricted and safe access for public visitors.</p>
             </div>
         </div>
     </div>
 
     <!-- HOW IT WORKS -->
     <div class="row" style="margin-bottom:40px;">
-        <div class="col-md-12" style="text-align:center; margin-bottom:28px;">
-            <h2 class="wpqr-h2" style="color:#363a6e; font-weight:bold; font-size:29px;">How It Works</h2>
+        <div class="col-12" style="text-align:center; margin-bottom:28px;">
+            <h2 style="color:#363a6e; font-weight:bold; font-size:clamp(20px,5vw,29px);">How It Works</h2>
         </div>
 
-        <div class="col-6 col-md-3 wpqr-step" style="text-align:center; padding:15px;">
-            <img src="step_circle.png" alt="1" style="width:54px; height:54px; border-radius:50%; margin-bottom:14px;"/>
-            <h6 style="font-weight:bold; color:#333333;">Open Product Form</h6>
-            <p style="font-size:13px; color:#666666;">Go to any product in Odoo.</p>
+        <div class="col-6 col-md-3" style="text-align:center; padding:15px;">
+            <img src="step_circle.png" alt="1" style="width:clamp(40px,10vw,54px); height:clamp(40px,10vw,54px); border-radius:50%; margin-bottom:14px;"/>
+            <h6 style="font-weight:bold; color:#333333; font-size:clamp(13px,3.2vw,15px);">Open Product Form</h6>
+            <p style="font-size:clamp(11px,2.8vw,13px); color:#666666;">Go to any product in Odoo.</p>
         </div>
 
-        <div class="col-6 col-md-3 wpqr-step" style="text-align:center; padding:15px;">
-            <img src="step_circle.png" alt="2" style="width:54px; height:54px; border-radius:50%; margin-bottom:14px;"/>
-            <h6 style="font-weight:bold; color:#333333;">Generate QR Code</h6>
-            <p style="font-size:13px; color:#666666;">Click one button to create it.</p>
+        <div class="col-6 col-md-3" style="text-align:center; padding:15px;">
+            <img src="step_circle.png" alt="2" style="width:clamp(40px,10vw,54px); height:clamp(40px,10vw,54px); border-radius:50%; margin-bottom:14px;"/>
+            <h6 style="font-weight:bold; color:#333333; font-size:clamp(13px,3.2vw,15px);">Generate QR Code</h6>
+            <p style="font-size:clamp(11px,2.8vw,13px); color:#666666;">Click one button to create it.</p>
         </div>
 
-        <div class="col-6 col-md-3 wpqr-step" style="text-align:center; padding:15px;">
-            <img src="step_circle.png" alt="3" style="width:54px; height:54px; border-radius:50%; margin-bottom:14px;"/>
-            <h6 style="font-weight:bold; color:#333333;">Print and Attach</h6>
-            <p style="font-size:13px; color:#666666;">Stick it on the box, shelf, or label.</p>
+        <div class="col-6 col-md-3" style="text-align:center; padding:15px;">
+            <img src="step_circle.png" alt="3" style="width:clamp(40px,10vw,54px); height:clamp(40px,10vw,54px); border-radius:50%; margin-bottom:14px;"/>
+            <h6 style="font-weight:bold; color:#333333; font-size:clamp(13px,3.2vw,15px);">Print and Attach</h6>
+            <p style="font-size:clamp(11px,2.8vw,13px); color:#666666;">Stick it on the box, shelf, or label.</p>
         </div>
 
-        <div class="col-6 col-md-3 wpqr-step" style="text-align:center; padding:15px;">
-            <img src="step_circle.png" alt="4" style="width:54px; height:54px; border-radius:50%; margin-bottom:14px;"/>
-            <h6 style="font-weight:bold; color:#333333;">Customer Scans</h6>
-            <p style="font-size:13px; color:#666666;">Instant product info and stock check.</p>
+        <div class="col-6 col-md-3" style="text-align:center; padding:15px;">
+            <img src="step_circle.png" alt="4" style="width:clamp(40px,10vw,54px); height:clamp(40px,10vw,54px); border-radius:50%; margin-bottom:14px;"/>
+            <h6 style="font-weight:bold; color:#333333; font-size:clamp(13px,3.2vw,15px);">Customer Scans</h6>
+            <p style="font-size:clamp(11px,2.8vw,13px); color:#666666;">Instant product info and stock check.</p>
         </div>
     </div>
 
     <!-- WHY CHOOSE THIS APP -->
     <div class="position-relative" style="border-radius:16px; margin-bottom:40px; overflow:hidden;">
         <img src="section_gradient.png" class="w-100" alt="background" style="display:block;"/>
-        <div class="position-absolute top-0 start-0 w-100 h-100" style="padding:35px 25px;">
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="padding:clamp(20px,6vw,35px) clamp(12px,4vw,25px);">
             <div class="row">
-                <div class="col-md-12" style="text-align:center; margin-bottom:20px;">
-                    <h2 class="wpqr-stats-title" style="color:#ffffff; font-weight:bold; font-size:26px;">Why Choose This App?</h2>
+                <div class="col-12" style="text-align:center; margin-bottom:20px;">
+                    <h2 style="color:#ffffff; font-weight:bold; font-size:clamp(18px,5vw,26px);">Why Choose This App?</h2>
                 </div>
-                <div class="col-4 col-md-4" style="text-align:center; padding:14px;">
-                    <h4 class="wpqr-stat-num" style="color:#ffffff; font-weight:bold; font-size:30px; margin-bottom:4px;">0</h4>
-                    <p class="wpqr-stat-label" style="color:#eef2fb; font-size:14px; margin:0;">Configuration Steps</p>
+                <div class="col-4" style="text-align:center; padding:10px;">
+                    <h4 style="color:#ffffff; font-weight:bold; font-size:clamp(18px,5.5vw,30px); margin-bottom:4px;">0</h4>
+                    <p style="color:#eef2fb; font-size:clamp(10px,2.8vw,14px); margin:0;">Configuration Steps</p>
                 </div>
-                <div class="col-4 col-md-4" style="text-align:center; padding:14px;">
-                    <h4 class="wpqr-stat-num" style="color:#ffffff; font-weight:bold; font-size:30px; margin-bottom:4px;">100%</h4>
-                    <p class="wpqr-stat-label" style="color:#eef2fb; font-size:14px; margin:0;">No-Login Access</p>
+                <div class="col-4" style="text-align:center; padding:10px;">
+                    <h4 style="color:#ffffff; font-weight:bold; font-size:clamp(18px,5.5vw,30px); margin-bottom:4px;">100%</h4>
+                    <p style="color:#eef2fb; font-size:clamp(10px,2.8vw,14px); margin:0;">No-Login Access</p>
                 </div>
-                <div class="col-4 col-md-4" style="text-align:center; padding:14px;">
-                    <h4 class="wpqr-stat-num" style="color:#ffffff; font-weight:bold; font-size:30px; margin-bottom:4px;">Real-Time</h4>
-                    <p class="wpqr-stat-label" style="color:#eef2fb; font-size:14px; margin:0;">Stock Availability</p>
+                <div class="col-4" style="text-align:center; padding:10px;">
+                    <h4 style="color:#ffffff; font-weight:bold; font-size:clamp(18px,5.5vw,30px); margin-bottom:4px;">Real-Time</h4>
+                    <p style="color:#eef2fb; font-size:clamp(10px,2.8vw,14px); margin:0;">Stock Availability</p>
                 </div>
             </div>
         </div>
@@ -244,22 +199,22 @@
     <!-- AVAILABLE FOR HIRE -->
     <div class="position-relative" style="border-radius:16px; margin-bottom:30px; overflow:hidden;">
         <img src="hero_gradient.png" class="w-100" alt="background" style="display:block;"/>
-        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="padding:35px 25px;">
-            <div style="text-align:center;">
-                <h2 class="wpqr-hire-title" style="color:#ffffff; font-weight:bold; font-size:26px; margin-bottom:12px;">Available for Hire!</h2>
-                <p class="wpqr-hire-text" style="color:#eef2fb; font-size:16px; max-width:700px; margin:0 auto 8px auto;">
+        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="padding:clamp(20px,6vw,35px) clamp(12px,4vw,25px);">
+            <div class="col-12 col-md-9 mx-auto px-0" style="text-align:center;">
+                <h2 style="color:#ffffff; font-weight:bold; font-size:clamp(18px,5vw,26px); margin-bottom:12px;">Available for Hire!</h2>
+                <p style="color:#eef2fb; font-size:clamp(13px,3.5vw,16px); margin:0 auto 8px auto;">
                     Looking for a skilled and reliable Odoo Developer to build, fix, or customize your Odoo system?
                 </p>
-                <p class="wpqr-hire-text" style="color:#eef2fb; font-size:15px; max-width:700px; margin:0 auto 20px auto;">
+                <p style="color:#eef2fb; font-size:clamp(12px,3.2vw,15px); margin:0 auto 20px auto;">
                     Specialized in custom module development, ERP implementation, integrations, and performance optimization.
                 </p>
-                <a href="mailto:anmol621314@gmail.com" class="wpqr-hire-btn" style="display:inline-block; margin:6px; padding:11px 22px; background-color:#ffbd3e; color:#363a6e; font-weight:bold; text-decoration:none; border-radius:6px;">
+                <a href="mailto:anmol621314@gmail.com" class="d-block d-md-inline-block" style="margin:6px auto; padding:11px 22px; background-color:#ffbd3e; color:#363a6e; font-weight:bold; text-decoration:none; border-radius:6px; max-width:260px;">
                     Email Me
                 </a>
-                <a href="https://wa.me/918208240374" class="wpqr-hire-btn" style="display:inline-block; margin:6px; padding:11px 22px; background-color:#ffbd3e; color:#363a6e; font-weight:bold; text-decoration:none; border-radius:6px;">
+                <a href="https://wa.me/918208240374" class="d-block d-md-inline-block" style="margin:6px auto; padding:11px 22px; background-color:#ffbd3e; color:#363a6e; font-weight:bold; text-decoration:none; border-radius:6px; max-width:260px;">
                     WhatsApp
                 </a>
-                <a href="http://linkedin.com/in/anmolpatil83" class="wpqr-hire-btn" style="display:inline-block; margin:6px; padding:11px 22px; background-color:#ffbd3e; color:#363a6e; font-weight:bold; text-decoration:none; border-radius:6px;">
+                <a href="http://linkedin.com/in/anmolpatil83" class="d-block d-md-inline-block" style="margin:6px auto; padding:11px 22px; background-color:#ffbd3e; color:#363a6e; font-weight:bold; text-decoration:none; border-radius:6px; max-width:260px;">
                     LinkedIn
                 </a>
             </div>
@@ -268,8 +223,8 @@
 
     <!-- COMPATIBILITY FOOTER -->
     <div class="row" style="background-color:#f4f7fc; border-radius:10px; padding:20px; margin-bottom:10px; border:1px solid #dbe6f2;">
-        <div class="col-md-12" style="text-align:center;">
-            <p class="wpqr-footer-text" style="color:#363a6e; font-size:14px; margin:0; font-weight:bold;">
+        <div class="col-12" style="text-align:center;">
+            <p style="color:#363a6e; font-size:clamp(11px,3vw,14px); margin:0; font-weight:bold;">
                 Website Product QR Portal | Compatible with Odoo Community and Enterprise | Engineered by Anmol Patil
             </p>
         </div>
