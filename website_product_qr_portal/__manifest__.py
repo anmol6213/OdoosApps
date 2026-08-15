@@ -19,6 +19,7 @@ QR Code & Stock Availability Checker
     'support': 'anmol621314@gmail.com',
     'license': 'LGPL-3',
     'depends': ['product', 'website', 'website_sale'],
+    'live_test_url': 'https://www.youtube.com/watch?v=Ua6EbxkHzs4',
     'external_dependencies': {
         'python': ['qrcode', 'Pillow'],
     },
