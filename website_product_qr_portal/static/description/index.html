@@ -56,161 +56,157 @@
         </div>
     </div>
 
-    <!-- YOUTUBE VIDEO (Odoo-native embed - survives the description sanitizer) -->
-    <!-- YOUTUBE VIDEO -->
-<div class="row" style="margin-bottom:40px;">
-    <div class="col-12" style="text-align:center; margin-bottom:20px;">
-        <h2 style="color:#363a6e; font-weight:bold; font-size:clamp(20px,5vw,29px);">Watch on YouTube</h2>
-        <p style="color:#7a86a8; font-size:clamp(12px,3vw,14px);">Full video tutorial and feature walkthrough</p>
-    </div>
-    <div class="col-12" style="text-align:center;">
-        <div style="position:relative; width:100%; max-width:900px; margin:0 auto; padding-top:50.625%; border-radius:12px; overflow:hidden; border:1px solid #dbe6f2;">
-            <iframe
-                src="https://www.youtube-nocookie.com/embed/Ua6EbxkHzs4"
-                title="Website Product QR Portal - Full Video Tutorial"
-                style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-            </iframe>
-        </div>
-    </div>
-</div>
-
-    <!-- SCREENSHOTS -->
+    <!-- WATCH ON YOUTUBE (link card - no iframe, no referrer/Error 153 issues) -->
     <div class="row" style="margin-bottom:40px;">
-        <div class="col-12" style="text-align:center; margin-bottom:25px;">
-            <h2 style="color:#363a6e; font-weight:bold; font-size:clamp(20px,5vw,29px);">See It In Action</h2>
+        <div class="col-12" style="text-align:center; margin-bottom:20px;">
+            <h2 style="color:#363a6e; font-weight:bold; font-size:clamp(20px,5vw,29px);">Watch on YouTube</h2>
+            <p style="color:#7a86a8; font-size:clamp(12px,3vw,14px);">Full video tutorial and feature walkthrough</p>
         </div>
-        <div class="col-12 col-md-6" style="padding:10px;">
-            <img src="screenshort_1.JPG" alt="Generate QR from product form" class="img-fluid" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
-            <p style="text-align:center; font-weight:bold; font-size:18px; color:#7a86a8; margin-top:8px">One-Click QR Generation</p>
-        </div>
-        <div class="col-12 col-md-6" style="padding:10px;">
-            <img src="screenshort_2.JPG" alt="Public QR landing page" class="img-fluid" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
-            <p style="text-align:center; font-weight:bold; font-size:18px; color:#7a86a8; margin-top:8px">Public Product Landing Page</p>
-        </div>
-        <div class="col-12 col-md-6" style="padding:10px;">
-            <img src="screenshort_4.JPG" alt="Mobile scan experience" class="img-fluid" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
-            <p style="text-align:center; font-weight:bold; font-size:18px; color:#7a86a8; margin-top:8px">Instant Mobile Access</p>
-        </div>
-        <div class="col-12 col-md-6" style="padding:10px;">
-            <img src="screenshort_3.JPG" alt="Check Availability widget on product page" class="img-fluid" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
-            <p style="text-align:center; font-weight:bold; font-size:18px; color:#7a86a8; margin-top:8px">Live Stock Availability Check</p>
+        <div class="col-12" style="text-align:center;">
+            <a href="https://www.youtube.com/watch?v=Ua6EbxkHzs4" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+                <img src="https://img.youtube.com/vi/Ua6EbxkHzs4/maxresdefault.jpg" alt="Watch on YouTube" class="img-fluid" style="width:100%; max-width:900px; border-radius:12px; border:1px solid #dbe6f2; display:block; margin:0 auto;"/>
+                <div style="display:inline-block; margin-top:18px; padding:11px 26px; background-color:#ff0000; color:#ffffff; font-weight:bold; font-size:clamp(13px,3.2vw,15px); border-radius:6px;">
+                    Watch Full Video on YouTube
+                </div>
+            </a>
         </div>
     </div>
 
-    <!-- KEY FEATURES (Tabbed design, style borrowed from Slack Attendance module) -->
-    <div style="padding:20px 0px;" id="Feature">
-        <div class="position-relative" style="background-color:#f4f7fc; border:1px solid #dbe6f2; border-radius:16px; padding:clamp(18px,5vw,40px);">
-            <div class="position-absolute start-100 top-0 translate-middle-x d-none d-md-block" style="transform: translateX(-100%); top: 0; left: 100%;">
-                <img src="images/1741840252979-grain.png" alt="grain">
-            </div>
-            <div class="position-absolute top-0 start-0 z-0 d-none d-md-block" style="top: 0; left: 0;">
-                <img src="images/1741840265299-grain-two.png" alt="grain-two">
-            </div>
-            <h1 class="text-center font-weight-bold mb-4" style="font-size:clamp(20px,5vw,36px); color:#363a6e;">Key Features</h1>
-            <p style="text-align:center; color:#7a86a8; font-size:clamp(12px,3vw,14px); margin-bottom:20px;">Everything you need, nothing you don't</p>
+    <!-- ===== TABBED SECTION: Screenshots / Features / How It Works ===== -->
+    <div class="row" style="margin-bottom:40px;">
+        <div class="col-12">
+            <ul class="nav nav-pills justify-content-center flex-wrap pb-4" id="qrTabs" role="tablist" style="gap:6px;">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="tab-screenshot" data-bs-toggle="pill" data-bs-target="#pane-screenshot" type="button" role="tab" style="border-radius:50px; padding:12px 24px; font-weight:600; border:2px solid #dbe6f2; color:#363a6e;">Screenshot</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="tab-features" data-bs-toggle="pill" data-bs-target="#pane-features" type="button" role="tab" style="border-radius:50px; padding:12px 24px; font-weight:600; border:2px solid #dbe6f2; color:#363a6e;">Features</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="tab-howto" data-bs-toggle="pill" data-bs-target="#pane-howto" type="button" role="tab" style="border-radius:50px; padding:12px 24px; font-weight:600; border:2px solid #dbe6f2; color:#363a6e;">How It Works</a>
+                </li>
+            </ul>
 
-            <div class="pt-3">
-                <nav class="border-bottom">
-                    <div id="nav-tab" role="tablist" class="nav nav-tabs justify-content-center flex-wrap z-1 position-relative" style="background-color:transparent; z-index:10;">
-                        <a data-bs-toggle="tab" type="button" role="tab" class="nav-link active" style="color:#363a6e; font-weight:bold;" id="nav-tab0" href="#nav-0" aria-controls="nav0" aria-selected="true"> QR Generation</a>
-                        <a data-bs-toggle="tab" type="button" role="tab" class="nav-link" style="color:#363a6e; font-weight:bold;" id="nav-tab1" href="#nav-1" aria-controls="nav1" aria-selected="false"> Public Access</a>
-                        <a data-bs-toggle="tab" type="button" role="tab" class="nav-link" style="color:#363a6e; font-weight:bold;" id="nav-tab2" href="#nav-2" aria-controls="nav2" aria-selected="false"> Stock Availability</a>
-                        <a data-bs-toggle="tab" type="button" role="tab" class="nav-link" style="color:#363a6e; font-weight:bold;" id="nav-tab3" href="#nav-3" aria-controls="nav3" aria-selected="false"> Integration & Security</a>
-                    </div>
-                </nav>
+            <div class="tab-content bg-white" style="border:2px solid #dbe6f2; border-radius:16px;">
 
-                <div id="nav-tabContent" class="tab-content pt-3">
-                    <!-- Tab 1: QR Generation -->
-                    <div role="tabpanel" class="tab-pane fade active show" id="nav-0" aria-labelledby="nav-tab0">
-                        <h6 class="font-weight-bold mt-3" style="font-size:20px; color:#363a6e;">Instant QR Generation</h6>
-                        <p style="font-size:14px; color:#555555;">
-                            Generate a scannable QR code directly from the product form with a single click. No external QR
-                            tools, no manual image handling, no third-party services required.
-                        </p>
-                        <ul style="font-size:14px; color:#555555; line-height:1.8;">
-                            <li>One-click generation from the product form</li>
-                            <li>Ready to print on boxes, shelves, or labels</li>
-                            <li>Works out of the box - zero configuration</li>
-                        </ul>
-                    </div>
-
-                    <!-- Tab 2: Public Access -->
-                    <div role="tabpanel" class="tab-pane fade" id="nav-1" aria-labelledby="nav-tab1">
-                        <h6 class="font-weight-bold mt-3" style="font-size:20px; color:#363a6e;">Zero-Login Public Access</h6>
-                        <p style="font-size:14px; color:#555555;">
-                            Every QR code opens an auto-generated public landing page. Customers see product details
-                            instantly - no account, no app download, no friction.
-                        </p>
-                        <ul style="font-size:14px; color:#555555; line-height:1.8;">
-                            <li>Auto product landing page: name, price, category</li>
-                            <li>Displays barcode, reference, and variants</li>
-                            <li>Anyone scans, anyone views - instantly</li>
-                        </ul>
-                    </div>
-
-                    <!-- Tab 3: Stock Availability -->
-                    <div role="tabpanel" class="tab-pane fade" id="nav-2" aria-labelledby="nav-tab2">
-                        <h6 class="font-weight-bold mt-3" style="font-size:20px; color:#363a6e;">Live Stock Availability Check</h6>
-                        <p style="font-size:14px; color:#555555;">
-                            Customers can enter a desired quantity on the scanned page and instantly see whether it's
-                            in stock, before they ever reach checkout.
-                        </p>
-                        <ul style="font-size:14px; color:#555555; line-height:1.8;">
-                            <li>Real-time inventory check on scan</li>
-                            <li>Quantity-based availability lookup</li>
-                            <li>Reduces pre-checkout stock surprises</li>
-                        </ul>
-                    </div>
-
-                    <!-- Tab 4: Integration & Security -->
-                    <div role="tabpanel" class="tab-pane fade" id="nav-3" aria-labelledby="nav-tab3">
-                        <h6 class="font-weight-bold mt-3" style="font-size:20px; color:#363a6e;">Native Integration & Secure Access</h6>
-                        <p style="font-size:14px; color:#555555;">
-                            Built directly into the website_sale product page with no redirects or clunky setup, backed
-                            by role-based access control.
-                        </p>
-                        <ul style="font-size:14px; color:#555555; line-height:1.8;">
-                            <li>Native eCommerce (website_sale) integration</li>
-                            <li>Full access for staff, restricted access for public</li>
-                            <li>Compatible with Odoo Community and Enterprise</li>
-                        </ul>
+                <!-- SCREENSHOT TAB -->
+                <div class="tab-pane fade show active" id="pane-screenshot" role="tabpanel">
+                    <div class="p-3 p-md-5">
+                        <div style="text-align:center; margin-bottom:26px;">
+                            <h2 style="color:#363a6e; font-weight:bold; font-size:clamp(20px,5vw,29px);">See It In Action</h2>
+                            <div style="width:60px; height:4px; background-color:#5b9ecc; border-radius:3px; margin:14px auto 0;"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6" style="padding:10px;">
+                                <img src="screenshort_1.JPG" alt="Generate QR from product form" class="img-fluid" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
+                                <p style="text-align:center; font-weight:bold; font-size:18px; color:#7a86a8; margin-top:8px;">One-Click QR Generation</p>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding:10px;">
+                                <img src="screenshort_2.JPG" alt="Public QR landing page" class="img-fluid" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
+                                <p style="text-align:center; font-weight:bold; font-size:18px; color:#7a86a8; margin-top:8px;">Public Product Landing Page</p>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding:10px;">
+                                <img src="screenshort_4.JPG" alt="Mobile scan experience" class="img-fluid" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
+                                <p style="text-align:center; font-weight:bold; font-size:18px; color:#7a86a8; margin-top:8px;">Instant Mobile Access</p>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding:10px;">
+                                <img src="screenshort_3.JPG" alt="Check Availability widget on product page" class="img-fluid" style="width:100%; border-radius:10px; border:1px solid #dbe6f2;"/>
+                                <p style="text-align:center; font-weight:bold; font-size:18px; color:#7a86a8; margin-top:8px;">Live Stock Availability Check</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- FEATURES TAB -->
+                <div class="tab-pane fade" id="pane-features" role="tabpanel">
+                    <div class="p-3 p-md-5">
+                        <div style="text-align:center; margin-bottom:26px;">
+                            <h2 style="color:#363a6e; font-weight:bold; font-size:clamp(20px,5vw,29px);">Key Features</h2>
+                            <div style="width:60px; height:4px; background-color:#5b9ecc; border-radius:3px; margin:14px auto 0;"></div>
+                            <p style="color:#7a86a8; font-size:clamp(12px,3vw,14px); margin-top:10px;">Everything you need, nothing you don't</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6" style="padding:10px;">
+                                <div style="background-color:#f4f7fc; border:1px solid #dbe6f2; border-left:4px solid #5b9ecc; border-radius:14px; padding:22px; height:100%;">
+                                    <h6 style="font-weight:bold; font-size:18px; color:#363a6e;">Instant QR Generation</h6>
+                                    <p style="font-size:14px; color:#555555;">Generate a scannable QR code directly from the product form with a single click. No external QR tools, no manual image handling, no third-party services required.</p>
+                                    <ul style="font-size:14px; color:#555555; line-height:1.8; margin:0; padding-left:18px;">
+                                        <li>One-click generation from the product form</li>
+                                        <li>Ready to print on boxes, shelves, or labels</li>
+                                        <li>Works out of the box - zero configuration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding:10px;">
+                                <div style="background-color:#f4f7fc; border:1px solid #dbe6f2; border-left:4px solid #5b9ecc; border-radius:14px; padding:22px; height:100%;">
+                                    <h6 style="font-weight:bold; font-size:18px; color:#363a6e;">Zero-Login Public Access</h6>
+                                    <p style="font-size:14px; color:#555555;">Every QR code opens an auto-generated public landing page. Customers see product details instantly - no account, no app download, no friction.</p>
+                                    <ul style="font-size:14px; color:#555555; line-height:1.8; margin:0; padding-left:18px;">
+                                        <li>Auto product landing page: name, price, category</li>
+                                        <li>Displays barcode, reference, and variants</li>
+                                        <li>Anyone scans, anyone views - instantly</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding:10px;">
+                                <div style="background-color:#f4f7fc; border:1px solid #dbe6f2; border-left:4px solid #5b9ecc; border-radius:14px; padding:22px; height:100%;">
+                                    <h6 style="font-weight:bold; font-size:18px; color:#363a6e;">Live Stock Availability Check</h6>
+                                    <p style="font-size:14px; color:#555555;">Customers can enter a desired quantity on the scanned page and instantly see whether it's in stock, before they ever reach checkout.</p>
+                                    <ul style="font-size:14px; color:#555555; line-height:1.8; margin:0; padding-left:18px;">
+                                        <li>Real-time inventory check on scan</li>
+                                        <li>Quantity-based availability lookup</li>
+                                        <li>Reduces pre-checkout stock surprises</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding:10px;">
+                                <div style="background-color:#f4f7fc; border:1px solid #dbe6f2; border-left:4px solid #5b9ecc; border-radius:14px; padding:22px; height:100%;">
+                                    <h6 style="font-weight:bold; font-size:18px; color:#363a6e;">Native Integration & Secure Access</h6>
+                                    <p style="font-size:14px; color:#555555;">Built directly into the website_sale product page with no redirects or clunky setup, backed by role-based access control.</p>
+                                    <ul style="font-size:14px; color:#555555; line-height:1.8; margin:0; padding-left:18px;">
+                                        <li>Native eCommerce (website_sale) integration</li>
+                                        <li>Full access for staff, restricted access for public</li>
+                                        <li>Compatible with Odoo Community and Enterprise</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HOW IT WORKS TAB -->
+                <div class="tab-pane fade" id="pane-howto" role="tabpanel">
+                    <div class="p-3 p-md-5">
+                        <div style="text-align:center; margin-bottom:26px;">
+                            <h2 style="color:#363a6e; font-weight:bold; font-size:clamp(20px,5vw,29px);">How It Works</h2>
+                            <div style="width:60px; height:4px; background-color:#5b9ecc; border-radius:3px; margin:14px auto 0;"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-md-3" style="text-align:center; padding:15px;">
+                                <img src="step_circle.png" alt="1" style="width:clamp(40px,10vw,54px); height:clamp(40px,10vw,54px); border-radius:50%; margin-bottom:14px;"/>
+                                <h6 style="font-weight:bold; color:#333333; font-size:clamp(13px,3.2vw,15px);">Open Product Form</h6>
+                                <p style="font-size:clamp(11px,2.8vw,13px); color:#666666;">Go to any product in Odoo.</p>
+                            </div>
+                            <div class="col-6 col-md-3" style="text-align:center; padding:15px;">
+                                <img src="step_circle.png" alt="2" style="width:clamp(40px,10vw,54px); height:clamp(40px,10vw,54px); border-radius:50%; margin-bottom:14px;"/>
+                                <h6 style="font-weight:bold; color:#333333; font-size:clamp(13px,3.2vw,15px);">Generate QR Code</h6>
+                                <p style="font-size:clamp(11px,2.8vw,13px); color:#666666;">Click one button to create it.</p>
+                            </div>
+                            <div class="col-6 col-md-3" style="text-align:center; padding:15px;">
+                                <img src="step_circle.png" alt="3" style="width:clamp(40px,10vw,54px); height:clamp(40px,10vw,54px); border-radius:50%; margin-bottom:14px;"/>
+                                <h6 style="font-weight:bold; color:#333333; font-size:clamp(13px,3.2vw,15px);">Print and Attach</h6>
+                                <p style="font-size:clamp(11px,2.8vw,13px); color:#666666;">Stick it on the box, shelf, or label.</p>
+                            </div>
+                            <div class="col-6 col-md-3" style="text-align:center; padding:15px;">
+                                <img src="step_circle.png" alt="4" style="width:clamp(40px,10vw,54px); height:clamp(40px,10vw,54px); border-radius:50%; margin-bottom:14px;"/>
+                                <h6 style="font-weight:bold; color:#333333; font-size:clamp(13px,3.2vw,15px);">Customer Scans</h6>
+                                <p style="font-size:clamp(11px,2.8vw,13px); color:#666666;">Instant product info and stock check.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </div>
-
-    <!-- HOW IT WORKS -->
-    <div class="row" style="margin-bottom:40px;">
-        <div class="col-12" style="text-align:center; margin-bottom:28px;">
-            <h2 style="color:#363a6e; font-weight:bold; font-size:clamp(20px,5vw,29px);">How It Works</h2>
-        </div>
-
-        <div class="col-6 col-md-3" style="text-align:center; padding:15px;">
-            <img src="step_circle.png" alt="1" style="width:clamp(40px,10vw,54px); height:clamp(40px,10vw,54px); border-radius:50%; margin-bottom:14px;"/>
-            <h6 style="font-weight:bold; color:#333333; font-size:clamp(13px,3.2vw,15px);">Open Product Form</h6>
-            <p style="font-size:clamp(11px,2.8vw,13px); color:#666666;">Go to any product in Odoo.</p>
-        </div>
-
-        <div class="col-6 col-md-3" style="text-align:center; padding:15px;">
-            <img src="step_circle.png" alt="2" style="width:clamp(40px,10vw,54px); height:clamp(40px,10vw,54px); border-radius:50%; margin-bottom:14px;"/>
-            <h6 style="font-weight:bold; color:#333333; font-size:clamp(13px,3.2vw,15px);">Generate QR Code</h6>
-            <p style="font-size:clamp(11px,2.8vw,13px); color:#666666;">Click one button to create it.</p>
-        </div>
-
-        <div class="col-6 col-md-3" style="text-align:center; padding:15px;">
-            <img src="step_circle.png" alt="3" style="width:clamp(40px,10vw,54px); height:clamp(40px,10vw,54px); border-radius:50%; margin-bottom:14px;"/>
-            <h6 style="font-weight:bold; color:#333333; font-size:clamp(13px,3.2vw,15px);">Print and Attach</h6>
-            <p style="font-size:clamp(11px,2.8vw,13px); color:#666666;">Stick it on the box, shelf, or label.</p>
-        </div>
-
-        <div class="col-6 col-md-3" style="text-align:center; padding:15px;">
-            <img src="step_circle.png" alt="4" style="width:clamp(40px,10vw,54px); height:clamp(40px,10vw,54px); border-radius:50%; margin-bottom:14px;"/>
-            <h6 style="font-weight:bold; color:#333333; font-size:clamp(13px,3.2vw,15px);">Customer Scans</h6>
-            <p style="font-size:clamp(11px,2.8vw,13px); color:#666666;">Instant product info and stock check.</p>
         </div>
     </div>
 
