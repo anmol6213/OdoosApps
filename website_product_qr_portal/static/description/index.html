@@ -1,38 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>app index</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
-    <style>
-        /* Cybrosys red active state for all pill tab groups (Bootstrap
-           hardcodes these in 5.0.2, so they cannot be set inline per pill). */
-        .nav-pills .nav-link {
-            color: #334155;
-        }
-        .nav-pills .nav-link.active {
-            background-color: #c30010 !important;
-            border-color: #c30010 !important;
-            color: #fff !important;
-        }
-    </style>
-</head>
-
-
-<body style="font-family: &quot;Montserrat&quot;, sans-serif;background-color: #c3001008;">
-
-
-
-
-
 <section class="oe_container">
 
     <!-- HERO -->
@@ -110,17 +75,43 @@
     <!-- ===== TABBED SECTION: Screenshots / Features / How It Works ===== -->
     <div class="row" style="margin-bottom:40px;">
         <div class="col-12">
-            <ul class="nav nav-pills justify-content-center flex-wrap pb-4" id="qrTabs" role="tablist" style="gap:6px;">
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="tab-screenshot" data-bs-toggle="pill" data-bs-target="#pane-screenshot" type="button" role="tab" style="border-radius:50px; padding:12px 24px; font-weight:600; border:2px solid #dbe6f2; color:#363a6e;">Screenshot</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="tab-features" data-bs-toggle="pill" data-bs-target="#pane-features" type="button" role="tab" style="border-radius:50px; padding:12px 24px; font-weight:600; border:2px solid #dbe6f2; color:#363a6e;">Features</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="tab-howto" data-bs-toggle="pill" data-bs-target="#pane-howto" type="button" role="tab" style="border-radius:50px; padding:12px 24px; font-weight:600; border:2px solid #dbe6f2; color:#363a6e;">How It Works</a>
-                </li>
-            </ul>
+           <ul class="nav nav-pills justify-content-center flex-wrap pb-4" id="qrTabs" role="tablist" style="gap:6px;">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active"
+           id="tab-screenshot"
+           data-bs-toggle="pill"
+           data-bs-target="#pane-screenshot"
+           type="button"
+           role="tab"
+           style="border-radius:50px; padding:12px 24px; font-weight:600; border:2px solid #dbe6f2; color:#dbe6f2; background-color:#363a6e;">
+            Screenshot
+        </a>
+    </li>
+
+    <li class="nav-item" role="presentation">
+        <a class="nav-link"
+           id="tab-features"
+           data-bs-toggle="pill"
+           data-bs-target="#pane-features"
+           type="button"
+           role="tab"
+           style="border-radius:50px; padding:12px 24px; font-weight:600; border:2px solid #dbe6f2; color:#363a6e;">
+            Features
+        </a>
+    </li>
+
+    <li class="nav-item" role="presentation">
+        <a class="nav-link"
+           id="tab-howto"
+           data-bs-toggle="pill"
+           data-bs-target="#pane-howto"
+           type="button"
+           role="tab"
+           style="border-radius:50px; padding:12px 24px; font-weight:600; border:2px solid #dbe6f2; color:#363a6e;">
+            How It Works
+        </a>
+    </li>
+</ul>
 
             <div class="tab-content bg-white" style="border:2px solid #dbe6f2; border-radius:16px;">
 
@@ -327,11 +318,3 @@
 
 </section>
 
-
-    </body>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
-</html>
