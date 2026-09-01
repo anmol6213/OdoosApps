@@ -1,9 +1,9 @@
 <section class="oe_container">
 
     <!-- HERO -->
-    <div style="position:relative; border-radius:14px; margin-bottom:35px; overflow:hidden;">
-        <img src="hero_gradient.png" alt="background" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0; display:block;"/>
-        <div style="position:relative; z-index:1; padding:clamp(15px,5vw,30px);">
+    <div class="position-relative" style="border-radius:14px; margin-bottom:35px; overflow:hidden;">
+        <img src="hero_gradient.png" class="w-100" alt="background" style="display:block;"/>
+        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="padding:clamp(15px,5vw,30px);">
             <div style="text-align:center;">
                 <img src="icon.png" alt="Website Product QR Portal" class="img-fluid" style="width:clamp(64px,16vw,100px); height:clamp(64px,16vw,100px); border-radius:22px; margin-bottom:clamp(10px,3vw,18px); border:3px solid #ffffff;"/>
                 <h1 style="color:#ffffff; font-weight:bold; font-size:clamp(22px,6vw,38px); line-height:1.25; margin-bottom:clamp(6px,2vw,12px);">
@@ -82,31 +82,6 @@
             border-color: #363a6e !important;
             color: #fff !important;
         }
-        /* Mobile-friendly scrollable sub-tabs for the Screenshot pane */
-        .qr-portal-ss-nav {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            gap: 8px;
-            padding-bottom: 6px;
-            scrollbar-width: thin;
-        }
-        .qr-portal-ss-nav .nav-link {
-            flex: 0 0 auto;
-            white-space: nowrap;
-        }
-        @media (min-width: 768px) {
-            .qr-portal-ss-nav {
-                flex-direction: column;
-                overflow-x: visible;
-                gap: 0;
-            }
-            .qr-portal-ss-nav .nav-link {
-                white-space: normal;
-            }
-        }
     </style>
     <div class="row" style="margin-bottom:40px;">
         <div class="col-12">
@@ -131,46 +106,46 @@
                             <h2 style="color:#363a6e; font-weight:bold; font-size:clamp(20px,5vw,29px);">App Screenshots</h2>
                             <div style="width:60px; height:4px; background-color:#5b9ecc; border-radius:3px; margin:14px auto 0;"></div>
                         </div>
-
-                        <!-- Responsive grid replaces the old fixed-width <table> layout -->
-                        <div class="row">
-                            <div class="col-12 col-md-3" style="margin-bottom:18px;">
-                                <div class="nav qr-portal-ss-nav nav-pills" role="tablist" aria-orientation="vertical">
-                                    <a class="nav-link active" data-bs-toggle="pill" data-bs-target="#ss-1" type="button" role="tab" style="display:block; text-align:left; border:1px solid #dbe6f2; border-radius:12px; margin-bottom:6px; padding:12px 15px; font-weight:600; color:#363a6e;">QR Generation</a>
-                                    <a class="nav-link" data-bs-toggle="pill" data-bs-target="#ss-2" type="button" role="tab" style="display:block; text-align:left; border:1px solid #dbe6f2; border-radius:12px; margin-bottom:6px; padding:12px 15px; font-weight:600; color:#363a6e;">Public Landing Page</a>
-                                    <a class="nav-link" data-bs-toggle="pill" data-bs-target="#ss-3" type="button" role="tab" style="display:block; text-align:left; border:1px solid #dbe6f2; border-radius:12px; margin-bottom:6px; padding:12px 15px; font-weight:600; color:#363a6e;">Mobile Access</a>
-                                    <a class="nav-link" data-bs-toggle="pill" data-bs-target="#ss-4" type="button" role="tab" style="display:block; text-align:left; border:1px solid #dbe6f2; border-radius:12px; margin-bottom:6px; padding:12px 15px; font-weight:600; color:#363a6e;">Stock Availability</a>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-9">
-                                <div class="tab-content">
-                                    <div class="tab-pane fade show active" id="ss-1" role="tabpanel">
-                                        <h6 style="font-weight:bold; color:#363a6e; margin:0 0 10px;">One-Click QR Generation</h6>
-                                        <div style="border:1px solid #dbe6f2; border-radius:12px; overflow:hidden;">
-                                            <img src="screenshort_1.JPG" alt="Generate QR from product form" style="width:100%; height:auto; display:block;"/>
+                        <table style="width:100%; border-collapse:collapse;">
+                            <tr>
+                                <td style="width:220px; vertical-align:top; padding-right:18px;">
+                                    <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+                                        <a class="nav-link active" data-bs-toggle="pill" data-bs-target="#ss-1" type="button" role="tab" style="display:block; text-align:left; border:1px solid #dbe6f2; border-radius:12px; margin-bottom:6px; padding:12px 15px; font-weight:600; color:#363a6e;">QR Generation</a>
+                                        <a class="nav-link" data-bs-toggle="pill" data-bs-target="#ss-2" type="button" role="tab" style="display:block; text-align:left; border:1px solid #dbe6f2; border-radius:12px; margin-bottom:6px; padding:12px 15px; font-weight:600; color:#363a6e;">Public Landing Page</a>
+                                        <a class="nav-link" data-bs-toggle="pill" data-bs-target="#ss-3" type="button" role="tab" style="display:block; text-align:left; border:1px solid #dbe6f2; border-radius:12px; margin-bottom:6px; padding:12px 15px; font-weight:600; color:#363a6e;">Mobile Access</a>
+                                        <a class="nav-link" data-bs-toggle="pill" data-bs-target="#ss-4" type="button" role="tab" style="display:block; text-align:left; border:1px solid #dbe6f2; border-radius:12px; margin-bottom:6px; padding:12px 15px; font-weight:600; color:#363a6e;">Stock Availability</a>
+                                    </div>
+                                </td>
+                                <td style="vertical-align:top;">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="ss-1" role="tabpanel">
+                                            <h6 style="font-weight:bold; color:#363a6e; margin:0 0 10px;">One-Click QR Generation</h6>
+                                            <div style="border:1px solid #dbe6f2; border-radius:12px; overflow:hidden;">
+                                                <img src="screenshort_1.JPG" alt="Generate QR from product form" style="width:100%; height:auto; display:block;"/>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="ss-2" role="tabpanel">
+                                            <h6 style="font-weight:bold; color:#363a6e; margin:0 0 10px;">Public Product Landing Page</h6>
+                                            <div style="border:1px solid #dbe6f2; border-radius:12px; overflow:hidden;">
+                                                <img src="screenshort_2.JPG" alt="Public QR landing page" style="width:100%; height:auto; display:block;"/>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="ss-3" role="tabpanel">
+                                            <h6 style="font-weight:bold; color:#363a6e; margin:0 0 10px;">Instant Mobile Access</h6>
+                                            <div style="border:1px solid #dbe6f2; border-radius:12px; overflow:hidden;">
+                                                <img src="screenshort_4.JPG" alt="Mobile scan experience" style="width:100%; height:auto; display:block;"/>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="ss-4" role="tabpanel">
+                                            <h6 style="font-weight:bold; color:#363a6e; margin:0 0 10px;">Live Stock Availability Check</h6>
+                                            <div style="border:1px solid #dbe6f2; border-radius:12px; overflow:hidden;">
+                                                <img src="screenshort_3.JPG" alt="Check Availability widget on product page" style="width:100%; height:auto; display:block;"/>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="ss-2" role="tabpanel">
-                                        <h6 style="font-weight:bold; color:#363a6e; margin:0 0 10px;">Public Product Landing Page</h6>
-                                        <div style="border:1px solid #dbe6f2; border-radius:12px; overflow:hidden;">
-                                            <img src="screenshort_2.JPG" alt="Public QR landing page" style="width:100%; height:auto; display:block;"/>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="ss-3" role="tabpanel">
-                                        <h6 style="font-weight:bold; color:#363a6e; margin:0 0 10px;">Instant Mobile Access</h6>
-                                        <div style="border:1px solid #dbe6f2; border-radius:12px; overflow:hidden;">
-                                            <img src="screenshort_4.JPG" alt="Mobile scan experience" style="width:100%; height:auto; display:block;"/>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="ss-4" role="tabpanel">
-                                        <h6 style="font-weight:bold; color:#363a6e; margin:0 0 10px;">Live Stock Availability Check</h6>
-                                        <div style="border:1px solid #dbe6f2; border-radius:12px; overflow:hidden;">
-                                            <img src="screenshort_3.JPG" alt="Check Availability widget on product page" style="width:100%; height:auto; display:block;"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
 
@@ -268,8 +243,9 @@
     </div>
 
     <!-- WHY CHOOSE THIS APP -->
-    <div style="position:relative; border-radius:16px; margin-bottom:40px; overflow:hidden; background-image:url('section_gradient.png'); background-size:cover; background-position:center; background-repeat:no-repeat;">
-        <div style="padding:clamp(20px,6vw,35px) clamp(12px,4vw,25px);">
+    <div class="position-relative" style="border-radius:16px; margin-bottom:40px; overflow:hidden;">
+        <img src="section_gradient.png" class="w-100" alt="background" style="display:block;"/>
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="padding:clamp(20px,6vw,35px) clamp(12px,4vw,25px);">
             <div class="row">
                 <div class="col-12" style="text-align:center; margin-bottom:20px;">
                     <h2 style="color:#ffffff; font-weight:bold; font-size:clamp(18px,5vw,26px);">Why Choose This App?</h2>
@@ -291,8 +267,9 @@
     </div>
 
     <!-- AVAILABLE FOR HIRE -->
-    <div style="position:relative; border-radius:16px; margin-bottom:30px; overflow:hidden; background-image:url('hero_gradient.png'); background-size:cover; background-position:center; background-repeat:no-repeat;">
-        <div style="padding:clamp(20px,6vw,35px) clamp(12px,4vw,25px);">
+    <div class="position-relative" style="border-radius:16px; margin-bottom:30px; overflow:hidden;">
+        <img src="hero_gradient.png" class="w-100" alt="background" style="display:block;"/>
+        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="padding:clamp(20px,6vw,35px) clamp(12px,4vw,25px);">
             <div class="col-12 col-md-9 mx-auto px-0" style="text-align:center;">
                 <h2 style="color:#ffffff; font-weight:bold; font-size:clamp(18px,5vw,26px); margin-bottom:12px;">Available for Hire!</h2>
                 <p style="color:#eef2fb; font-size:clamp(13px,3.5vw,16px); margin:0 auto 8px auto;">
