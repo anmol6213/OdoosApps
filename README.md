@@ -1,8 +1,8 @@
 ## Odoo App Store
 
-- [Slack Attendance Integration](PASTE_LINK)
-- [QR Code & Stock Availability Checker](PASTE_LINK)
-- [CBM Converter](PASTE_LINK)
+- [Slack Attendance Integration](https://apps.odoo.com/apps/modules/19.0/slack_attendance_integration)
+- [QR Code & Stock Availability Checker](https://apps.odoo.com/apps/modules/19.0/website_product_qr_portal)
+- [CBM Converter](https://apps.odoo.com/apps/modules/19.0/cbm_converter)
 
 ## Screenshots
 
