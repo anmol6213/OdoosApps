@@ -7,12 +7,12 @@
 ## Screenshots
 
 <p align="center">
-  <img src="website_product_qr_portal/static/description/screenshort_1.JPG" width="800">
-  <img src="website_product_qr_portal/static/description/screenshort_2.JPG" width="800">
+  <img src="website_product_qr_portal/static/description/screenshort_1.JPG" width="400">
+  <img src="website_product_qr_portal/static/description/screenshort_2.JPG" width="400">
 </p>
 <p align="center">
-  <img src="website_product_qr_portal/static/description/screenshort_3.JPG" width="800">
-  <img src="website_product_qr_portal/static/description/screenshort_4.JPG" width="800">
+  <img src="website_product_qr_portal/static/description/screenshort_3.JPG" width="400">
+  <img src="website_product_qr_portal/static/description/screenshort_4.JPG" width="400">
 </p>
 
 # Odoo Apps Collection
