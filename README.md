@@ -1,3 +1,16 @@
+## Odoo App Store
+
+- [Slack Attendance Integration](PASTE_LINK)
+- [QR Code & Stock Availability Checker](PASTE_LINK)
+- [CBM Converter](PASTE_LINK)
+
+## Screenshots
+
+<p align="center">
+  <img src="website_product_qr_portal/static/description/screenshort_1.JPG" width="300">
+  <img src="website_product_qr_portal/static/description/screenshort_2.JPG" width="300">
+</p>
+
 # Odoo Apps Collection
 
 A collection of Odoo 19 custom modules for HR attendance automation, product QR access, and material quantity conversion.
@@ -203,9 +216,20 @@ Before installing these modules, make sure your Odoo instance meets the followin
 git clone https://github.com/anmol6213/OdoosApps.git
 ```
 
-### 2. Copy modules to custom addons
+### 2. Add the modules to your Odoo addons path
+
+Option A: point Odoo to the cloned folder:
+
 ```bash
-cp -r OdoosApps /path/to/your/odoo/custom_addons/
+./odoo-bin --addons-path=/path/to/odoo/addons,/path/to/OdoosApps
+```
+
+Option B: copy only the modules you need:
+
+```bash
+cp -r OdoosApps/slack_attendance_integration /path/to/custom_addons/
+cp -r OdoosApps/website_product_qr_portal /path/to/custom_addons/
+cp -r OdoosApps/cbm_converter /path/to/custom_addons/
 ```
 
 ### 3. Update apps list
@@ -229,6 +253,8 @@ To use the module correctly:
 3. Set the employee `slack_user_id`
 4. Create a Slack config record with:
    - active flag
+   - Slack Bot Token (`xoxb-...`)
+   - Slack Signing Secret
    - webhook URL
    - login grace minutes
    - minimum break minutes
