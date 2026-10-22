@@ -18,18 +18,6 @@ This repository contains multiple independent Odoo add-ons designed to extend st
 - [QR Code & Stock Availability Checker](https://apps.odoo.com/apps/modules/19.0/website_product_qr_portal)
 - [CBM Converter](https://apps.odoo.com/apps/modules/19.0/cbm_converter)
 
-## Screenshots
-
-QR Code & Stock Availability Checker:
-
-<p align="center">
-  <img src="website_product_qr_portal/static/description/screenshort_1.JPG" width="300">
-  <img src="website_product_qr_portal/static/description/screenshort_2.JPG" width="300">
-</p>
-<p align="center">
-  <img src="website_product_qr_portal/static/description/screenshort_3.JPG" width="300">
-  <img src="website_product_qr_portal/static/description/screenshort_4.JPG" width="300">
-</p>
 
 ## Repository Overview
 
