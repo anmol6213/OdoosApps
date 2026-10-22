@@ -1,3 +1,17 @@
+# Odoo Apps Collection
+
+![Odoo](https://img.shields.io/badge/Odoo-19.0-714B67)
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-LGPL--3.0-blue)
+
+A collection of Odoo 19 custom modules for HR attendance automation, product QR access, and material quantity conversion.
+
+This repository contains multiple independent Odoo add-ons designed to extend standard Odoo functionality for real-world business processes:
+
+- Slack-based employee attendance tracking
+- Product QR code generation and customer-facing stock availability
+- CBM-to-pieces conversion for inventory and sales workflows
+
 ## Odoo App Store
 
 - [Slack Attendance Integration](https://apps.odoo.com/apps/modules/19.0/slack_attendance_integration)
@@ -5,6 +19,8 @@
 - [CBM Converter](https://apps.odoo.com/apps/modules/19.0/cbm_converter)
 
 ## Screenshots
+
+QR Code & Stock Availability Checker:
 
 <p align="center">
   <img src="website_product_qr_portal/static/description/screenshort_1.JPG" width="300">
@@ -14,16 +30,6 @@
   <img src="website_product_qr_portal/static/description/screenshort_3.JPG" width="300">
   <img src="website_product_qr_portal/static/description/screenshort_4.JPG" width="300">
 </p>
-
-# Odoo Apps Collection
-
-A collection of Odoo 19 custom modules for HR attendance automation, product QR access, and material quantity conversion.
-
-This repository contains multiple independent Odoo add-ons designed to extend standard Odoo functionality for real-world business processes:
-
-- Slack-based employee attendance tracking
-- Product QR code generation and customer-facing stock availability
-- CBM-to-pieces conversion for inventory and sales workflows
 
 ## Repository Overview
 
@@ -44,20 +50,23 @@ This project is built for Odoo 19 and is organized as a set of custom modules un
 
 - `cbm_converter`
   - Converts CBM quantity to pieces for construction material-related workflows
-  - integrates with accounting, sales and stock models
+  - Integrates with accounting, sales and stock models
 
 ## Tech Stack
 
 - Odoo 19
 - Python
 - JavaScript (frontend asset for website availability checker)
-- Slack incoming webhooks
+- Slack slash commands and incoming webhooks
 - qrcode / Pillow for QR generation
+- certifi for HTTPS certificate validation
 
 ## Project Structure
 
 ```text
 OdoosApps/
+├── LICENSE
+├── README.md
 ├── cbm_converter/
 │   ├── __init__.py
 │   ├── __manifest__.py
@@ -126,8 +135,12 @@ This module allows employees to manage attendance using Slack slash commands ins
 - Employee logout via Slack command
 - Break start and break resume handling
 - Break exclusion logic for short breaks
-- Attendance working hour calculation
-- Slack config record for grace minutes and break duration thresholds
+- Attendance working hour calculation (total time minus counted breaks)
+- Login grace minutes and minimum break threshold, configurable per Slack config record
+- HMAC-SHA256 verification of Slack requests
+- AI daily summaries (optional, Gemini or Claude)
+- Per-employee timezone support
+- Daily missed-logout alerts
 - Webhook-based interaction with Slack
 
 ### Example Slack Commands
@@ -150,7 +163,8 @@ This module allows employees to manage attendance using Slack slash commands ins
 ### Important Notes
 - The module depends on Odoo HR and Attendance features
 - This is designed for use in Odoo environments where Slack integration is required in a workplace attendance workflow
-- SSL verification is disabled in the webhook sender for compatibility with certain hosted environments
+- HTTPS calls use `certifi` for certificate validation
+- Slack requests are verified with HMAC-SHA256 signatures
 
 ## Module 2: Website Product QR Portal
 
@@ -210,6 +224,7 @@ Before installing these modules, make sure your Odoo instance meets the followin
 - Python packages:
   - `qrcode`
   - `Pillow`
+  - `certifi`
 - HR attendance enabled
 - Website module enabled for product QR portal
 
@@ -252,7 +267,7 @@ Search and install the required module(s) individually:
 
 ### Slack Attendance Integration
 To use the module correctly:
-1. Create and configure Slack app / slash commands
+1. Create and configure a Slack app with slash commands
 2. Map each Slack user to an Odoo employee
 3. Set the employee `slack_user_id`
 4. Create a Slack config record with:
@@ -263,6 +278,8 @@ To use the module correctly:
    - login grace minutes
    - minimum break minutes
 5. Ensure Odoo can reach the Slack webhook endpoint
+
+> The bot token and signing secret are stored in Odoo password fields, never in the source code.
 
 ### Product QR Portal
 For QR generation:
@@ -289,7 +306,8 @@ For QR generation:
 
 ## Security & Best Practices
 
-- Slack request handling should be secured with proper validation in production
+- Slack requests are verified with HMAC-SHA256 signatures
+- Bot token and signing secret are stored in Odoo password fields, never in the source code
 - Use environment-specific secrets and webhook configuration
 - Restrict access to employee and attendance data appropriately
 - Regularly review break and attendance logic for business compliance
@@ -302,15 +320,15 @@ For QR generation:
 
 ## License
 
-This project is licensed under LGPL-3 unless stated otherwise in a module-specific file.
+This project is licensed under [LGPL-3.0](LICENSE) unless stated otherwise in a module-specific file.
 
 ## Author
 
-- Anmol Patil
+- Anmol Patil ([GitHub](https://github.com/anmol6213))
 
 ## Contribution
 
-Feel free to fork and extend this project for your own Odoo deployment needs. If you’re using these modules in a production environment, it’s recommended to validate all business rules against your internal HR and inventory policies.
+Feel free to fork and extend this project for your own Odoo deployment needs. If you are using these modules in a production environment, it is recommended to validate all business rules against your internal HR and inventory policies.
 
 ## Summary
 
