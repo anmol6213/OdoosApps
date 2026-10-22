@@ -1,4 +1,4 @@
-# Odoo Apps Collection
+# Odoo Apps Collection 
 
 ![Odoo](https://img.shields.io/badge/Odoo-19.0-714B67)
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
